@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../src/**/*.{js,ts,jsx,tsx}";
+@plugin "daisyui";
 
 body {
   @apply m-0;
