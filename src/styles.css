@@ -1,5 +1,11 @@
 @import "tailwindcss";
 @source "../src/**/*.{js,ts,jsx,tsx}";
+
+@plugin "daisyui/theme" {
+  name: "emerald";
+  default: true;
+}
+
 @plugin "daisyui";
 
 body {
