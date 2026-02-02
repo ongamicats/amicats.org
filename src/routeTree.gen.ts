@@ -9,12 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Layout3RouteImport } from './routes/layout3'
+import { Route as Layout2RouteImport } from './routes/layout2'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LandingIndexRouteImport } from './routes/landing/index'
 import { Route as AppHomeRouteImport } from './routes/_app/home'
 import { Route as AppHomeIndexRouteImport } from './routes/app/home/index'
 
+const Layout3Route = Layout3RouteImport.update({
+  id: '/layout3',
+  path: '/layout3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Layout2Route = Layout2RouteImport.update({
+  id: '/layout2',
+  path: '/layout2',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AppRoute = AppRouteImport.update({
   id: '/_app',
   getParentRoute: () => rootRouteImport,
@@ -42,12 +54,16 @@ const AppHomeIndexRoute = AppHomeIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/layout2': typeof Layout2Route
+  '/layout3': typeof Layout3Route
   '/home': typeof AppHomeRoute
   '/landing/': typeof LandingIndexRoute
   '/app/home/': typeof AppHomeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/layout2': typeof Layout2Route
+  '/layout3': typeof Layout3Route
   '/home': typeof AppHomeRoute
   '/landing': typeof LandingIndexRoute
   '/app/home': typeof AppHomeIndexRoute
@@ -56,27 +72,59 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_app': typeof AppRouteWithChildren
+  '/layout2': typeof Layout2Route
+  '/layout3': typeof Layout3Route
   '/_app/home': typeof AppHomeRoute
   '/landing/': typeof LandingIndexRoute
   '/app/home/': typeof AppHomeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/home' | '/landing/' | '/app/home/'
+  fullPaths:
+    | '/'
+    | '/layout2'
+    | '/layout3'
+    | '/home'
+    | '/landing/'
+    | '/app/home/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/home' | '/landing' | '/app/home'
-  id: '__root__' | '/' | '/_app' | '/_app/home' | '/landing/' | '/app/home/'
+  to: '/' | '/layout2' | '/layout3' | '/home' | '/landing' | '/app/home'
+  id:
+    | '__root__'
+    | '/'
+    | '/_app'
+    | '/layout2'
+    | '/layout3'
+    | '/_app/home'
+    | '/landing/'
+    | '/app/home/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRouteWithChildren
+  Layout2Route: typeof Layout2Route
+  Layout3Route: typeof Layout3Route
   LandingIndexRoute: typeof LandingIndexRoute
   AppHomeIndexRoute: typeof AppHomeIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/layout3': {
+      id: '/layout3'
+      path: '/layout3'
+      fullPath: '/layout3'
+      preLoaderRoute: typeof Layout3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/layout2': {
+      id: '/layout2'
+      path: '/layout2'
+      fullPath: '/layout2'
+      preLoaderRoute: typeof Layout2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_app': {
       id: '/_app'
       path: ''
@@ -128,6 +176,8 @@ const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRouteWithChildren,
+  Layout2Route: Layout2Route,
+  Layout3Route: Layout3Route,
   LandingIndexRoute: LandingIndexRoute,
   AppHomeIndexRoute: AppHomeIndexRoute,
 }
