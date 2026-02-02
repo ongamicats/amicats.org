@@ -1,6 +1,6 @@
-import { createFileRoute, Outlet } from '@tanstack/react-router'
+import { createFileRoute, Outlet, Link } from '@tanstack/react-router'
 
-export const Route = createFileRoute('/_app')({
+export const Route = createFileRoute('/app')({
     component: AppLayout,
 })
 
@@ -9,7 +9,7 @@ function AppLayout() {
         <div className="min-h-screen bg-base-200">
             <div className="navbar bg-base-100 shadow-sm">
                 <div className="flex-1">
-                    <a href="/home" className="btn btn-ghost text-xl">Amicats App</a>
+                    <Link to="/app/home" className="btn btn-ghost text-xl">Amicats App</Link>
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">

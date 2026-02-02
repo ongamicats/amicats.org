@@ -1,12 +1,9 @@
 @import "tailwindcss";
 @source "../src/**/*.{js,ts,jsx,tsx}";
 
-@plugin "daisyui/theme" {
-  name: "emerald";
-  default: true;
+@plugin "daisyui" {
+  themes: light, dark, emerald --default;
 }
-
-@plugin "daisyui";
 
 body {
   @apply m-0;

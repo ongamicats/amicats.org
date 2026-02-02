@@ -9,31 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Layout3RouteImport } from './routes/layout3'
-import { Route as Layout2RouteImport } from './routes/layout2'
-import { Route as AppRouteImport } from './routes/_app'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as NotFoundIndexRouteImport } from './routes/not-found/index'
 import { Route as LandingIndexRouteImport } from './routes/landing/index'
-import { Route as AppHomeRouteImport } from './routes/_app/home'
+import { Route as AppHomeRouteImport } from './routes/app/home'
 import { Route as AppHomeIndexRouteImport } from './routes/app/home/index'
 
-const Layout3Route = Layout3RouteImport.update({
-  id: '/layout3',
-  path: '/layout3',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const Layout2Route = Layout2RouteImport.update({
-  id: '/layout2',
-  path: '/layout2',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AppRoute = AppRouteImport.update({
-  id: '/_app',
+  id: '/app',
+  path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotFoundIndexRoute = NotFoundIndexRouteImport.update({
+  id: '/not-found/',
+  path: '/not-found/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LandingIndexRoute = LandingIndexRouteImport.update({
@@ -47,88 +42,69 @@ const AppHomeRoute = AppHomeRouteImport.update({
   getParentRoute: () => AppRoute,
 } as any)
 const AppHomeIndexRoute = AppHomeIndexRouteImport.update({
-  id: '/app/home/',
-  path: '/app/home/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppHomeRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/layout2': typeof Layout2Route
-  '/layout3': typeof Layout3Route
-  '/home': typeof AppHomeRoute
+  '/app': typeof AppRouteWithChildren
+  '/app/home': typeof AppHomeRouteWithChildren
   '/landing/': typeof LandingIndexRoute
+  '/not-found/': typeof NotFoundIndexRoute
   '/app/home/': typeof AppHomeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/layout2': typeof Layout2Route
-  '/layout3': typeof Layout3Route
-  '/home': typeof AppHomeRoute
+  '/app': typeof AppRouteWithChildren
   '/landing': typeof LandingIndexRoute
+  '/not-found': typeof NotFoundIndexRoute
   '/app/home': typeof AppHomeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/_app': typeof AppRouteWithChildren
-  '/layout2': typeof Layout2Route
-  '/layout3': typeof Layout3Route
-  '/_app/home': typeof AppHomeRoute
+  '/app': typeof AppRouteWithChildren
+  '/app/home': typeof AppHomeRouteWithChildren
   '/landing/': typeof LandingIndexRoute
+  '/not-found/': typeof NotFoundIndexRoute
   '/app/home/': typeof AppHomeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/layout2'
-    | '/layout3'
-    | '/home'
+    | '/app'
+    | '/app/home'
     | '/landing/'
+    | '/not-found/'
     | '/app/home/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/layout2' | '/layout3' | '/home' | '/landing' | '/app/home'
+  to: '/' | '/app' | '/landing' | '/not-found' | '/app/home'
   id:
     | '__root__'
     | '/'
-    | '/_app'
-    | '/layout2'
-    | '/layout3'
-    | '/_app/home'
+    | '/app'
+    | '/app/home'
     | '/landing/'
+    | '/not-found/'
     | '/app/home/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AppRoute: typeof AppRouteWithChildren
-  Layout2Route: typeof Layout2Route
-  Layout3Route: typeof Layout3Route
   LandingIndexRoute: typeof LandingIndexRoute
-  AppHomeIndexRoute: typeof AppHomeIndexRoute
+  NotFoundIndexRoute: typeof NotFoundIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/layout3': {
-      id: '/layout3'
-      path: '/layout3'
-      fullPath: '/layout3'
-      preLoaderRoute: typeof Layout3RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/layout2': {
-      id: '/layout2'
-      path: '/layout2'
-      fullPath: '/layout2'
-      preLoaderRoute: typeof Layout2RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_app': {
-      id: '/_app'
-      path: ''
-      fullPath: '/'
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
       preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
@@ -139,6 +115,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/not-found/': {
+      id: '/not-found/'
+      path: '/not-found'
+      fullPath: '/not-found/'
+      preLoaderRoute: typeof NotFoundIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/landing/': {
       id: '/landing/'
       path: '/landing'
@@ -146,29 +129,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LandingIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_app/home': {
-      id: '/_app/home'
+    '/app/home': {
+      id: '/app/home'
       path: '/home'
-      fullPath: '/home'
+      fullPath: '/app/home'
       preLoaderRoute: typeof AppHomeRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/home/': {
       id: '/app/home/'
-      path: '/app/home'
+      path: '/'
       fullPath: '/app/home/'
       preLoaderRoute: typeof AppHomeIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AppHomeRoute
     }
   }
 }
 
+interface AppHomeRouteChildren {
+  AppHomeIndexRoute: typeof AppHomeIndexRoute
+}
+
+const AppHomeRouteChildren: AppHomeRouteChildren = {
+  AppHomeIndexRoute: AppHomeIndexRoute,
+}
+
+const AppHomeRouteWithChildren =
+  AppHomeRoute._addFileChildren(AppHomeRouteChildren)
+
 interface AppRouteChildren {
-  AppHomeRoute: typeof AppHomeRoute
+  AppHomeRoute: typeof AppHomeRouteWithChildren
 }
 
 const AppRouteChildren: AppRouteChildren = {
-  AppHomeRoute: AppHomeRoute,
+  AppHomeRoute: AppHomeRouteWithChildren,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
@@ -176,10 +170,8 @@ const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AppRoute: AppRouteWithChildren,
-  Layout2Route: Layout2Route,
-  Layout3Route: Layout3Route,
   LandingIndexRoute: LandingIndexRoute,
-  AppHomeIndexRoute: AppHomeIndexRoute,
+  NotFoundIndexRoute: NotFoundIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -2,8 +2,8 @@ import {
   HeadContent,
   Scripts,
   createRootRouteWithContext,
-  Outlet,
 } from '@tanstack/react-router'
+import { NotFound } from './not-found'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
@@ -40,11 +40,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   }),
 
   shellComponent: RootDocument,
+  notFoundComponent: NotFound,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" data-theme="emerald">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>

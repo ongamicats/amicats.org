@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react'
 
-export function LandingFooter() {
+export function Footer() {
     return (
         <footer className="bg-neutral text-neutral-content pt-16 pb-8">
             <div className="container mx-auto px-4">
