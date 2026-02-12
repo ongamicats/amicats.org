@@ -8,6 +8,34 @@ export interface AdoteSectionProps {
 }
 
 export function AdoteSection({ images }: AdoteSectionProps) {
+  const gatos = [
+    {
+      nome: "Zezinho",
+      descricao: "Ama um carinho e adora um abraço, galã de novela.",
+      imagem: images[0],
+      status: "Disponível"
+    },
+    {
+      nome: "Augusto",
+      descricao: "A fofura do abrigo, distribuidor de amor. Esqueceu de desligar a fofura.",
+      imagem: images[1],
+      status: "Disponível"
+    },
+    {
+      nome: "Poliana",
+      descricao: "A Princesa da Ong, padeira de mão cheia, amor silencioso.",
+      imagem: images[2],
+      status: "Disponível"
+    },
+    {
+      nome: "Túlio",
+      descricao: "Amigo estou aqui! Os seus problemas, são meus também... 🎶",
+      imagem: images[3],
+      status: "Disponível"
+    }
+  ]
+
+
   return (
     <Section id="adote" className="px-4 bg-base-200">
       <Container>
@@ -19,13 +47,13 @@ export function AdoteSection({ images }: AdoteSectionProps) {
         </div>
 
         <Grid className="md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[0, 1, 2, 3].map((i) => (
+          {gatos.map((gato) => (
             <GatoCard
-              key={i}
-              nome={`Gato ${i + 1}`}
-              descricao="Castrado, vacinado e muito carinhoso. Adora brincar com bolinhas de papel."
-              imagem={images[i]}
-              status="Disponível"
+              key={gato.nome}
+              nome={gato.nome}
+              descricao={gato.descricao}
+              imagem={gato.imagem}
+              status={gato.status}
             />
           ))}
         </Grid>

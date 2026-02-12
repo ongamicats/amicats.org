@@ -10,7 +10,7 @@ export interface IntroducaoSectionProps {
 }
 
 export function IntroducaoSection({ imageSrc, images = [] }: IntroducaoSectionProps) {
-    const displayImages = images.length > 0 ? images : [imageSrc || "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"]
+    const displayImages = images.length > 0 ? images : [imageSrc || ""]
 
     return (
         <Hero className="bg-base-100 relative overflow-hidden">
