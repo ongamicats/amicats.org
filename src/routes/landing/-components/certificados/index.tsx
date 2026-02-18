@@ -30,7 +30,7 @@ export function CertificadosSection() {
         <Section id="certificados" className="bg-base-100">
             <Container>
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Reconhecimento</span>
+                    <span className="text-neutral font-bold tracking-widest uppercase text-sm mb-2 block">Reconhecimento</span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">Certificados</h2>
                     <p className="text-lg opacity-70">
                         Nosso compromisso com a excelência e transparência é reconhecido por diversas instituições.

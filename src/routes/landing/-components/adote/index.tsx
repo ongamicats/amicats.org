@@ -4,7 +4,7 @@ import { Grid } from "@/components/layout/ui/grid"
 import { GatoCard } from "@/components/layout/ui/gato-card"
 
 export interface AdoteSectionProps {
-  images: string[]
+  images: Array<string>
 }
 
 export function AdoteSection({ images }: AdoteSectionProps) {
@@ -37,10 +37,11 @@ export function AdoteSection({ images }: AdoteSectionProps) {
 
 
   return (
-    <Section id="adote" className="px-4 bg-base-200">
+    <Section id="adote" className="px-4 bg-base-200 lg:h-164 overflow-hidden">
       <Container>
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-4">Gatinhos Disponíveis</h2>
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-primary-content font-bold tracking-widest uppercase text-sm mb-2 block">Nossos amiguinhos</span>
+          <h2 className="text-3xl text-primary font-bold mb-4">Gatinhos Disponíveis</h2>
           <p className="opacity-70">
             Estes pequenos estão prontos para encher sua casa de alegria.
           </p>

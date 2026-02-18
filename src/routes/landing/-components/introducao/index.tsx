@@ -5,11 +5,16 @@ import { Resgates } from '@/components/layout/ui/resgates'
 
 
 export interface IntroducaoSectionProps {
-    imageSrc?: string
-    images?: string[]
+    imageSrc?: string;
+    images?: Array<string>;
+    voluntarios?: Array<{
+        nome: string;
+        funcao: string;
+        img: string;
+    }>;
 }
 
-export function IntroducaoSection({ imageSrc, images = [] }: IntroducaoSectionProps) {
+export function IntroducaoSection({ imageSrc, images = [], voluntarios = [] }: IntroducaoSectionProps) {
     const displayImages = images.length > 0 ? images : [imageSrc || ""]
 
     return (
@@ -40,7 +45,7 @@ export function IntroducaoSection({ imageSrc, images = [] }: IntroducaoSectionPr
                             Como funciona?
                         </Button>
                     </div>
-                    <Resgates />
+                    <Resgates socorristas={voluntarios} />
                 </div>
             </Hero.Content>
         </Hero>

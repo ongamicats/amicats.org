@@ -23,7 +23,7 @@ export function GatoCard({
 }: GatoCardProps) {
     return (
         <Card className="bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-transparent hover:border-primary/20">
-            <Figure className="h-48 overflow-hidden relative">
+            <Figure className="h-42 overflow-hidden relative">
                 <Img
                     src={imagem}
                     alt={nome}
@@ -37,8 +37,8 @@ export function GatoCard({
                 </Badge>
             </Figure>
             <Card.Body className="p-6">
-                <Card.Title className="text-xl">{nome}</Card.Title>
-                <p className="text-sm opacity-70 mb-4 line-clamp-2">
+                <Card.Title className="text-lg">{nome}</Card.Title>
+                <p className="text-xs opacity-70 mb-4 line-clamp-2">
                     {descricao}
                 </p>
                 <Card.Actions>

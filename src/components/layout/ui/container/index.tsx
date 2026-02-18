@@ -13,7 +13,7 @@ export function Container({ children, className, fluid = false, size = 'xl', ...
 
     return (
         <div
-            className={`mx-auto px-4 w-full ${fluid ? 'max-w-none' : maxWidths[size]} ${className || ''}`}
+            className={`mx-auto px-4 ${fluid ? 'max-w-none' : maxWidths[size]} ${className || ''}`}
             {...props}
         >
             {children}

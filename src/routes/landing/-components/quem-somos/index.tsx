@@ -6,12 +6,12 @@ import { CardComponent as Card } from '@/components/layout/daisy/data-display/ca
 
 export function QuemSomosSection() {
     return (
-        <Section id="about" className="bg-base-100">
+        <Section id="about" className="bg-base-100 lg:h-150 overflow-hidden">
             <Container>
-                <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="text-center max-w-3xl mx-auto mb-12">
                     <span className="text-secondary font-bold tracking-widest uppercase text-sm mb-2 block">Nossa História</span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">Quem Somos</h2>
-                    <p className="text-lg opacity-70">
+                    <p className="text-base opacity-70">
                         A AmiCat's nasceu do desejo genuíno de mudar o destino de centenas de felinos nas ruas de Campo Grande.
                         Somos voluntários apaixonados que dedicam tempo e recursos para resgatar, tratar e encontrar lares amorosos.
                         Acreditamos que cada vida importa e que o amor pode curar as feridas mais profundas.
