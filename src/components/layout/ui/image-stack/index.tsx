@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export interface ImageStackProps {
-    images: string[]
+    images: Array<string>
 }
 
 export function ImageStack({ images }: ImageStackProps) {
@@ -17,8 +17,8 @@ export function ImageStack({ images }: ImageStackProps) {
     }, [images.length])
 
     return (
-        <div className="lg:w-1/2 w-full relative h-[600px] flex items-center justify-center">
-            <div className="relative w-full max-w-md aspect-[4/5]">
+        <div className="relative h-full flex items-center justify-center">
+            <div className="relative w-full max-w-xl aspect-4/6">
                 {images.map((src, index) => {
                     const offset = (index - currentImageIndex + images.length) % images.length;
                     const isActive = offset === 0
@@ -36,11 +36,11 @@ export function ImageStack({ images }: ImageStackProps) {
                     } else if (isNext) {
                         zIndex = 40
                         opacity = 0.8
-                        transform = 'translate(10px, 10px) rotate(2deg) scale(0.95)'
+                        transform = 'translate(10px, 10px) rotate(8deg) scale(0.95)'
                     } else if (offset === 2) {
                         zIndex = 30
                         opacity = 0.6
-                        transform = 'translate(20px, 20px) rotate(4deg) scale(0.9)'
+                        transform = 'translate(20px, 20px) rotate(16deg) scale(0.9)'
                     } else if (isLast) {
                         zIndex = 0
                         opacity = 0

@@ -1,8 +1,10 @@
-import { Hero } from '@/components/layout/daisy/layout/hero'
-import { Button } from '@/components/layout/daisy/actions/button'
-import { ImageStack } from '@/components/layout/ui/image-stack'
-import { Resgates } from '@/components/layout/ui/resgates'
-
+import { twMerge } from 'tailwind-merge';
+import clsx from 'clsx';
+import { Button } from '@/components/layout/daisy/actions/button';
+import { ImageStack } from '@/components/layout/ui/image-stack';
+import { Resgates } from '@/components/layout/ui/resgates';
+import { Container } from '@/components/layout/ui/container';
+import { Flex } from '@/components/layout/ui/flex';
 
 export interface IntroducaoSectionProps {
     imageSrc?: string;
@@ -18,36 +20,43 @@ export function IntroducaoSection({ imageSrc, images = [], voluntarios = [] }: I
     const displayImages = images.length > 0 ? images : [imageSrc || ""]
 
     return (
-        <Hero className="bg-base-100 relative overflow-hidden">
-            <div className="absolute right-0 top-0 w-1/2 h-full bg-primary/5 hidden lg:block rounded-l-[5rem]"></div>
-            <Hero.Content className="flex-col lg:flex-row-reverse gap-12 p-0 w-full max-w-7xl mx-auto px-6 relative z-10">
-                <ImageStack images={displayImages} />
-                <div className="lg:w-1/2 w-full text-left pt-20 lg:pt-0">
-                    <h1 className="text-5xl md:text-6xl font-black text-base-content leading-tight mb-6">
-                        AmiCat's: Salvando Vidas Felinas
-                    </h1>
-                    <p className="py-6 text-lg text-base-content/70 leading-relaxed max-w-lg">
-                        Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande.
-                    </p>
-                    <div className="flex gap-4">
-                        <Button
-                            href="#adote"
-                            variant="primary"
-                            size="lg"
-                            className="shadow-lg hover:shadow-primary/50"
-                        >
-                            Começe sua jornada
-                        </Button>
-                        <Button
-                            variant="ghost"
-                            size="lg"
-                        >
-                            Como funciona?
-                        </Button>
+        <>
+            <Container fluid className={twMerge(clsx('bg-base-100', 'w-full', 'h-screen', 'relative', 'overflow-hidden', 'p-10', 'pl-10', 'pr-10'))}>
+                <div className="absolute right-0 top-0 w-1/2 h-full bg-primary/5 block rounded-l-[5rem] z-0"></div>
+                <Flex className={'z-10 flex-row-reverse items-center h-full'}>
+                    <div className={'w-1/2 min-w-0 shrink'}>
+                        <ImageStack images={displayImages} />
                     </div>
-                    <Resgates socorristas={voluntarios} />
-                </div>
-            </Hero.Content>
-        </Hero>
+                    <Flex direction='col' className="w-1/2 min-w-0 shrink h-full justify-center text-left pt-20 lg:pt-0">
+                        <h1 className="text-5xl md:text-6xl font-black text-base-content leading-tight mb-6">
+                            AmiCat's:
+                        </h1>
+                        <h1 className="text-5xl md:text-6xl font-black text-base-content leading-tight mb-6">
+                            Salvando Vidas Felinas
+                        </h1>
+                        <p className="py-6 text-lg text-base-content/70 leading-relaxed max-w-lg">
+                            Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande.
+                        </p>
+                        <div className="flex gap-4">
+                            <Button
+                                href="#adote"
+                                variant="primary"
+                                size="lg"
+                                className="shadow-lg hover:shadow-primary/50"
+                            >
+                                Começe sua jornada
+                            </Button>
+                            <Button
+                                variant="ghost"
+                                size="lg"
+                            >
+                                Como funciona?
+                            </Button>
+                        </div>
+                        <Resgates socorristas={voluntarios} />
+                    </Flex>
+                </Flex>
+            </Container>
+        </>
     )
 }
