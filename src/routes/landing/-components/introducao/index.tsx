@@ -5,6 +5,10 @@ import { ImageStack } from '@/components/layout/ui/image-stack';
 import { Resgates } from '@/components/layout/ui/resgates';
 import { Container } from '@/components/layout/ui/container';
 import { Flex } from '@/components/layout/ui/flex';
+import { Img } from '@/components/layout/ui/img';
+
+import amicatsLogo from '@/assets/amicats-logo.png';
+import amicatsNameLogo from '@/assets/amicats-name-logo.png';
 
 export interface IntroducaoSectionProps {
     imageSrc?: string;
@@ -27,9 +31,13 @@ export function IntroducaoSection({ imageSrc, images = [], voluntarios = [] }: I
                     <div className={'w-1/2 min-w-0 shrink'}>
                         <ImageStack images={displayImages} />
                     </div>
-                    <Flex direction='col' className="w-1/2 min-w-0 shrink h-full justify-center text-left pt-20 lg:pt-0">
-                        <h1 className="text-5xl md:text-6xl font-black text-base-content leading-tight mb-6">
-                            AmiCat's:
+                    <Flex direction='col' className="w-1/2 min-w-0 shrink h-full justify-center text-left pt-20 lg:pt-0 relative isolate">
+                        <h1 className="text-5xl md:text-6xl font-black text-base-content leading-tight flex items-center gap-2">
+                            <Img
+                                src={amicatsNameLogo}
+                                alt="AmiCat's"
+                                className="h-64 w-96 object-contain"
+                            />
                         </h1>
                         <h1 className="text-5xl md:text-6xl font-black text-base-content leading-tight mb-6">
                             Salvando Vidas Felinas
