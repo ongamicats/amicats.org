@@ -3,13 +3,13 @@ import {
   Scripts,
   createRootRouteWithContext,
 } from '@tanstack/react-router'
-import { NotFound } from './not-found'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
 
 import appCss from '../styles.css?url'
+import { NotFound } from './not-found'
 
 import type { QueryClient } from '@tanstack/react-query'
 
@@ -47,6 +47,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
+        <meta charSet="utf-8" name='viewport' content='width=device-width, initial-scale=1.0' />
         <HeadContent />
       </head>
       <body>

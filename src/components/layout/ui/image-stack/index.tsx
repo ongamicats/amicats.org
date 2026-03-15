@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Container } from '../container'
 
 export interface ImageStackProps {
     images: Array<string>
@@ -17,8 +18,8 @@ export function ImageStack({ images }: ImageStackProps) {
     }, [images.length])
 
     return (
-        <div className="relative h-full flex items-center justify-center">
-            <div className="relative w-full max-w-xl aspect-4/6">
+        <Container id={'image-stack'} className="relative w-full h-full flex items-center justify-center">
+            <div className="relative h-[90vh] aspect-2/3">
                 {images.map((src, index) => {
                     const offset = (index - currentImageIndex + images.length) % images.length;
                     const isActive = offset === 0
@@ -67,6 +68,6 @@ export function ImageStack({ images }: ImageStackProps) {
                 })}
             </div>
             <div className="absolute bottom-10 -left-10 w-40 h-40 bg-secondary rounded-full -z-10 opacity-50 blur-xl animate-pulse"></div>
-        </div>
+        </Container>
     )
 }

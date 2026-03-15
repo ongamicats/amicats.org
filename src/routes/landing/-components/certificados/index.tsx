@@ -1,6 +1,7 @@
 import { Container } from '@/components/layout/ui/container'
-import { Section } from '@/components/layout/ui/section'
 import { Grid } from '@/components/layout/ui/grid'
+import { Flex } from '@/components/layout/ui/flex'
+import { SectionContainer } from '@/components/layout/ui/container/section'
 
 export function CertificadosSection() {
     const certificados = [
@@ -27,17 +28,18 @@ export function CertificadosSection() {
     ]
 
     return (
-        <Section id="certificados" className="bg-base-100">
-            <Container>
-                <div className="text-center max-w-3xl mx-auto mb-16">
+        <SectionContainer containerId='c-certificados' sectionId="certificados">
+            <Container fluid id='c-certificados-inner' spacing='lg' className="h-screen overflow-hidden">
+                <Flex direction='col' justify='center' className="h-full py-10">
+                <div className="text-center max-w-3xl mx-auto mb-6">
                     <span className="text-neutral font-bold tracking-widest uppercase text-sm mb-2 block">Reconhecimento</span>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">Certificados</h2>
-                    <p className="text-lg opacity-70">
+                    <h2 className="text-4xl xl:text-5xl font-bold mb-4 text-primary">Certificados</h2>
+                    <p className="text-base opacity-70">
                         Nosso compromisso com a excelência e transparência é reconhecido por diversas instituições.
                     </p>
                 </div>
 
-                <Grid className="md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <Grid className="md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {certificados.map((cert) => (
                         <div
                             key={cert.nome}
@@ -50,7 +52,7 @@ export function CertificadosSection() {
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                             </div>
-                            <div className="p-6">
+                            <div className="p-4">
                                 <h3 className="text-xl font-bold mb-2 text-primary">{cert.nome}</h3>
                                 <p className="text-sm opacity-70">{cert.descricao}</p>
                             </div>
@@ -58,7 +60,8 @@ export function CertificadosSection() {
                         </div>
                     ))}
                 </Grid>
+                </Flex>
             </Container>
-        </Section>
+        </SectionContainer>
     )
 }

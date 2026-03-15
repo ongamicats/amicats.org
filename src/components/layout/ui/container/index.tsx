@@ -1,9 +1,19 @@
+import { cn } from "../../shared/helpers/class.helper";
+
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-    fluid?: boolean
-    size?: 'sm' | 'md' | 'lg' | 'xl'
+    id: string;
+    fluid?: boolean;
+    size?: 'sm' | 'md' | 'lg' | 'xl';
+    spacing?: 'sm' | 'md' | 'lg';
 }
 
-export function Container({ children, className, fluid = false, size = 'xl', ...props }: ContainerProps) {
+const spacingClasses: Record<string, string> = {
+    sm: 'px-4',
+    md: 'px-8',
+    lg: 'px-12',
+}
+
+export function Container({ id, fluid = false, size = 'xl', spacing, children, className, ...props }: ContainerProps) {
     const maxWidths = {
         sm: 'max-w-screen-sm',
         md: 'max-w-screen-md',
@@ -13,7 +23,12 @@ export function Container({ children, className, fluid = false, size = 'xl', ...
 
     return (
         <div
-            className={`mx-auto px-4 ${fluid ? 'max-w-none' : maxWidths[size]} ${className || ''}`}
+            id={id}
+            className={cn(
+                `@container/${id}`,
+                { 'max-w-none': fluid, [maxWidths[size]]: !fluid },
+                spacing ? spacingClasses[spacing] : '',
+                className)}
             {...props}
         >
             {children}
