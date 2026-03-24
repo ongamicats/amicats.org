@@ -8,11 +8,11 @@ import { Flex } from '@/components/layout/ui/flex'
 export function QuemSomosSection() {
     return (
         <SectionContainer containerId={'qs'} sectionId={'quem-somos'}>
-            <Container fluid id={'qs-inner'} spacing='lg' className={'md:h-screen md:overflow-hidden'}>
-                <Flex direction='col' className={'md:h-full py-10'} justify='center'>
+            <Container fluid id={'qs-inner'} spacing='lg' className={'md:h-screen md:overflow-hidden landscape-mobile:h-auto landscape-mobile:overflow-visible'}>
+                <Flex direction='col' className={'md:h-full py-10 landscape-mobile:h-auto'} justify='center'>
                     <Flex direction='col' justify='center' gap={2} className={"items-center mx-auto py-10"}>
                         <span className="text-secondary font-bold tracking-widest uppercase text-sm block">Nossa História</span>
-                        <h2 className="text-2xl md:text-4xl xl:text-5xl font-bold text-primary mb-4">Quem Somos</h2>
+                        <h2 className="text-2xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-bold text-primary mb-4">Quem Somos</h2>
                         <p className="text-center text-sm md:text-base opacity-70 wrap-break-word max-w-2xl mb-6">
                             A AmiCat's nasceu do desejo genuíno de mudar o destino de centenas de felinos nas ruas de Campo Grande.
                             Somos voluntários apaixonados que dedicam tempo e recursos para resgatar, tratar e encontrar lares amorosos.

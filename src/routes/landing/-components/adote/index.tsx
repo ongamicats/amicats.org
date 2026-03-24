@@ -39,11 +39,11 @@ export function AdoteSection({ images }: AdoteSectionProps) {
 
   return (
     <SectionContainer containerId="c-adote" sectionId="adote" background="bg-base-200">
-      <Container fluid id="c-adote-gatinhos" spacing="lg" className="md:h-screen md:overflow-hidden">
-        <Flex direction="col" justify="center" className="md:h-full py-10">
+      <Container fluid id="c-adote-gatinhos" spacing="lg" className="md:h-screen md:overflow-hidden landscape-mobile:h-auto landscape-mobile:overflow-visible">
+        <Flex direction="col" justify="center" className="md:h-full py-10 landscape-mobile:h-auto">
           <div className="text-center max-w-2xl mx-auto mb-6">
             <span className="text-primary-content font-bold tracking-widest uppercase text-sm mb-2 block">Nossos amiguinhos</span>
-            <h2 className="text-xl md:text-3xl xl:text-4xl text-primary font-bold mb-3">Gatinhos Disponíveis</h2>
+            <h2 className="text-xl md:text-3xl xl:text-4xl landscape-mobile:text-base text-primary font-bold mb-3">Gatinhos Disponíveis</h2>
             <p className="text-sm md:text-base opacity-70">
               Estes pequenos estão prontos para encher sua casa de alegria.
             </p>

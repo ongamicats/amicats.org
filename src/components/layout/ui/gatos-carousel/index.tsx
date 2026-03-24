@@ -22,11 +22,12 @@ const USER_PAUSE_MS = 6000
 const SWIPE_THRESHOLD_PX = 40
 
 function useResponsiveVisibleCards(override?: number): number {
-    const getDefault = () =>
-        typeof window !== "undefined" &&
-        window.matchMedia("(min-width: 768px)").matches
-            ? 4
-            : 1
+    const getDefault = () => {
+        if (typeof window === "undefined") return 1
+        if (window.matchMedia("(orientation: landscape) and (max-height: 500px)").matches) return 3
+        if (window.matchMedia("(min-width: 768px)").matches) return 4
+        return 1
+    }
 
     const [cards, setCards] = useState<number>(() => override ?? getDefault())
 
@@ -35,10 +36,19 @@ function useResponsiveVisibleCards(override?: number): number {
             setCards(override)
             return
         }
-        const mq = window.matchMedia("(min-width: 768px)")
-        const update = (e: MediaQueryListEvent) => setCards(e.matches ? 4 : 1)
-        mq.addEventListener("change", update)
-        return () => mq.removeEventListener("change", update)
+        const mqLandscape = window.matchMedia("(orientation: landscape) and (max-height: 500px)")
+        const mqDesktop = window.matchMedia("(min-width: 768px)")
+        const update = () => {
+            if (mqLandscape.matches) setCards(3)
+            else if (mqDesktop.matches) setCards(4)
+            else setCards(1)
+        }
+        mqLandscape.addEventListener("change", update)
+        mqDesktop.addEventListener("change", update)
+        return () => {
+            mqLandscape.removeEventListener("change", update)
+            mqDesktop.removeEventListener("change", update)
+        }
     }, [override])
 
     return cards

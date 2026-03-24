@@ -29,11 +29,11 @@ export function CertificadosSection() {
 
     return (
         <SectionContainer containerId='c-certificados' sectionId="certificados">
-            <Container fluid id='c-certificados-inner' spacing='lg' className="md:h-screen md:overflow-hidden">
-                <Flex direction='col' justify='center' className="md:h-full py-10">
+            <Container fluid id='c-certificados-inner' spacing='lg' className="md:h-screen md:overflow-hidden landscape-mobile:h-auto landscape-mobile:overflow-visible">
+                <Flex direction='col' justify='center' className="md:h-full py-10 landscape-mobile:h-auto">
                 <div className="text-center max-w-3xl mx-auto mb-6">
                     <span className="text-neutral font-bold tracking-widest uppercase text-sm mb-2 block">Reconhecimento</span>
-                    <h2 className="text-2xl md:text-4xl xl:text-5xl font-bold mb-4 text-primary">Certificados</h2>
+                    <h2 className="text-2xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-bold mb-4 text-primary">Certificados</h2>
                     <p className="text-sm md:text-base opacity-70">
                         Nosso compromisso com a excelência e transparência é reconhecido por diversas instituições.
                     </p>

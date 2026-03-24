@@ -17,11 +17,11 @@ const desktopOrder: Record<number, string> = { 0: 'md:order-2', 1: 'md:order-1',
 export function VoluntariosSection({ voluntarios }: VoluntariosProps) {
     return (
         <SectionContainer containerId="c-voluntarios" sectionId="voluntarios-section">
-            <Container fluid id="c-voluntarios-equipe" spacing="lg" className="md:h-screen md:overflow-hidden">
-                <Flex direction="col" justify="center" className="md:h-full py-10">
+            <Container fluid id="c-voluntarios-equipe" spacing="lg" className="md:h-screen md:overflow-hidden landscape-mobile:h-auto landscape-mobile:overflow-visible">
+                <Flex direction="col" justify="center" className="md:h-full py-10 landscape-mobile:h-auto">
                     <Flex direction="col" align="center" className="text-center mb-6">
                         <span className="text-info font-bold uppercase tracking-wider text-sm">Nossa Equipe</span>
-                        <h2 className="text-2xl md:text-4xl font-bold mt-2 text-primary">Quem Faz Acontecer</h2>
+                        <h2 className="text-2xl md:text-4xl landscape-mobile:text-xl font-bold mt-2 text-primary">Quem Faz Acontecer</h2>
                         <p className="mt-3 text-sm md:text-base opacity-70 max-w-2xl mx-auto">
                             Por trás de cada resgate, existe um time dedicado de voluntários que trabalha incansavelmente.
                         </p>

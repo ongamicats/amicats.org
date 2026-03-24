@@ -3,9 +3,11 @@ import { cn } from "../../shared/helpers/class.helper";
 export interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     mobileSrc?: string
     mobileClassName?: string
+    landscapeSrc?: string
+    landscapeClassName?: string
 }
 
-export function Img({ className, src, alt, mobileSrc, mobileClassName, ...props }: ImgProps) {
+export function Img({ className, src, alt, mobileSrc, mobileClassName, landscapeSrc, landscapeClassName, ...props }: ImgProps) {
     return (
         <>
             <img
@@ -17,9 +19,17 @@ export function Img({ className, src, alt, mobileSrc, mobileClassName, ...props 
             <img
                 src={src}
                 alt={alt}
-                className={cn("block w-full h-auto hidden md:block", className)}
+                className={cn("w-full h-auto hidden md:block", landscapeSrc ? "landscape-mobile:hidden" : "", className)}
                 {...props}
             />
+            {landscapeSrc && (
+                <img
+                    src={landscapeSrc}
+                    alt={alt}
+                    className={cn("hidden landscape-mobile:block", landscapeClassName)}
+                    {...props}
+                />
+            )}
         </>
     )
 }

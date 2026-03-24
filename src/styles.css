@@ -5,6 +5,8 @@
   themes: light, dark, emerald --default;
 }
 
+@custom-variant landscape-mobile (@media (orientation: landscape) and (max-height: 500px));
+
 body {
   @apply m-0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

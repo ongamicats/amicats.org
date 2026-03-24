@@ -5,8 +5,9 @@ import { Container } from '@/components/layout/ui/container';
 import { Flex } from '@/components/layout/ui/flex';
 import { Img } from '@/components/layout/ui/img';
 
-import amicatsNameLogo from '@/assets/amicats-name-logo.png';
+import amicatsLogo from '@/assets/amicats-logo.png';
 import amicatsLogoFull from '@/assets/amicats-logo-full.png';
+import amicatsNameLogo from '@/assets/amicats-name-logo.png';
 import { SectionContainer } from '@/components/layout/ui/container/section';
 
 export interface IntroducaoSectionProps {
@@ -44,16 +45,18 @@ export function IntroducaoSection({ imageSrc, images = [], voluntarios = [] }: I
                                         <Img
                                             src={amicatsNameLogo}
                                             mobileSrc={amicatsLogoFull}
+                                            landscapeSrc={amicatsNameLogo}
                                             alt="AmiCat's"
                                             className="h-[15vh] w-auto object-contain"
                                             mobileClassName="h-[40vh] w-auto object-contain"
+                                            landscapeClassName="h-15 w-auto object-contain"
                                         />
                                     </h1>
                                 </Flex>
-                                <h1 className="text-3xl md:text-4xl xl:text-5xl font-black text-base-content leading-tight mb-4 whitespace-nowrap">
+                                <h1 className="text-3xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-black text-base-content leading-tight mb-4 whitespace-nowrap">
                                     Salvando Vidas Felinas
                                 </h1>
-                                <Flex mobileHidden>
+                                <Flex mobileHidden className="landscape-mobile:hidden">
                                     <p className="py-3 text-base text-base-content/70 leading-relaxed max-w-lg">
                                         Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande.
                                     </p>

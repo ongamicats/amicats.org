@@ -6,11 +6,11 @@ import { SectionContainer } from '@/components/layout/ui/container/section'
 export function OAbrigoSection() {
     return (
         <SectionContainer containerId='c-o-abrigo' sectionId="o-abrigo" background='bg-base-200'>
-            <Container fluid id='innerc-o-abrigo' spacing='lg' className={'md:h-screen md:overflow-hidden'}>
-                <Flex stackAt='md' align='stretch' gap={6} className='md:h-full py-10'>
+            <Container fluid id='innerc-o-abrigo' spacing='lg' className={'md:h-screen md:overflow-hidden landscape-mobile:h-auto landscape-mobile:overflow-visible'}>
+                <Flex stackAt='md' align='stretch' gap={6} className='md:h-full py-10 landscape-mobile:h-auto'>
                     <Flex id='c-abrigo-intro' justify='center' direction='col' grow className="items-center text-center">
                         <span className="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Nosso Dia a Dia</span>
-                        <h2 className="text-2xl md:text-4xl xl:text-5xl font-bold mb-4 text-primary">O Abrigo</h2>
+                        <h2 className="text-2xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-bold mb-4 text-primary">O Abrigo</h2>
                         <p className="text-sm md:text-base opacity-70">
                             Estamos desde 2017 resgatando, cuidando e encontrando lares. 
                         </p>
