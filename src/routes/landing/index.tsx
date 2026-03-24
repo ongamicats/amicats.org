@@ -22,14 +22,14 @@ export function LandingPage() {
 
     const voluntarios = [
         {
-            nome: 'Flavi',
-            funcao: 'Coordenação Geral & Resgates',
-            img: 'https://f005.backblazeb2.com/file/voluntarios/WhatsApp+Image+2026-02-04+at+19.02.08.jpeg'
-        },
-        {
             nome: 'Ana Cristina',
             funcao: 'Fundadora',
             img: 'https://f005.backblazeb2.com/file/voluntarios/screenshot-2026-02-16_13-50-21.png'
+        },
+        {
+            nome: 'Flavi',
+            funcao: 'Coordenação Geral & Resgates',
+            img: 'https://f005.backblazeb2.com/file/voluntarios/WhatsApp+Image+2026-02-04+at+19.02.08.jpeg'
         },
         {
             nome: 'Lane',

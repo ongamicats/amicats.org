@@ -9,6 +9,10 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
     stackAt?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
     grow?: boolean
     growAt?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+    mobileHidden?: boolean
+    desktopHidden?: boolean
+    mobileJustify?: 'start' | 'center' | 'end' | 'between' | 'around'
+    mobileAlign?: 'start' | 'center' | 'end' | 'stretch'
 }
 
 const stackAtRowClasses: Record<string, string> = {
@@ -35,6 +39,36 @@ const growAtClasses: Record<string, string> = {
     '2xl': '2xl:flex-1 2xl:min-w-0',
 }
 
+const mobileJustifyClasses: Record<string, string> = {
+    start: 'justify-start',
+    center: 'justify-center',
+    end: 'justify-end',
+    between: 'justify-between',
+    around: 'justify-around',
+}
+
+const desktopJustifyClasses: Record<string, string> = {
+    start: 'md:justify-start',
+    center: 'md:justify-center',
+    end: 'md:justify-end',
+    between: 'md:justify-between',
+    around: 'md:justify-around',
+}
+
+const mobileAlignClasses: Record<string, string> = {
+    start: 'items-start',
+    center: 'items-center',
+    end: 'items-end',
+    stretch: 'items-stretch',
+}
+
+const desktopAlignClasses: Record<string, string> = {
+    start: 'md:items-start',
+    center: 'md:items-center',
+    end: 'md:items-end',
+    stretch: 'md:items-stretch',
+}
+
 export function Flex({
     children,
     className,
@@ -46,25 +80,45 @@ export function Flex({
     stackAt,
     grow = false,
     growAt,
+    mobileHidden = false,
+    desktopHidden = false,
+    mobileJustify,
+    mobileAlign,
     ...props
 }: FlexProps) {
     let directionClass: string
     if (stackAt && direction !== 'col') {
-        // Use col-reverse when reverse so that in column layout the DOM-last child (text) appears on top
         const baseCol = reverse ? 'flex-col-reverse' : 'flex-col'
         directionClass = cn(baseCol, reverse ? stackAtReverseClasses[stackAt] : stackAtRowClasses[stackAt])
     } else {
         directionClass = direction === 'col' ? 'flex-col' : (reverse ? 'flex-row-reverse' : 'flex-row')
     }
 
-    const alignClass = align ? `items-${align}` : ''
-    const justifyClass = justify ? `justify-${justify}` : ''
+    let alignClass: string
+    if (mobileAlign && align) {
+        alignClass = cn(mobileAlignClasses[mobileAlign], desktopAlignClasses[align])
+    } else if (mobileAlign) {
+        alignClass = mobileAlignClasses[mobileAlign]
+    } else {
+        alignClass = align ? `items-${align}` : ''
+    }
+
+    let justifyClass: string
+    if (mobileJustify && justify) {
+        justifyClass = cn(mobileJustifyClasses[mobileJustify], desktopJustifyClasses[justify])
+    } else if (mobileJustify) {
+        justifyClass = mobileJustifyClasses[mobileJustify]
+    } else {
+        justifyClass = justify ? `justify-${justify}` : ''
+    }
+
     const gapClass = gap ? `gap-${gap}` : ''
     const growClass = growAt ? growAtClasses[growAt] : (grow ? 'flex-1 min-w-0' : '')
+    const visibilityClass = mobileHidden ? 'hidden md:flex ' : desktopHidden ? 'md:hidden' : ''
 
     return (
         <div
-            className={cn("flex", directionClass, alignClass, justifyClass, gapClass, growClass, className)}
+            className={cn("flex", directionClass, alignClass, justifyClass, gapClass, growClass, visibilityClass, className)}
             {...props}
         >
             {children}

@@ -29,17 +29,17 @@ export function CertificadosSection() {
 
     return (
         <SectionContainer containerId='c-certificados' sectionId="certificados">
-            <Container fluid id='c-certificados-inner' spacing='lg' className="h-screen overflow-hidden">
-                <Flex direction='col' justify='center' className="h-full py-10">
+            <Container fluid id='c-certificados-inner' spacing='lg' className="md:h-screen md:overflow-hidden">
+                <Flex direction='col' justify='center' className="md:h-full py-10">
                 <div className="text-center max-w-3xl mx-auto mb-6">
                     <span className="text-neutral font-bold tracking-widest uppercase text-sm mb-2 block">Reconhecimento</span>
-                    <h2 className="text-4xl xl:text-5xl font-bold mb-4 text-primary">Certificados</h2>
-                    <p className="text-base opacity-70">
+                    <h2 className="text-2xl md:text-4xl xl:text-5xl font-bold mb-4 text-primary">Certificados</h2>
+                    <p className="text-sm md:text-base opacity-70">
                         Nosso compromisso com a excelência e transparência é reconhecido por diversas instituições.
                     </p>
                 </div>
 
-                <Grid className="md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <Grid className="grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                     {certificados.map((cert) => (
                         <div
                             key={cert.nome}
@@ -52,9 +52,9 @@ export function CertificadosSection() {
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                             </div>
-                            <div className="p-4">
-                                <h3 className="text-xl font-bold mb-2 text-primary">{cert.nome}</h3>
-                                <p className="text-sm opacity-70">{cert.descricao}</p>
+                            <div className="p-2 md:p-4">
+                                <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 text-primary">{cert.nome}</h3>
+                                <p className="text-xs md:text-sm opacity-70">{cert.descricao}</p>
                             </div>
                             <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                         </div>

@@ -19,7 +19,7 @@ export function ImageStack({ images }: ImageStackProps) {
 
     return (
         <Container id={'image-stack'} className="relative w-full h-full flex items-center justify-center">
-            <div className="relative h-[90vh] aspect-2/3">
+            <div className="relative w-full max-w-[min(100%,60dvh)] aspect-2/3">
                 {images.map((src, index) => {
                     const offset = (index - currentImageIndex + images.length) % images.length;
                     const isActive = offset === 0
@@ -37,15 +37,15 @@ export function ImageStack({ images }: ImageStackProps) {
                     } else if (isNext) {
                         zIndex = 40
                         opacity = 0.8
-                        transform = 'translate(10px, 10px) rotate(8deg) scale(0.95)'
+                        transform = 'translate(4%, 4%) rotate(6deg) scale(0.95)'
                     } else if (offset === 2) {
                         zIndex = 30
                         opacity = 0.6
-                        transform = 'translate(20px, 20px) rotate(16deg) scale(0.9)'
+                        transform = 'translate(8%, 8%) rotate(10deg) scale(0.9)'
                     } else if (isLast) {
                         zIndex = 0
                         opacity = 0
-                        transform = 'translate(-20px, -20px) rotate(-5deg) scale(1.1)'
+                        transform = 'translate(-4%, -4%) rotate(-4deg) scale(1.05)'
                     }
 
                     return (

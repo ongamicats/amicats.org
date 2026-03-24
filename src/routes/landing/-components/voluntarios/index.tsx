@@ -12,23 +12,25 @@ type VoluntariosProps = {
     }>;
 };
 
+const desktopOrder: Record<number, string> = { 0: 'md:order-2', 1: 'md:order-1', 2: 'md:order-3', 3: 'md:order-4', 4: 'md:order-5' }
+
 export function VoluntariosSection({ voluntarios }: VoluntariosProps) {
     return (
         <SectionContainer containerId="c-voluntarios" sectionId="voluntarios-section">
-            <Container fluid id="c-voluntarios-equipe" spacing="lg" className="h-screen overflow-hidden">
-                <Flex direction="col" justify="center" className="h-full py-10">
+            <Container fluid id="c-voluntarios-equipe" spacing="lg" className="md:h-screen md:overflow-hidden">
+                <Flex direction="col" justify="center" className="md:h-full py-10">
                     <Flex direction="col" align="center" className="text-center mb-6">
                         <span className="text-info font-bold uppercase tracking-wider text-sm">Nossa Equipe</span>
-                        <h2 className="text-4xl font-bold mt-2 text-primary">Quem Faz Acontecer</h2>
-                        <p className="mt-3 text-base opacity-70 max-w-2xl mx-auto">
+                        <h2 className="text-2xl md:text-4xl font-bold mt-2 text-primary">Quem Faz Acontecer</h2>
+                        <p className="mt-3 text-sm md:text-base opacity-70 max-w-2xl mx-auto">
                             Por trás de cada resgate, existe um time dedicado de voluntários que trabalha incansavelmente.
                         </p>
                     </Flex>
-                    <Grid className="sm:grid-cols-2 md:grid-cols-6 gap-6">
+                    <Grid className="grid-cols-2 md:grid-cols-6 gap-4 md:gap-6">
                         {voluntarios.map((voluntario, index) => (
                             <div
-                                key={index}
-                                className={`${index < 3 ? 'md:col-span-2' : 'md:col-span-2 md:col-start-2 first:md:col-start-2 last:md:col-start-4'}`}
+                                key={voluntario.nome}
+                                className={`${index === 0 ? 'col-span-2 md:col-span-2' : index < 3 ? 'md:col-span-2' : 'md:col-span-2 md:col-start-2 first:md:col-start-2 last:md:col-start-4'} ${desktopOrder[index] ?? ''}`}
                             >
                                 <Voluntario
                                     nome={voluntario.nome}

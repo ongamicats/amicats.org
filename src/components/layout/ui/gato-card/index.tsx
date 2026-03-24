@@ -37,7 +37,7 @@ export function GatoCard({
                 </Badge>
             </Figure>
             <Card.Body className="p-6">
-                <Card.Title className="text-lg">{nome}</Card.Title>
+                <Card.Title className="text-sm md:text-lg">{nome}</Card.Title>
                 <p className="text-xs opacity-70 mb-4 line-clamp-2">
                     {descricao}
                 </p>
