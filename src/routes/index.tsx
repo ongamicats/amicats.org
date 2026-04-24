@@ -1,12 +1,15 @@
-import { createFileRoute } from '@tanstack/react-router'
-
-import { LandingPage } from './landing/index'
+import { createFileRoute, Navigate } from '@tanstack/react-router'
+import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 
 export const Route = createFileRoute('/')({
-  component: LandingPageWrapper,
+  loader: async ({ cookieHeader, location }) => {
+    const { locale } = resolveLocale({ cookieHeader })
+    const to = `/${locale}/${location?.search ?? ''}${location?.hash ?? ''}`
+    throw new Navigate({ to, replace: true })
+  },
+  component: Redirect,
 })
 
-function LandingPageWrapper() {
-  return <LandingPage />
+function Redirect() {
+  return null
 }
-

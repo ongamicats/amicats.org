@@ -10,15 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteImport } from './routes/app'
+import { Route as LocaleRouteImport } from './routes/$locale'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NotFoundIndexRouteImport } from './routes/not-found/index'
-import { Route as LandingIndexRouteImport } from './routes/landing/index'
-import { Route as AppHomeRouteImport } from './routes/app/home'
+import { Route as AppIndexRouteImport } from './routes/app/index'
+import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
+import { Route as LocaleNotFoundRouteImport } from './routes/$locale/not-found'
+import { Route as LocaleAppRouteImport } from './routes/$locale/app'
 import { Route as AppHomeIndexRouteImport } from './routes/app/home/index'
+import { Route as LocaleAppIndexRouteImport } from './routes/$locale/app/index'
+import { Route as LocaleAppHomeIndexRouteImport } from './routes/$locale/app/home/index'
 
 const AppRoute = AppRouteImport.update({
   id: '/app',
   path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocaleRoute = LocaleRouteImport.update({
+  id: '/$locale',
+  path: '/$locale',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,71 +41,122 @@ const NotFoundIndexRoute = NotFoundIndexRouteImport.update({
   path: '/not-found/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LandingIndexRoute = LandingIndexRouteImport.update({
-  id: '/landing/',
-  path: '/landing/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AppHomeRoute = AppHomeRouteImport.update({
-  id: '/home',
-  path: '/home',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppHomeIndexRoute = AppHomeIndexRouteImport.update({
+const AppIndexRoute = AppIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => AppHomeRoute,
+  getParentRoute: () => AppRoute,
+} as any)
+const LocaleIndexRoute = LocaleIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleNotFoundRoute = LocaleNotFoundRouteImport.update({
+  id: '/not-found',
+  path: '/not-found',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleAppRoute = LocaleAppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const AppHomeIndexRoute = AppHomeIndexRouteImport.update({
+  id: '/home/',
+  path: '/home/',
+  getParentRoute: () => AppRoute,
+} as any)
+const LocaleAppIndexRoute = LocaleAppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LocaleAppRoute,
+} as any)
+const LocaleAppHomeIndexRoute = LocaleAppHomeIndexRouteImport.update({
+  id: '/home/',
+  path: '/home/',
+  getParentRoute: () => LocaleAppRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/app': typeof AppRouteWithChildren
-  '/app/home': typeof AppHomeRouteWithChildren
-  '/landing/': typeof LandingIndexRoute
+  '/$locale/app': typeof LocaleAppRouteWithChildren
+  '/$locale/not-found': typeof LocaleNotFoundRoute
+  '/$locale/': typeof LocaleIndexRoute
+  '/app/': typeof AppIndexRoute
   '/not-found/': typeof NotFoundIndexRoute
+  '/$locale/app/': typeof LocaleAppIndexRoute
   '/app/home/': typeof AppHomeIndexRoute
+  '/$locale/app/home/': typeof LocaleAppHomeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/app': typeof AppRouteWithChildren
-  '/landing': typeof LandingIndexRoute
+  '/$locale/not-found': typeof LocaleNotFoundRoute
+  '/$locale': typeof LocaleIndexRoute
+  '/app': typeof AppIndexRoute
   '/not-found': typeof NotFoundIndexRoute
+  '/$locale/app': typeof LocaleAppIndexRoute
   '/app/home': typeof AppHomeIndexRoute
+  '/$locale/app/home': typeof LocaleAppHomeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/app': typeof AppRouteWithChildren
-  '/app/home': typeof AppHomeRouteWithChildren
-  '/landing/': typeof LandingIndexRoute
+  '/$locale/app': typeof LocaleAppRouteWithChildren
+  '/$locale/not-found': typeof LocaleNotFoundRoute
+  '/$locale/': typeof LocaleIndexRoute
+  '/app/': typeof AppIndexRoute
   '/not-found/': typeof NotFoundIndexRoute
+  '/$locale/app/': typeof LocaleAppIndexRoute
   '/app/home/': typeof AppHomeIndexRoute
+  '/$locale/app/home/': typeof LocaleAppHomeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$locale'
     | '/app'
-    | '/app/home'
-    | '/landing/'
+    | '/$locale/app'
+    | '/$locale/not-found'
+    | '/$locale/'
+    | '/app/'
     | '/not-found/'
+    | '/$locale/app/'
     | '/app/home/'
+    | '/$locale/app/home/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/app' | '/landing' | '/not-found' | '/app/home'
+  to:
+    | '/'
+    | '/$locale/not-found'
+    | '/$locale'
+    | '/app'
+    | '/not-found'
+    | '/$locale/app'
+    | '/app/home'
+    | '/$locale/app/home'
   id:
     | '__root__'
     | '/'
+    | '/$locale'
     | '/app'
-    | '/app/home'
-    | '/landing/'
+    | '/$locale/app'
+    | '/$locale/not-found'
+    | '/$locale/'
+    | '/app/'
     | '/not-found/'
+    | '/$locale/app/'
     | '/app/home/'
+    | '/$locale/app/home/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LocaleRoute: typeof LocaleRouteWithChildren
   AppRoute: typeof AppRouteWithChildren
-  LandingIndexRoute: typeof LandingIndexRoute
   NotFoundIndexRoute: typeof NotFoundIndexRoute
 }
 
@@ -106,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/app'
       fullPath: '/app'
       preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$locale': {
+      id: '/$locale'
+      path: '/$locale'
+      fullPath: '/$locale'
+      preLoaderRoute: typeof LocaleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -122,55 +190,103 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotFoundIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/landing/': {
-      id: '/landing/'
-      path: '/landing'
-      fullPath: '/landing/'
-      preLoaderRoute: typeof LandingIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/app/home': {
-      id: '/app/home'
-      path: '/home'
-      fullPath: '/app/home'
-      preLoaderRoute: typeof AppHomeRouteImport
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRoute
+    }
+    '/$locale/': {
+      id: '/$locale/'
+      path: '/'
+      fullPath: '/$locale/'
+      preLoaderRoute: typeof LocaleIndexRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/not-found': {
+      id: '/$locale/not-found'
+      path: '/not-found'
+      fullPath: '/$locale/not-found'
+      preLoaderRoute: typeof LocaleNotFoundRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/app': {
+      id: '/$locale/app'
+      path: '/app'
+      fullPath: '/$locale/app'
+      preLoaderRoute: typeof LocaleAppRouteImport
+      parentRoute: typeof LocaleRoute
     }
     '/app/home/': {
       id: '/app/home/'
-      path: '/'
+      path: '/home'
       fullPath: '/app/home/'
       preLoaderRoute: typeof AppHomeIndexRouteImport
-      parentRoute: typeof AppHomeRoute
+      parentRoute: typeof AppRoute
+    }
+    '/$locale/app/': {
+      id: '/$locale/app/'
+      path: '/'
+      fullPath: '/$locale/app/'
+      preLoaderRoute: typeof LocaleAppIndexRouteImport
+      parentRoute: typeof LocaleAppRoute
+    }
+    '/$locale/app/home/': {
+      id: '/$locale/app/home/'
+      path: '/home'
+      fullPath: '/$locale/app/home/'
+      preLoaderRoute: typeof LocaleAppHomeIndexRouteImport
+      parentRoute: typeof LocaleAppRoute
     }
   }
 }
 
-interface AppHomeRouteChildren {
+interface LocaleAppRouteChildren {
+  LocaleAppIndexRoute: typeof LocaleAppIndexRoute
+  LocaleAppHomeIndexRoute: typeof LocaleAppHomeIndexRoute
+}
+
+const LocaleAppRouteChildren: LocaleAppRouteChildren = {
+  LocaleAppIndexRoute: LocaleAppIndexRoute,
+  LocaleAppHomeIndexRoute: LocaleAppHomeIndexRoute,
+}
+
+const LocaleAppRouteWithChildren = LocaleAppRoute._addFileChildren(
+  LocaleAppRouteChildren,
+)
+
+interface LocaleRouteChildren {
+  LocaleAppRoute: typeof LocaleAppRouteWithChildren
+  LocaleNotFoundRoute: typeof LocaleNotFoundRoute
+  LocaleIndexRoute: typeof LocaleIndexRoute
+}
+
+const LocaleRouteChildren: LocaleRouteChildren = {
+  LocaleAppRoute: LocaleAppRouteWithChildren,
+  LocaleNotFoundRoute: LocaleNotFoundRoute,
+  LocaleIndexRoute: LocaleIndexRoute,
+}
+
+const LocaleRouteWithChildren =
+  LocaleRoute._addFileChildren(LocaleRouteChildren)
+
+interface AppRouteChildren {
+  AppIndexRoute: typeof AppIndexRoute
   AppHomeIndexRoute: typeof AppHomeIndexRoute
 }
 
-const AppHomeRouteChildren: AppHomeRouteChildren = {
-  AppHomeIndexRoute: AppHomeIndexRoute,
-}
-
-const AppHomeRouteWithChildren =
-  AppHomeRoute._addFileChildren(AppHomeRouteChildren)
-
-interface AppRouteChildren {
-  AppHomeRoute: typeof AppHomeRouteWithChildren
-}
-
 const AppRouteChildren: AppRouteChildren = {
-  AppHomeRoute: AppHomeRouteWithChildren,
+  AppIndexRoute: AppIndexRoute,
+  AppHomeIndexRoute: AppHomeIndexRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LocaleRoute: LocaleRouteWithChildren,
   AppRoute: AppRouteWithChildren,
-  LandingIndexRoute: LandingIndexRoute,
   NotFoundIndexRoute: NotFoundIndexRoute,
 }
 export const routeTree = rootRouteImport

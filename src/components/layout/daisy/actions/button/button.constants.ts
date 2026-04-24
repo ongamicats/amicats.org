@@ -1,1 +1,1 @@
-export * from "../../../../shared/constants/class.constants";
+export * from '../../../../shared/constants/class.constants'
