@@ -13,6 +13,6 @@ module.exports = {
   ],
   // Use json format for simple integration with the app (messages.json)
   // Use the official @lingui/format-json formatter so catalogs are
-  // written as simple messages.json files.
-  format: require('@lingui/format-json')({ lineNumbers: false }),
+  // written as simple messages.json files. The package exports `formatter`.
+  format: require('@lingui/format-json').formatter({ lineNumbers: false }),
 };

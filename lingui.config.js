@@ -1,4 +1,4 @@
-const { format } = require('@lingui/format-json')
+const { formatter } = require('@lingui/format-json')
 
 module.exports = {
   locales: ['pt-BR', 'en'],
@@ -9,5 +9,5 @@ module.exports = {
       include: ['src/**/*.{ts,tsx,js,jsx}'],
     },
   ],
-  format: format({ lineNumbers: false }),
+  format: formatter({ lineNumbers: false }),
 }
