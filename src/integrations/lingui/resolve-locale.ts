@@ -10,22 +10,33 @@ export function parseCookie(header?: string | null) {
   )
 }
 
-export function resolveLocale({ params, cookieHeader }: { params?: { locale?: string }; cookieHeader?: string | null } = {}) {
+export function resolveLocale({
+  params,
+  cookieHeader,
+}: { params?: { locale?: string }; cookieHeader?: string | null } = {}) {
   const paramLocale = params?.locale
-  if (isSupported(paramLocale)) return { locale: paramLocale, redirected: false }
+  if (isSupported(paramLocale))
+    return { locale: paramLocale, redirected: false }
 
-  const cookies = parseCookie(cookieHeader ?? (typeof document !== 'undefined' ? document.cookie : undefined))
+  const cookies = parseCookie(
+    cookieHeader ??
+      (typeof document !== 'undefined' ? document.cookie : undefined),
+  )
   const cookieLocale = cookies['locale']
-  if (isSupported(cookieLocale)) return { locale: cookieLocale, redirected: false }
+  if (isSupported(cookieLocale))
+    return { locale: cookieLocale, redirected: false }
 
   return { locale: DEFAULT_LOCALE, redirected: true }
 }
 
-export function setLocaleCookie(target: { cookie?: string } | Document, locale: string) {
+export function setLocaleCookie(
+  target: { cookie?: string } | Document,
+  locale: string,
+) {
   const expires = new Date(Date.now() + 1000 * 60 * 60 * 24 * 365).toUTCString()
   const cookie = `locale=${encodeURIComponent(locale)}; Path=/; Expires=${expires}`
   if (typeof document !== 'undefined' && 'cookie' in document) {
-    ;(document as Document).cookie = cookie
+    document.cookie = cookie
     return
   }
   try {

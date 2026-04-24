@@ -151,19 +151,19 @@ describe('LandingNavbar (unit) — scroll-threshold behavior', () => {
       const navbarRoot = screen.getByRole('navigation', {
         name: /Main landing navigation/i,
       })
-       const langButton = within(navbarRoot).getByRole('button', {
-         name: /Language select/i,
-       })
-       expect(langButton).toBeInTheDocument()
+      const langButton = within(navbarRoot).getByRole('button', {
+        name: /Language select/i,
+      })
+      expect(langButton).toBeInTheDocument()
 
       // Clicking the button should open a menu containing both PT and ENG options
       const user = userEvent.setup()
-       await user.click(langButton)
+      await user.click(langButton)
 
-       // After opening, the accessible menu must expose menuitems for PT and ENG
-       let menuItems = screen.queryAllByRole('menuitem')
-       const texts = menuItems.map((n) => n.textContent?.trim())
-       expect(texts).toEqual(expect.arrayContaining(['PT', 'ENG']))
+      // After opening, the accessible menu must expose menuitems for PT and ENG
+      const menuItems = screen.queryAllByRole('menuitem')
+      const texts = menuItems.map((n) => n.textContent?.trim())
+      expect(texts).toEqual(expect.arrayContaining(['PT', 'ENG']))
 
       // Selecting the other language should update localStorage
       const other = menuItems.find(
@@ -180,10 +180,10 @@ describe('LandingNavbar (unit) — scroll-threshold behavior', () => {
       const next = cta.nextElementSibling
       expect(next).toBeTruthy()
       // the next sibling (the language toggle wrapper) should contain the language button
-       const langBtnInNav = within(next as Element).queryByRole('button', {
-         name: /Language select/i,
-         hidden: true,
-       })
+      const langBtnInNav = within(next as Element).queryByRole('button', {
+        name: /Language select/i,
+        hidden: true,
+      })
       expect(langBtnInNav).toBeTruthy()
     })
   })

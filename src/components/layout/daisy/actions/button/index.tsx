@@ -8,7 +8,7 @@ import {
   daisySizes,
 } from '../../../shared/constants/class.constants'
 import type { ButtonProps } from './button.types'
-import type { ComponentProps } from 'react';
+import type { ComponentProps } from 'react'
 
 const buildBtnClass = createDaisyClassBuilder('btn')
 

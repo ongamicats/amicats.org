@@ -151,9 +151,9 @@ describe('LandingNavbar (unit) — scroll-threshold behavior', () => {
       const navbarRoot = screen.getByRole('navigation', {
         name: /Main landing navigation/i,
       })
-       const langButton = within(navbarRoot).getByRole('button', {
-         name: /Language select/i,
-       })
+      const langButton = within(navbarRoot).getByRole('button', {
+        name: /Language select/i,
+      })
       expect(langButton).toBeInTheDocument()
 
       // Clicking the button should open a menu containing both PT and ENG options
@@ -181,10 +181,10 @@ describe('LandingNavbar (unit) — scroll-threshold behavior', () => {
       const next = cta.nextElementSibling
       expect(next).toBeTruthy()
       // the next sibling (the language toggle wrapper) should contain the language button
-       const langBtnInNav = within(next as Element).queryByRole('button', {
-         name: /Language select/i,
-         hidden: true,
-       })
+      const langBtnInNav = within(next as Element).queryByRole('button', {
+        name: /Language select/i,
+        hidden: true,
+      })
       expect(langBtnInNav).toBeTruthy()
     })
   })

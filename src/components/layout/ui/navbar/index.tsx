@@ -1,5 +1,5 @@
-import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 import { Link } from '@tanstack/react-router'
+import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 
 export function Navbar(): JSX.Element {
   const initial = resolveLocale()

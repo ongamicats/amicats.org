@@ -12,10 +12,10 @@ import appCss from '../styles.css?url'
 import { NotFound } from './not-found'
 
 import type { QueryClient } from '@tanstack/react-query'
+import type { Locale } from '@/integrations/lingui/locales'
 import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 import { loadCatalog } from '@/integrations/lingui/catalog-loader'
 import { LinguiProvider } from '@/integrations/lingui/provider'
-import type { Locale } from '@/integrations/lingui/locales'
 
 interface MyRouterContext {
   queryClient: QueryClient
@@ -49,7 +49,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   loader: async ({ params, cookieHeader }) => {
     const { locale } = resolveLocale({ params, cookieHeader })
     // Load a catalog for SSR rendering when available. Do not redirect here.
-    const catalog = await loadCatalog(locale as Locale)
+    const catalog = await loadCatalog(locale)
     return { locale, catalog }
   },
 
@@ -61,7 +61,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 function RootDocument({ children }: { children: React.ReactNode }) {
   // Attempt to read the loader data for the root route to set html lang
   // server-side when available. Fall back to pt-BR.
-  const data = Route.useLoaderData?.() as { locale?: Locale; catalog?: Record<string, string> } | undefined
+  const data = Route.useLoaderData?.()
   const lang = data?.locale ?? 'pt-BR'
 
   return (
@@ -96,7 +96,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 function AppShell({ children }: { children: React.ReactNode }) {
   // Use the root loader data (locale + catalog) and provide Lingui
-  const data = Route.useLoaderData?.() as { locale: Locale; catalog: Record<string, string> } | undefined
+  const data = Route.useLoaderData?.()
 
   if (!data) return <>{children}</>
 

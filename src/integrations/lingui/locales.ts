@@ -3,5 +3,7 @@ export type Locale = (typeof SUPPORTED_LOCALES)[number]
 export const DEFAULT_LOCALE: Locale = 'pt-BR'
 
 export function isSupported(locale?: string): locale is Locale {
-  return !!locale && (SUPPORTED_LOCALES as readonly string[]).includes(locale)
+  return (
+    !!locale && (SUPPORTED_LOCALES as ReadonlyArray<string>).includes(locale)
+  )
 }

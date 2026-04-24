@@ -1,4 +1,4 @@
-import { createFileRoute, Navigate } from '@tanstack/react-router'
+import { Navigate, createFileRoute } from '@tanstack/react-router'
 import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 
 export const Route = createFileRoute('/$locale')({
@@ -7,7 +7,8 @@ export const Route = createFileRoute('/$locale')({
     // If the requested :locale is invalid, redirect to the resolved
     // locale while preserving the remainder of the path.
     if (redirected) {
-      const path = location?.pathname === '/' ? '/' : location?.pathname ?? '/'
+      const path =
+        location?.pathname === '/' ? '/' : (location?.pathname ?? '/')
       const to = `/${locale}${path}`
       throw new Navigate({ to, replace: true })
     }

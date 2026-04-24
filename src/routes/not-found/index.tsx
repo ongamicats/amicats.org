@@ -26,9 +26,16 @@ export function NotFound() {
         <AlertCircle size={64} />
       </div>
       <h1 className="text-9xl font-black text-primary/20 select-none">404</h1>
-      <h2 className="text-4xl font-bold mt-[-2rem] mb-4 text-base-content">{title}</h2>
+      <h2 className="text-4xl font-bold mt-[-2rem] mb-4 text-base-content">
+        {title}
+      </h2>
       <p className="text-lg opacity-60 mb-8 max-w-md mx-auto">{message}</p>
-      <Link to={`/${locale}/`} className="btn btn-primary rounded-full px-8 shadow-lg">{home}</Link>
+      <Link
+        to={`/${locale}/`}
+        className="btn btn-primary rounded-full px-8 shadow-lg"
+      >
+        {home}
+      </Link>
     </div>
   )
 }

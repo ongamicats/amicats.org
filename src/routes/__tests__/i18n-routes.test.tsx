@@ -1,5 +1,8 @@
-import { describe, test, beforeEach, afterEach, expect } from 'vitest'
-import { resolveLocale, setLocaleCookie } from '@/integrations/lingui/resolve-locale'
+import { afterEach, beforeEach, describe, expect, test } from 'vitest'
+import {
+  resolveLocale,
+  setLocaleCookie,
+} from '@/integrations/lingui/resolve-locale'
 
 describe('I18n routing and resolveLocale', () => {
   beforeEach(() => {

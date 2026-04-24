@@ -9,7 +9,11 @@ interface LinguiProviderProps {
   children: React.ReactNode
 }
 
-export function LinguiProvider({ locale, catalog, children }: LinguiProviderProps) {
+export function LinguiProvider({
+  locale,
+  catalog,
+  children,
+}: LinguiProviderProps) {
   useEffect(() => {
     i18n.load(locale, catalog)
     i18n.activate(locale)

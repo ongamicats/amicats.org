@@ -1,7 +1,10 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
 import { cn } from '@/components/layout/shared/helpers/class.helper'
-import { resolveLocale, setLocaleCookie } from '@/integrations/lingui/resolve-locale'
+import {
+  resolveLocale,
+  setLocaleCookie,
+} from '@/integrations/lingui/resolve-locale'
 
 export interface LanguageSelectProps {
   className?: string
@@ -90,7 +93,10 @@ export function LanguageSelect({ className, hidden }: LanguageSelectProps) {
       // navigate like click handler
       const { pathname, search, hash } = window.location
       const segments = pathname.split('/').filter(Boolean)
-      if (segments.length > 0 && (segments[0] === 'pt-BR' || segments[0] === 'en')) {
+      if (
+        segments.length > 0 &&
+        (segments[0] === 'pt-BR' || segments[0] === 'en')
+      ) {
         segments[0] = opt.value
       } else {
         segments.unshift(opt.value)
@@ -178,7 +184,10 @@ export function LanguageSelect({ className, hidden }: LanguageSelectProps) {
                 // navigate to same path under new locale - preserve search/hash
                 const { pathname, search, hash } = window.location
                 const segments = pathname.split('/').filter(Boolean)
-                if (segments.length > 0 && (segments[0] === 'pt-BR' || segments[0] === 'en')) {
+                if (
+                  segments.length > 0 &&
+                  (segments[0] === 'pt-BR' || segments[0] === 'en')
+                ) {
                   segments[0] = opt.value
                 } else {
                   segments.unshift(opt.value)

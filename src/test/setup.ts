@@ -1,6 +1,6 @@
 import { createElement } from 'react'
 import '@testing-library/jest-dom'
-import { vi, afterEach } from 'vitest'
+import { afterEach, vi } from 'vitest'
 // reset landing locale module state between tests to avoid cross-test leakage
 // from module-level state in use-landing-locale.ts
 import { __resetLandingLocaleForTests } from '@/hooks/use-landing-locale'
@@ -48,7 +48,9 @@ Object.defineProperty(globalThis, 'IntersectionObserver', {
 })
 
 // helper for tests to trigger intersection callbacks for all created observers
-;(globalThis as any).__triggerIO = (entries: Array<IntersectionObserverEntry>) => {
+;(globalThis as any).__triggerIO = (
+  entries: Array<IntersectionObserverEntry>,
+) => {
   for (const obs of __createdObservers) {
     try {
       obs.callback(entries as any, {} as IntersectionObserver)

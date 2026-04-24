@@ -65,7 +65,9 @@ describe('Landing locale controls and persistence (integration)', () => {
     // By default queries only return visible elements. Only the hero overlay select
     // should be visible initially.
     // The hero overlay renders a visible LanguageSelect button; the navbar mounts a hidden LanguageSelect button
-    const visibleButtons = screen.getAllByRole('button', { name: /Language select/i })
+    const visibleButtons = screen.getAllByRole('button', {
+      name: /Language select/i,
+    })
     // there should be exactly one visible button (hero overlay)
     expect(visibleButtons.length).toBe(1)
 
@@ -84,7 +86,7 @@ describe('Landing locale controls and persistence (integration)', () => {
     const user = userEvent.setup()
     await user.click(visibleButtons[0])
     // After opening, options should be exposed as menuitems and include PT and ENG
-    let items = screen.queryAllByRole('menuitem')
+    const items = screen.queryAllByRole('menuitem')
     const labels = items.map((n) => n.textContent?.trim())
     expect(labels).toEqual(expect.arrayContaining(['PT', 'ENG']))
   })
@@ -94,7 +96,9 @@ describe('Landing locale controls and persistence (integration)', () => {
     render(<IntroducaoSection images={[]} voluntarios={[]} />)
 
     // hero overlay LanguageSelect is the visible one
-    const heroButton = await screen.findByRole('button', { name: /Language select/i })
+    const heroButton = await screen.findByRole('button', {
+      name: /Language select/i,
+    })
 
     // the navbar control should be present but hidden
     const navRoot2 = await screen.findByRole('navigation', {
@@ -110,7 +114,7 @@ describe('Landing locale controls and persistence (integration)', () => {
     const user = userEvent.setup()
     await user.click(heroButton)
     // open menu and assert PT/ENG items are present
-    let items2 = screen.queryAllByRole('menuitem')
+    const items2 = screen.queryAllByRole('menuitem')
     const eng = items2.find((n) => (n.textContent || '').trim() === 'ENG')
     if (eng) await user.click(eng)
 
@@ -126,7 +130,7 @@ describe('Landing locale controls and persistence (integration)', () => {
     // hidden navbar button should reflect the selection by showing ENG label when opened
     await user.click(navbarButtonHidden)
     // navbar's menu exposes the same accessible options
-    let navbarItems = screen.queryAllByRole('menuitem')
+    const navbarItems = screen.queryAllByRole('menuitem')
     const navbarLabels = navbarItems.map((n) => n.textContent?.trim())
     expect(navbarLabels).toEqual(expect.arrayContaining(['PT', 'ENG']))
   })
@@ -136,7 +140,9 @@ describe('Landing locale controls and persistence (integration)', () => {
     render(<IntroducaoSection images={[]} voluntarios={[]} />)
 
     // initially visible hero language button
-    const heroBtn = await screen.findByRole('button', { name: /Language select/i })
+    const heroBtn = await screen.findByRole('button', {
+      name: /Language select/i,
+    })
     expect(heroBtn).toBeInTheDocument()
 
     // simulate scroll past threshold
@@ -144,7 +150,9 @@ describe('Landing locale controls and persistence (integration)', () => {
 
     // hero control should be removed from document — navbar control should now be visible
     await waitFor(() => {
-      const visibleBtns = screen.getAllByRole('button', { name: /Language select/i })
+      const visibleBtns = screen.getAllByRole('button', {
+        name: /Language select/i,
+      })
       expect(visibleBtns.length).toBe(1)
       expect(heroBtn).not.toBeInTheDocument()
     })

@@ -1,6 +1,8 @@
 import type { Locale } from './locales'
 
-export async function loadCatalog(locale: Locale): Promise<Record<string, string>> {
+export async function loadCatalog(
+  locale: Locale,
+): Promise<Record<string, string>> {
   try {
     // Try project alias first (when tsconfig paths are active), otherwise
     // fall back to a relative import that matches the file layout.
