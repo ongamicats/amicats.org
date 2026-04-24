@@ -7,6 +7,7 @@ module.exports = {
     {
       path: 'src/locales/{locale}/messages',
       include: ['src/**/*.{ts,tsx,js,jsx}'],
+      exclude: ['**/*.test.*', '**/__tests__/**'],
     },
   ],
   format: formatter({ lineNumbers: false }),
