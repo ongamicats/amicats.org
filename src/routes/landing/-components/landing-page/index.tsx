@@ -1,11 +1,11 @@
-import { Footer } from './-components/footer'
-import { Navbar } from './-components/navbar'
-import { IntroducaoSection } from './-components/introducao'
-import { VoluntariosSection } from './-components/voluntarios'
-import { QuemSomosSection } from './-components/quem-somos'
-import { AdoteSection } from './-components/adote'
-import { OAbrigoSection } from './-components/o-abrigo'
-import { CertificadosSection } from './-components/certificados'
+import { Footer } from '../footer'
+import { Navbar } from '../navbar'
+import { IntroducaoSection } from '../introducao'
+import { VoluntariosSection } from '../voluntarios'
+import { QuemSomosSection } from '../quem-somos'
+import { AdoteSection } from '../adote'
+import { OAbrigoSection } from '../o-abrigo'
+import { CertificadosSection } from '../certificados'
 
 export function LandingPage() {
   const heroImages = [

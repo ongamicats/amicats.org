@@ -2,17 +2,29 @@
   "notfound.title": {
     "placeholders": {},
     "comments": [],
-    "origin": [["src/routes/not-found/index.tsx"]]
+    "origin": [
+      [
+        "src/routes/not-found/index.tsx"
+      ]
+    ]
   },
   "notfound.message": {
     "placeholders": {},
     "comments": [],
-    "origin": [["src/routes/not-found/index.tsx"]]
+    "origin": [
+      [
+        "src/routes/not-found/index.tsx"
+      ]
+    ]
   },
   "nav.home": {
     "placeholders": {},
     "comments": [],
-    "origin": [["src/routes/not-found/index.tsx"]]
+    "origin": [
+      [
+        "src/routes/not-found/index.tsx"
+      ]
+    ]
   },
   "nav.app": {
     "0": "A",
@@ -107,5 +119,137 @@
     "5": "s",
     "6": "h",
     "obsolete": true
+  },
+  "IQNL5p": {
+    "message": "A AmiCat's nasceu do desejo genuíno de mudar o destino de centenas de felinos nas ruas de Campo Grande. Somos voluntários apaixonados que dedicam tempo e recursos para resgatar, tratar e encontrar lares amorosos. Acreditamos que cada vida importa e que o amor pode curar as feridas mais profundas.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ],
+    "translation": "AmiCat's was born from a genuine desire to change the fate of hundreds of cats on the streets of Campo Grande. We are passionate volunteers who dedicate time and resources to rescue, treat, and find loving homes. We believe every life matters and that love can heal the deepest wounds."
+  },
+  "sH6QdJ": {
+    "message": "Cada dia no abrigo é uma jornada de amor, dedicação e superação. Enfrentamos desafios constantes, mas cada vida salva nos motiva a continuar.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/o-abrigo/index.tsx"
+      ]
+    ],
+    "translation": "Each day at the shelter is a journey of love, dedication, and resilience. We face constant challenges, but every life saved motivates us to keep going."
+  },
+  "k1nKn9": {
+    "message": "Comece sua Jornada",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/introducao/index.tsx"
+      ]
+    ],
+    "translation": "Start your journey"
+  },
+  "fz0xDB": {
+    "message": "Como funciona?",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/introducao/index.tsx"
+      ]
+    ],
+    "translation": "How it works?"
+  },
+  "JFiWW0": {
+    "message": "Estamos desde 2017 resgatando, cuidando e encontrando lares.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/o-abrigo/index.tsx"
+      ]
+    ],
+    "translation": "We have been rescuing, caring for, and finding homes since 2017."
+  },
+  "--yDRB": {
+    "message": "Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/introducao/index.tsx"
+      ]
+    ],
+    "translation": "Join us in the mission to protect, care for, and find homes for cats in Campo Grande."
+  },
+  "aaINyE": {
+    "message": "Nossa História",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ],
+    "translation": "Our story"
+  },
+  "gJuhRF": {
+    "message": "Nosso Dia a Dia",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/o-abrigo/index.tsx"
+      ]
+    ],
+    "translation": "Our day-to-day"
+  },
+  "3IoT7D": {
+    "message": "O Abrigo",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/o-abrigo/index.tsx"
+      ]
+    ],
+    "translation": "The shelter"
+  },
+  "UuOVfT": {
+    "message": "Possuímos areás de cuidados de gatos em observação, tratamento e recuperação. Areas de filhotes, adultos e idosos. E uma área de quarentena para gatos recém resgatados. Além de áreas exclusivas para gatos com necessidades especiais, como os que vivem com FIV ou Felv, garantindo um ambiente seguro e acolhedor para todos.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/o-abrigo/index.tsx"
+      ]
+    ],
+    "translation": "We have areas for observing, treating, and recovering cats: spaces for kittens, adults, and seniors, plus a quarantine area for newly rescued cats. We also provide dedicated areas for cats with special needs, such as those living with FIV or FeLV, ensuring a safe, welcoming environment for all."
+  },
+  "DlUBwL": {
+    "message": "Quem Somos",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ],
+    "translation": "Who we are"
+  },
+  "j4aPJi": {
+    "message": "Salvando Vidas Felinas",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/introducao/index.tsx"
+      ]
+    ],
+    "translation": "Saving cats' lives"
   }
 }

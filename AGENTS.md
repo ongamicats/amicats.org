@@ -1,5 +1,7 @@
 # amicats.org — Agent Context
 
+> Inherits all rules from [`../AGENTS.md`](../AGENTS.md).
+
 > Module-level `AGENTS.md` files inherit from this root.
 > They contain **only additions** — never duplicate rules stated here.
 

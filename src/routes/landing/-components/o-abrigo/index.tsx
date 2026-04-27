@@ -2,6 +2,9 @@ import { Container } from '@/components/layout/ui/container'
 import { Grid } from '@/components/layout/ui/grid'
 import { Flex } from '@/components/layout/ui/flex'
 import { SectionContainer } from '@/components/layout/ui/container/section'
+import { Trans } from '@lingui/react/macro'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 export function OAbrigoSection() {
   return (
@@ -32,25 +35,19 @@ export function OAbrigoSection() {
             className="items-center text-center"
           >
             <span className="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">
-              Nosso Dia a Dia
+              <Trans>Nosso Dia a Dia</Trans>
             </span>
             <h2 className="text-2xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-bold mb-4 text-primary">
-              O Abrigo
+              <Trans>O Abrigo</Trans>
             </h2>
             <p className="text-sm md:text-base opacity-70">
-              Estamos desde 2017 resgatando, cuidando e encontrando lares.
+              <Trans>Estamos desde 2017 resgatando, cuidando e encontrando lares.</Trans>
             </p>
             <p className="text-sm md:text-base opacity-70">
-              Cada dia no abrigo é uma jornada de amor, dedicação e superação.
-              Enfrentamos desafios constantes, mas cada vida salva nos motiva a
-              continuar.
+              <Trans>Cada dia no abrigo é uma jornada de amor, dedicação e superação. Enfrentamos desafios constantes, mas cada vida salva nos motiva a continuar.</Trans>
             </p>
             <p className="pt-3 text-sm md:text-base opacity-70">
-              Possuímos areás de cuidados de gatos em observação, tratamento e
-              recuperação. Areas de filhotes, adultos e idosos. E uma área de
-              quarentena para gatos recém resgatados. Além de áreas exclusivas
-              para gatos com necessidades especiais, como os que vivem com FIV
-              ou Felv, garantindo um ambiente seguro e acolhedor para todos.
+              <Trans>Possuímos areás de cuidados de gatos em observação, tratamento e recuperação. Areas de filhotes, adultos e idosos. E uma área de quarentena para gatos recém resgatados. Além de áreas exclusivas para gatos com necessidades especiais, como os que vivem com FIV ou Felv, garantindo um ambiente seguro e acolhedor para todos.</Trans>
             </p>
           </Flex>
           <Flex grow direction="col" justify="center">

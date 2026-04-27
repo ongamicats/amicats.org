@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Route as AppRoute } from '@/routes/app'
 
-// Localized app index: reuse the main app route component if available.
+// Localized app index: provide a simple self-contained component
+// to avoid importing other Route objects (which breaks code-splitting).
 export const Route = createFileRoute('/$locale/app/')({
-  component: AppRoute.component ?? AppIndexShim,
+  component: LocalizedAppIndex,
 })
 
-function AppIndexShim() {
+function LocalizedAppIndex() {
   return <div />
 }

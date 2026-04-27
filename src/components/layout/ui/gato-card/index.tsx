@@ -3,6 +3,8 @@ import { Figure } from '@/components/layout/ui/figure'
 import { Img } from '@/components/layout/ui/img'
 import { Badge } from '@/components/layout/daisy/data-display/badge'
 import { Button } from '@/components/layout/daisy/actions/button'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 export interface GatoCardProps {
   nome: string
@@ -17,10 +19,13 @@ export function GatoCard({
   nome,
   descricao,
   imagem,
-  status = 'Disponível',
+  status,
   onAdotar,
   onApadrinhar,
 }: GatoCardProps) {
+  const { i18n } = useLingui()
+  const displayStatus = status ?? i18n._(t`Disponível`)
+
   return (
     <Card className="bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-transparent hover:border-primary/20">
       <Figure className="h-42 overflow-hidden relative">
@@ -30,7 +35,7 @@ export function GatoCard({
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <Badge variant="secondary" className="absolute top-2 right-2">
-          {status}
+          {displayStatus}
         </Badge>
       </Figure>
       <Card.Body className="p-6">
@@ -43,7 +48,7 @@ export function GatoCard({
             className="w-full btn-soft"
             onClick={onApadrinhar}
           >
-            Apadrinhe
+            {i18n._(t`Apadrinhe`)}
           </Button>
           <Button
             variant="primary"
@@ -51,7 +56,7 @@ export function GatoCard({
             className="w-full btn-outline"
             onClick={onAdotar}
           >
-            Quero Adotar
+            {i18n._(t`Quero Adotar`)}
           </Button>
         </Card.Actions>
       </Card.Body>

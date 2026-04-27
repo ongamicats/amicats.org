@@ -1,6 +1,8 @@
 import { Img } from '../img'
 import { Avatar } from '@/components/layout/daisy/data-display/avatar'
 import { AvatarGroup } from '@/components/layout/daisy/data-display/avatar-group'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 type ResgatesProps = {
   count?: number
@@ -11,6 +13,7 @@ type ResgatesProps = {
 }
 
 export function Resgates({ count = 400, socorristas }: ResgatesProps) {
+  const { i18n } = useLingui()
   return (
     <div className="mt-12 flex items-center gap-4">
       <AvatarGroup>
@@ -21,7 +24,8 @@ export function Resgates({ count = 400, socorristas }: ResgatesProps) {
         ))}
       </AvatarGroup>
       <p className="text-sm font-semibold opacity-70">
-        +{count} resgates realizados
+        <span className="font-semibold">+{count}</span>{' '}
+        {i18n._(t`resgates realizados`)}
       </p>
     </div>
   )

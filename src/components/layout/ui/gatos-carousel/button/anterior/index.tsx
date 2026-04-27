@@ -4,6 +4,8 @@ import type {
   ComponentShape,
 } from '@/components/layout/shared/types/types.constants'
 import { cn } from '@/components/layout/shared/helpers/class.helper'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 export interface AnteriorButtonProps {
   shape?: ComponentShape
@@ -18,11 +20,13 @@ export function AnteriorButton({
   onClick,
   className,
 }: AnteriorButtonProps) {
+  const { i18n } = useLingui()
+
   return (
     <button
       type="button"
       onClick={onClick}
-      aria-label="Anterior"
+      aria-label={i18n._(t`Anterior`)}
       className={cn(
         'btn',
         `btn-${color}`,

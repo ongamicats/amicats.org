@@ -4,6 +4,7 @@ import { Grid } from '@/components/layout/ui/grid'
 import { CardComponent as Card } from '@/components/layout/daisy/data-display/card'
 import { SectionContainer } from '@/components/layout/ui/container/section'
 import { Flex } from '@/components/layout/ui/flex'
+import { Trans } from '@lingui/react/macro'
 
 export function QuemSomosSection() {
   return (
@@ -28,19 +29,21 @@ export function QuemSomosSection() {
             className={'items-center mx-auto py-10'}
           >
             <span className="text-secondary font-bold tracking-widest uppercase text-sm block">
-              Nossa História
+              <Trans>Nossa História</Trans>
             </span>
             <h2 className="text-2xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-bold text-primary mb-4">
-              Quem Somos
+              <Trans>Quem Somos</Trans>
             </h2>
             <p className="text-center text-sm md:text-base opacity-70 wrap-break-word max-w-2xl mb-6">
-              A AmiCat's nasceu do desejo genuíno de mudar o destino de centenas
-              de felinos nas ruas de Campo Grande. Somos voluntários apaixonados
-              que dedicam tempo e recursos para resgatar, tratar e encontrar
-              lares amorosos. Acreditamos que cada vida importa e que o amor
-              pode curar as feridas mais profundas.
+              <Trans>
+                A AmiCat's nasceu do desejo genuíno de mudar o destino de centenas
+                de felinos nas ruas de Campo Grande. Somos voluntários apaixonados
+                que dedicam tempo e recursos para resgatar, tratar e encontrar
+                lares amorosos. Acreditamos que cada vida importa e que o amor
+                pode curar as feridas mais profundas.
+              </Trans>
             </p>
-          </Flex>
+            </Flex>
           <Grid className="md:grid-cols-3 gap-6">
             <Card className="bg-base-200 hover:-translate-y-2 transition-transform duration-300 border-t-4 border-primary">
               <Card.Body className="items-center text-center">

@@ -10,6 +10,7 @@ import { Img } from '@/components/layout/ui/img'
 import amicatsLogoFull from '@/assets/amicats-logo-full.png'
 import amicatsNameLogo from '@/assets/amicats-name-logo.png'
 import { SectionContainer } from '@/components/layout/ui/container/section'
+import { Trans } from '@lingui/react/macro'
 
 export interface IntroducaoSectionProps {
   imageSrc?: string
@@ -85,13 +86,15 @@ export function IntroducaoSection({
                     />
                   </h1>
                 </Flex>
-                <h1 className="text-3xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-black text-base-content leading-tight mb-4 whitespace-nowrap">
-                  Salvando Vidas Felinas
+                  <h1 className="text-3xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-black text-base-content leading-tight mb-4 whitespace-nowrap">
+                  <Trans>Salvando Vidas Felinas</Trans>
                 </h1>
                 <Flex mobileHidden className="landscape-mobile:hidden">
                   <p className="py-3 text-base text-base-content/70 leading-relaxed max-w-lg">
-                    Junte-se a nós na missão de proteger, cuidar e encontrar
-                    lares para gatos em Campo Grande.
+                    <Trans>
+                      Junte-se a nós na missão de proteger, cuidar e encontrar
+                      lares para gatos em Campo Grande.
+                    </Trans>
                   </p>
                 </Flex>
                 <Flex gap={4} stackAt="md">
@@ -101,10 +104,10 @@ export function IntroducaoSection({
                     size="lg"
                     className="shadow-lg hover:shadow-primary/50"
                   >
-                    Comece sua Jornada
+                    <Trans>Comece sua Jornada</Trans>
                   </Button>
                   <Button variant="ghost" size="lg">
-                    Como funciona?
+                    <Trans>Como funciona?</Trans>
                   </Button>
                 </Flex>
               </div>

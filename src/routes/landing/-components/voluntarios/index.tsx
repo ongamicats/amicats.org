@@ -3,6 +3,8 @@ import { Flex } from '@/components/layout/ui/flex'
 import { Grid } from '@/components/layout/ui/grid'
 import { Voluntario } from '@/components/layout/ui/voluntario'
 import { SectionContainer } from '@/components/layout/ui/container/section'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 type VoluntariosProps = {
   voluntarios: Array<{
@@ -21,6 +23,25 @@ const desktopOrder: Record<number, string> = {
 }
 
 export function VoluntariosSection({ voluntarios }: VoluntariosProps) {
+  const { i18n } = useLingui()
+
+  function localizeFuncao(funcao: string) {
+    switch (funcao) {
+      case 'Fundadora':
+        return i18n._(t`Fundadora`)
+      case 'Coordenação Geral & Resgates':
+        return i18n._(t`Coordenação Geral & Resgates`)
+      case 'Coordenação de Redes & Cuidados':
+        return i18n._(t`Coordenação de Redes & Cuidados`)
+      case 'Tecnologia & Cuidados':
+        return i18n._(t`Tecnologia & Cuidados`)
+      case 'Redes & Resgates':
+        return i18n._(t`Redes & Resgates`)
+      default:
+        return funcao
+    }
+  }
+
   return (
     <SectionContainer
       containerId="c-voluntarios"
@@ -39,14 +60,13 @@ export function VoluntariosSection({ voluntarios }: VoluntariosProps) {
         >
           <Flex direction="col" align="center" className="text-center mb-6">
             <span className="text-info font-bold uppercase tracking-wider text-sm">
-              Nossa Equipe
+              <Trans>Nossa Equipe</Trans>
             </span>
             <h2 className="text-2xl md:text-4xl landscape-mobile:text-xl font-bold mt-2 text-primary">
-              Quem Faz Acontecer
+              <Trans>Quem Faz Acontecer</Trans>
             </h2>
             <p className="mt-3 text-sm md:text-base opacity-70 max-w-2xl mx-auto">
-              Por trás de cada resgate, existe um time dedicado de voluntários
-              que trabalha incansavelmente.
+              <Trans>Por trás de cada resgate, existe um time dedicado de voluntários que trabalha incansavelmente.</Trans>
             </p>
           </Flex>
           <Grid className="grid-cols-2 md:grid-cols-6 gap-4 md:gap-6">
@@ -57,7 +77,7 @@ export function VoluntariosSection({ voluntarios }: VoluntariosProps) {
               >
                 <Voluntario
                   nome={voluntario.nome}
-                  funcao={voluntario.funcao}
+                  funcao={localizeFuncao(voluntario.funcao)}
                   imagem={voluntario.img}
                 />
               </div>

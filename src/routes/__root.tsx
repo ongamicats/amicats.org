@@ -1,5 +1,6 @@
 import {
   HeadContent,
+  Outlet,
   Scripts,
   createRootRouteWithContext,
 } from '@tanstack/react-router'
@@ -53,29 +54,33 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     return { locale, catalog }
   },
 
+  // Render the full document from the root component so router hooks
+  // (useLoaderData) may be used server-side during SSR. Using the
+  // shellComponent previously caused router hooks to be called from an
+  // unsupported location which resulted in runtime failures.
   component: AppShell,
-  shellComponent: RootDocument,
   notFoundComponent: NotFound,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
-  // Attempt to read the loader data for the root route to set html lang
-  // server-side when available. Fall back to pt-BR.
+function AppShell({ children }: { children: React.ReactNode }) {
+  // Use the root loader data (locale + catalog) and provide Lingui. The
+  // root component is allowed to call router hooks which enables setting
+  // the <html lang> attribute server-side during SSR.
   const data = Route.useLoaderData?.()
+
   const lang = data?.locale ?? 'pt-BR'
 
   return (
     <html lang={lang}>
       <head>
-        <meta
-          charSet="utf-8"
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
+        <meta charSet="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
         <HeadContent />
       </head>
       <body>
-        {children}
+        <LinguiProvider locale={data?.locale} catalog={data?.catalog}>
+          <Outlet />
+        </LinguiProvider>
+
         <TanStackDevtools
           config={{
             position: 'bottom-right',
@@ -88,21 +93,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             TanStackQueryDevtools,
           ]}
         />
+
         <Scripts />
       </body>
     </html>
   )
 }
 
-function AppShell({ children }: { children: React.ReactNode }) {
-  // Use the root loader data (locale + catalog) and provide Lingui
-  const data = Route.useLoaderData?.()
-
-  if (!data) return <>{children}</>
-
-  return (
-    <LinguiProvider locale={data.locale} catalog={data.catalog}>
-      {children}
-    </LinguiProvider>
-  )
-}

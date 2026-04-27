@@ -1,6 +1,6 @@
 # components/
 
-> Inherits all rules from [`../../AGENTS.md`](../../AGENTS.md). Only component-specific additions below.
+> Inherits all rules from [`../AGENTS.md`](../AGENTS.md). Only component-specific additions below.
 
 ## Role
 

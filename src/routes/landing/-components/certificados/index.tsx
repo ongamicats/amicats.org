@@ -2,27 +2,31 @@ import { Container } from '@/components/layout/ui/container'
 import { Grid } from '@/components/layout/ui/grid'
 import { Flex } from '@/components/layout/ui/flex'
 import { SectionContainer } from '@/components/layout/ui/container/section'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 export function CertificadosSection() {
+  const { i18n } = useLingui()
+
   const certificados = [
     {
       nome: 'PHOMENTA',
-      descricao: 'Programa de Fomento às Atividades Produtivas Rurais',
+      descricao: i18n._(t`Programa de Fomento às Atividades Produtivas Rurais`),
       imagem: '/certificates/phomenta.png',
     },
     {
       nome: 'Bem-Estar Animal',
-      descricao: 'Certificação de Padrões de Bem-Estar Animal',
+      descricao: i18n._(t`Certificação de Padrões de Bem-Estar Animal`),
       imagem: '/certificates/animal-welfare.png',
     },
     {
       nome: 'Registro ONG',
-      descricao: 'Organização Sem Fins Lucrativos Registrada',
+      descricao: i18n._(t`Organização Sem Fins Lucrativos Registrada`),
       imagem: '/certificates/nonprofit-registration.png',
     },
     {
       nome: 'Parceria Veterinária',
-      descricao: 'Associação de Médicos Veterinários',
+      descricao: i18n._(t`Associação de Médicos Veterinários`),
       imagem: '/certificates/veterinary-partnership.png',
     },
   ]

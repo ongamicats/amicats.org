@@ -5,6 +5,8 @@ import {
   resolveLocale,
   setLocaleCookie,
 } from '@/integrations/lingui/resolve-locale'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 export interface LanguageSelectProps {
   className?: string
@@ -28,6 +30,11 @@ export function LanguageSelect({ className, hidden }: LanguageSelectProps) {
       { value: 'pt-BR', label: 'PT', flag: 'fi fi-br' },
       { value: 'en', label: 'ENG', flag: 'fi fi-us' },
     ]
+  
+  const { i18n } = useLingui()
+  // localized aria labels (sourceLocale remains pt-BR so messages extracted in pt-BR)
+  const ariaLanguageSelect = i18n._(t`Selecionar idioma`)
+  const ariaLanguageMenu = i18n._(t`Menu de idiomas`)
 
   useEffect(() => {
     function onDoc(e: MouseEvent) {
@@ -134,7 +141,7 @@ export function LanguageSelect({ className, hidden }: LanguageSelectProps) {
         id={`${id}-lang-toggle`}
         ref={buttonRef}
         type="button"
-        aria-label="Language select"
+        aria-label={ariaLanguageSelect}
         aria-haspopup="menu"
         aria-expanded={open}
         aria-controls={`${id}-lang-menu`}
@@ -146,7 +153,7 @@ export function LanguageSelect({ className, hidden }: LanguageSelectProps) {
           className={locale === 'pt-BR' ? 'fi fi-br' : 'fi fi-us'}
           aria-hidden
         />
-        <span className="sr-only">Language</span>
+        <span className="sr-only">{i18n._(t`Idioma`)}</span>
         <span className="font-medium ml-1">
           {locale === 'pt-BR' ? 'PT' : 'ENG'}
         </span>
@@ -156,7 +163,7 @@ export function LanguageSelect({ className, hidden }: LanguageSelectProps) {
         <div
           id={`${id}-lang-menu`}
           role="menu"
-          aria-label="Language menu"
+          aria-label={ariaLanguageMenu}
           ref={menuRef}
           className={cn(
             // position the menu to the left of the trigger, vertically centered

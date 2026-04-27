@@ -3,10 +3,13 @@ import { Link } from '@tanstack/react-router'
 import { cn } from '@/components/layout/shared/helpers/class.helper'
 import amicatsLogoFull from '@/assets/amicats-logo-full.png'
 import { LanguageSelect } from '@/components/layout/ui/language-select'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 export function Navbar(): JSX.Element | null {
   const navRef = useRef<HTMLDivElement | null>(null)
   const [visible, setVisible] = useState<boolean>(false)
+  const { i18n } = useLingui()
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -82,38 +85,38 @@ export function Navbar(): JSX.Element | null {
           </div>
 
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <ul className="menu menu-horizontal px-1">
-              <li>
-                <Link to="/" hash="adote">
-                  Adote
-                </Link>
-              </li>
-              <li>
-                <Link to="/" hash="quem-somos">
-                  Quem Somos
-                </Link>
-              </li>
-              <li>
-                <Link to="/" hash="o-abrigo">
-                  O Abrigo
-                </Link>
-              </li>
-              <li>
-                <Link to="/" hash="voluntarios-section">
-                  Voluntários
-                </Link>
-              </li>
-              <li>
-                <Link to="/" hash="certificados">
-                  Certificados
-                </Link>
-              </li>
-            </ul>
+              <ul className="menu menu-horizontal px-1">
+                <li>
+                  <Link to="/" hash="adote">
+                   Adote
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" hash="quem-somos">
+                   Quem Somos
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" hash="o-abrigo">
+                   O Abrigo
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" hash="voluntarios-section">
+                   Voluntários
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/" hash="certificados">
+                   Certificados
+                  </Link>
+                </li>
+              </ul>
           </div>
 
           <div className="flex-1 flex justify-end items-center gap-3 pr-4">
             <Link to="/" hash="adote" className="btn btn-primary btn-md">
-              Comece sua Jornada
+              {i18n._(t`Comece sua Jornada`)}
             </Link>
             <LanguageSelect />
           </div>

@@ -1,11 +1,11 @@
-import { Navigate, createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, redirect } from '@tanstack/react-router'
 import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 
 export const Route = createFileRoute('/app/')({
-  loader: async ({ cookieHeader, location }) => {
+  loader: async ({ cookieHeader }) => {
     const { locale } = resolveLocale({ cookieHeader })
-    const to = `/${locale}/app/${location?.search ?? ''}${location?.hash ?? ''}`
-    throw new Navigate({ to, replace: true })
+    // Redirect to the canonical localized app root using redirect().
+    throw redirect({ to: `/${locale}/app/`, replace: true })
   },
   component: Redirect,
 })

@@ -1,9 +1,48 @@
 import { createElement } from 'react'
 import '@testing-library/jest-dom'
 import { afterEach, vi } from 'vitest'
+import { i18n } from '@lingui/core'
+
+// Provide a lightweight mock for @lingui/react in the test environment so
+// components that call `useLingui()` don't fail if a full I18nProvider isn't
+// present. The mock returns the real `i18n` instance from @lingui/core so
+// tests can manipulate/activate catalogs via the app's helpers or the
+// LinguiProvider wrapper used in some tests.
+vi.mock('@lingui/react', async () => {
+  const actual = await vi.importActual<any>('@lingui/react').catch(() => ({}))
+  return {
+    ...actual,
+    useLingui: () => ({ i18n }),
+    I18nProvider: ({ children }: any) => children,
+    Trans: ({ children }: any) => children,
+  }
+})
+
+// Preload catalogs and activate default locale for tests to avoid race
+// conditions where components call i18n._() during render before any
+// test explicitly activates a locale. We load the checked-in JSON catalogs
+// so tests are deterministic.
+import enCatalog from '../locales/en/messages.json'
+import ptCatalog from '../locales/pt-BR/messages.json'
+
+const EN = (enCatalog as any).default ?? enCatalog
+const PT = (ptCatalog as any).default ?? ptCatalog
+
+try {
+  // load both catalogs and activate pt-BR by default
+  i18n.load('en', EN as any)
+  i18n.load('pt-BR', PT as any)
+  i18n.activate('pt-BR')
+} catch (e) {
+  // ignore failures — tests that wrap with LinguiProvider will control i18n
+}
 // reset landing locale module state between tests to avoid cross-test leakage
 // from module-level state in use-landing-locale.ts
 import { __resetLandingLocaleForTests } from '@/hooks/use-landing-locale'
+// Import deterministic i18n mocks so loaders that dynamically import
+// locale catalogs become deterministic in the test environment.
+// The module registers a narrow vi.mock for the catalog loader.
+import './i18n-fixtures'
 
 // Mock @tanstack/react-router Link for tests that render components directly
 vi.mock('@tanstack/react-router', async () => {
@@ -13,6 +52,22 @@ vi.mock('@tanstack/react-router', async () => {
     Link: (props: any) => {
       const { children, ...rest } = props
       return createElement('a', rest, children)
+    },
+    // Provide a lightweight useNavigate mock for tests that call navigate({ to })
+    // during migration. The real router will perform navigation; in tests a
+    // no-op that updates history is sufficient to avoid errors and to let
+    // components compute path-based behavior.
+    useNavigate: () => {
+      return ({ to }: { to?: string } = {}) => {
+        try {
+          if (typeof window !== 'undefined' && typeof to === 'string') {
+            // update the history so components that read window.location see the new path
+            window.history.pushState({}, '', to)
+          }
+        } catch (e) {
+          // swallow - tests will assert expected behavior
+        }
+      }
     },
   }
 })

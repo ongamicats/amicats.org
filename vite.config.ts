@@ -25,7 +25,9 @@ const config = defineConfig({
     tanstackStart(),
     viteReact({
       babel: {
-        plugins: ['babel-plugin-react-compiler'],
+        // Enable babel-plugin-macros so @lingui/macro works in dev/build.
+        // Keep existing react-compiler plugin for the project's JSX handling.
+        plugins: ['babel-plugin-macros', 'babel-plugin-react-compiler'],
       },
     }),
   ],

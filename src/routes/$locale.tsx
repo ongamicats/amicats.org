@@ -1,16 +1,14 @@
-import { Navigate, createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, redirect, Outlet } from '@tanstack/react-router'
 import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 
 export const Route = createFileRoute('/$locale')({
-  loader: async ({ params, cookieHeader, location }) => {
+  loader: async ({ params, cookieHeader }) => {
     const { locale, redirected } = resolveLocale({ params, cookieHeader })
     // If the requested :locale is invalid, redirect to the resolved
     // locale while preserving the remainder of the path.
     if (redirected) {
-      const path =
-        location?.pathname === '/' ? '/' : (location?.pathname ?? '/')
-      const to = `/${locale}${path}`
-      throw new Navigate({ to, replace: true })
+      // Use the redirect() helper to produce a proper loader redirect.
+      throw redirect({ to: `/${locale}/`, replace: true })
     }
     return null
   },
@@ -18,5 +16,8 @@ export const Route = createFileRoute('/$locale')({
 })
 
 function LocaleLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  // Use Outlet to render nested routes instead of directly returning
+  // children. This ensures the file-based router can code-split and mount
+  // nested route components correctly.
+  return <Outlet />
 }

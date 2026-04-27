@@ -3,19 +3,9 @@ import { AlertCircle } from 'lucide-react'
 import { i18n } from '@lingui/core'
 import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 
-// Although __root configures it as a component, we can define it here.
-// Attempting to export a Route for it in case it's used as a direct route too.
-// If purely for 404 handling, the component export is enough.
-// The user asked for "it's own route".
-
-export const Route = createFileRoute('/not-found/')({
-  component: NotFound,
-})
-
 export function NotFound() {
   const locale = resolveLocale().locale
 
-  // Use i18n._ to look up messages by id from the loaded catalog
   const title = i18n._('notfound.title')
   const message = i18n._('notfound.message')
   const home = i18n._('nav.home')
@@ -39,3 +29,8 @@ export function NotFound() {
     </div>
   )
 }
+
+// Export component and route (root also imports NotFound from this index)
+export const Route = createFileRoute('/not-found/')({
+  component: NotFound,
+})

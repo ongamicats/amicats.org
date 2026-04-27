@@ -1,12 +1,12 @@
-import { Navigate, createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, redirect, Outlet } from '@tanstack/react-router'
 import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 
 export const Route = createFileRoute('/$locale/app')({
-  loader: async ({ params, cookieHeader, location }) => {
+  loader: async ({ params, cookieHeader }) => {
     const { locale } = resolveLocale({ params, cookieHeader })
     if (params?.locale !== locale) {
-      const to = `/${locale}/app${location?.search ?? ''}${location?.hash ?? ''}`
-      throw new Navigate({ to, replace: true })
+      // Redirect to the canonical localized app root using redirect().
+      throw redirect({ to: `/${locale}/app/`, replace: true })
     }
     return null
   },
@@ -14,5 +14,6 @@ export const Route = createFileRoute('/$locale/app')({
 })
 
 function AppLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  // Use Outlet so nested routes render correctly and support code-splitting.
+  return <Outlet />
 }

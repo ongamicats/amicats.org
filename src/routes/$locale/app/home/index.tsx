@@ -1,10 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Route as AppHome } from '../../../../routes/app/home/index'
 
 export const Route = createFileRoute('/$locale/app/home/')({
-  component: AppHome.component ?? AppHomeShim,
+  component: LocalizedAppHome,
 })
 
-function AppHomeShim() {
-  return <div />
+function LocalizedAppHome() {
+  // Keep the localized route simple and self-contained to avoid importing
+  // other Route objects (which can confuse the router's code-splitting).
+  return <div>Hello "/app/home/"!</div>
 }

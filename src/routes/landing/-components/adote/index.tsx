@@ -3,37 +3,44 @@ import { GatoCard } from '@/components/layout/ui/gato-card'
 import { Flex } from '@/components/layout/ui/flex'
 import { SectionContainer } from '@/components/layout/ui/container/section'
 import { GatosCarouselComponent as GatosCarousel } from '@/components/layout/ui/gatos-carousel'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 
 export interface AdoteSectionProps {
   images: Array<string>
 }
 
 export function AdoteSection({ images }: AdoteSectionProps) {
+  const { i18n } = useLingui()
+
   const gatos = [
     {
       nome: 'Zezinho',
-      descricao: 'Ama um carinho e adora um abraço, galã de novela.',
+      descricao: i18n._(
+        t`Ama um carinho e adora um abraço, galã de novela.`,
+      ),
       imagem: images[0],
-      status: 'Disponível',
+      status: i18n._(t`Disponível`),
     },
     {
       nome: 'Augusto',
-      descricao:
-        'A fofura do abrigo, distribuidor de amor. Esqueceu de desligar a fofura.',
+      descricao: i18n._(
+        t`A fofura do abrigo, distribuidor de amor. Esqueceu de desligar a fofura.`,
+      ),
       imagem: images[1],
-      status: 'Disponível',
+      status: i18n._(t`Disponível`),
     },
     {
       nome: 'Poliana',
-      descricao: 'A Princesa da Ong, padeira de mão cheia, amor silencioso.',
+      descricao: i18n._(t`A Princesa da Ong, padeira de mão cheia, amor silencioso.`),
       imagem: images[2],
-      status: 'Disponível',
+      status: i18n._(t`Disponível`),
     },
     {
       nome: 'Túlio',
-      descricao: 'Amigo estou aqui! Os seus problemas, são meus também... 🎶',
+      descricao: i18n._(t`Amigo estou aqui! Os seus problemas, são meus também... 🎶`),
       imagem: images[3],
-      status: 'Disponível',
+      status: i18n._(t`Disponível`),
     },
   ]
 
@@ -56,13 +63,13 @@ export function AdoteSection({ images }: AdoteSectionProps) {
         >
           <div className="text-center max-w-2xl mx-auto mb-6">
             <span className="text-primary-content font-bold tracking-widest uppercase text-sm mb-2 block">
-              Nossos amiguinhos
+              {i18n._(t`Nossos amiguinhos`)}
             </span>
             <h2 className="text-xl md:text-3xl xl:text-4xl landscape-mobile:text-base text-primary font-bold mb-3">
-              Gatinhos Disponíveis
+              {i18n._(t`Gatinhos Disponíveis`)}
             </h2>
             <p className="text-sm md:text-base opacity-70">
-              Estes pequenos estão prontos para encher sua casa de alegria.
+              {i18n._(t`Estes pequenos estão prontos para encher sua casa de alegria.`)}
             </p>
           </div>
 
