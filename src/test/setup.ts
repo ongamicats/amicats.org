@@ -18,6 +18,45 @@ vi.mock('@lingui/react', async () => {
   }
 })
 
+// Some components import Trans from '@lingui/react/macro' which at runtime
+// tries to load babel-plugin-macros. In the test environment we don't run
+// babel macros, so provide a lightweight mock to avoid requiring that package.
+vi.mock('@lingui/react/macro', async () => {
+  return {
+    // Provide a runtime Trans that uses the i18n instance so tests that
+    // import the macro at runtime still receive translated strings from
+    // the loaded catalogs. Many components use <Trans> with literal
+    // strings; this mock maps those literal children through i18n._().
+    Trans: ({ children }: any) => {
+      try {
+        if (typeof children === 'string') {
+          return i18n._(children as any)
+        }
+      } catch (e) {
+        // fallthrough to return raw children
+      }
+      return children
+    },
+  }
+})
+
+// Provide runtime shims for '@lingui/macro' used by source code (t`` and Trans)
+// so tests don't require the babel macro transform. t returns the raw string
+// from the tagged template and Trans maps literal children via i18n.
+vi.mock('@lingui/macro', async () => {
+  return {
+    t: (strings: TemplateStringsArray, ..._vals: any[]) => strings[0],
+    Trans: ({ children }: any) => {
+      try {
+        if (typeof children === 'string') return i18n._(children as any)
+      } catch (e) {
+        // noop
+      }
+      return children
+    },
+  }
+})
+
 // Preload catalogs and activate default locale for tests to avoid race
 // conditions where components call i18n._() during render before any
 // test explicitly activates a locale. We load the checked-in JSON catalogs
@@ -29,12 +68,51 @@ const EN = (enCatalog as any).default ?? enCatalog
 const PT = (ptCatalog as any).default ?? ptCatalog
 
 try {
-  // load both catalogs and activate pt-BR by default
+  // load both catalogs and activate en by default for tests
+  // Many unit tests expect English labels; activating 'en' avoids
+  // having to wrap every render. Tests that need pt-BR explicitly can
+  // still wrap with LinguiProvider.
   i18n.load('en', EN as any)
   i18n.load('pt-BR', PT as any)
-  i18n.activate('pt-BR')
+  i18n.activate('en')
 } catch (e) {
   // ignore failures — tests that wrap with LinguiProvider will control i18n
+}
+
+// Build reverse lookup maps from source (Portuguese) message -> translation
+// for the loaded catalogs so runtime calls to i18n._("...pt string...")
+// (which occur when babel macros aren't applied in tests) still return
+// the expected translated label when the test activates 'en'. This is a
+// test-only shim and mirrors what the babel macro would produce at build
+// time by resolving messages to ids.
+try {
+  const enMap = new Map<string, string>()
+  const ptMap = new Map<string, string>()
+  for (const [, entry] of Object.entries(EN as any)) {
+    if (entry && typeof entry === 'object' && entry.message) {
+      if (entry.translation) enMap.set(entry.message, entry.translation)
+      ptMap.set(entry.message, entry.message)
+    }
+  }
+
+  // Wrap i18n._ to resolve plain-string calls using our reverse maps when
+  // possible. Fall back to the original implementation otherwise.
+  const originalI18nGet = i18n._.bind(i18n)
+  // @ts-ignore - augmenting i18n for test shim
+  i18n._ = (msg: any, ...args: any[]) => {
+    try {
+      if (typeof msg === 'string') {
+        const locale = i18n.locale
+        if (locale === 'en' && enMap.has(msg)) return enMap.get(msg)
+        if (locale === 'pt-BR' && ptMap.has(msg)) return ptMap.get(msg)
+      }
+    } catch (e) {
+      // ignore and fallthrough
+    }
+    return originalI18nGet(msg, ...args)
+  }
+} catch (e) {
+  // noop - best-effort shim for tests
 }
 // reset landing locale module state between tests to avoid cross-test leakage
 // from module-level state in use-landing-locale.ts

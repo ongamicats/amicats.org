@@ -112,39 +112,42 @@ describe('LandingNavbar (unit) — scroll-threshold behavior', () => {
     const logo = screen.queryByRole('img', { name: /Amicats/i })
     if (logo) expect(logo).toBeInTheDocument()
 
-    // Nav center links should be present and rendered as links (order: Adote, Quem Somos, O Abrigo, Voluntários, Certificados)
+    // Nav center links should be present and rendered as links. Labels may
+    // be localized; each entry contains both Portuguese and English labels
+    // to make the assertion work regardless of active catalog.
     const centerLinkLabels = [
-      'Quem Somos',
-      'O Abrigo',
-      'Voluntários',
-      'Adote',
-      'Certificados',
+      { pt: 'Quem Somos', en: 'About us', hash: 'quem-somos' },
+      { pt: 'O Abrigo', en: 'The shelter', hash: 'o-abrigo' },
+      { pt: 'Voluntários', en: 'Volunteers', hash: 'voluntarios-section' },
+      { pt: 'Adote', en: 'Adopt', hash: 'adote' },
+      { pt: 'Certificados', en: 'Certificates', hash: 'certificados' },
     ]
-
-    const expectedHashes: Record<string, string> = {
-      'Quem Somos': 'quem-somos',
-      'O Abrigo': 'o-abrigo',
-      Voluntários: 'voluntarios-section',
-      Adote: 'adote',
-      Certificados: 'certificados',
-    }
 
     // Verify presence and order by inspecting the menu list children
     const menu = screen.getByRole('list') || screen.querySelector('.menu')
     if (menu) {
       const items = Array.from(menu.querySelectorAll('li')).map((li) => li.textContent?.trim())
-      // menu in markup: Adote, Quem Somos, O Abrigo, Voluntários, Certificados
-      expect(items).toEqual(expect.arrayContaining(['Adote', 'Quem Somos', 'O Abrigo', 'Voluntários', 'Certificados']))
+      // menu in markup may be localized; accept either Portuguese or English labels
+      const expectations = [
+        ['Adote', 'Adopt'],
+        ['Quem Somos', 'About us'],
+        ['O Abrigo', 'The shelter'],
+        ['Voluntários', 'Volunteers'],
+        ['Certificados', 'Certificates'],
+      ]
+      for (const opts of expectations) {
+        const found = items.some((it) => it && (it === opts[0] || it === opts[1]))
+        expect(found).toBeTruthy()
+      }
     }
 
-    centerLinkLabels.forEach((label) => {
-      // Some nav items may be rendered as anchors with inner text only. Use
-      // a tolerant query that accepts either role=link or plain text nodes.
-      const byText = screen.queryByText(new RegExp(`^${label}$`, 'i'))
+    centerLinkLabels.forEach((entry) => {
+      const labelRegex = new RegExp(`^(${entry.pt}|${entry.en})$`, 'i')
+      const byText = screen.queryByText(labelRegex)
       const link = byText ? byText.closest('a') : null
       if (link) {
         expect(link).toBeInTheDocument()
-        expect(link.getAttribute('hash')).toBe(expectedHashes[label])
+        expect(link.getAttribute('hash')).toBe(entry.hash)
       } else {
         // fallback: assert the text node exists
         expect(byText).toBeInTheDocument()
@@ -154,7 +157,8 @@ describe('LandingNavbar (unit) — scroll-threshold behavior', () => {
     // CTA exact label must be present and visible after navbar becomes visible.
     // Because Link is mocked to a plain anchor, query the visible text and then
     // locate the closest anchor to assert forwarded props.
-    const ctaText = screen.getByText('Comece sua Jornada')
+    // Accept either Portuguese or English CTA depending on active catalog
+    const ctaText = screen.getByText(/Comece sua Jornada|Start your journey/i)
     expect(ctaText).toBeInTheDocument()
     const cta = ctaText.closest('a')
     expect(cta).toBeTruthy()

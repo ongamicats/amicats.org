@@ -11,22 +11,24 @@ export function CertificadosSection() {
   const certificados = [
     {
       nome: 'PHOMENTA',
-      descricao: i18n._(t`Programa de Fomento às Atividades Produtivas Rurais`),
+      descricao: i18n._(
+        t`PHOMENTA — Program to foster rural productive activities`
+      ),
       imagem: '/certificates/phomenta.png',
     },
     {
-      nome: 'Bem-Estar Animal',
-      descricao: i18n._(t`Certificação de Padrões de Bem-Estar Animal`),
+      nome: i18n._(t`Bem-Estar Animal`),
+      descricao: i18n._(t`Animal Welfare Certification`),
       imagem: '/certificates/animal-welfare.png',
     },
     {
-      nome: 'Registro ONG',
-      descricao: i18n._(t`Organização Sem Fins Lucrativos Registrada`),
+      nome: i18n._(t`Registro ONG`),
+      descricao: i18n._(t`Registered Nonprofit Organization`),
       imagem: '/certificates/nonprofit-registration.png',
     },
     {
-      nome: 'Parceria Veterinária',
-      descricao: i18n._(t`Associação de Médicos Veterinários`),
+      nome: i18n._(t`Parceria Veterinária`),
+      descricao: i18n._(t`Veterinary Partnership`),
       imagem: '/certificates/veterinary-partnership.png',
     },
   ]
@@ -46,14 +48,15 @@ export function CertificadosSection() {
         >
           <div className="text-center max-w-3xl mx-auto mb-6">
             <span className="text-neutral font-bold tracking-widest uppercase text-sm mb-2 block">
-              Reconhecimento
+              {i18n._(t`Reconhecimento`)}
             </span>
             <h2 className="text-2xl md:text-4xl xl:text-5xl landscape-mobile:text-xl font-bold mb-4 text-primary">
-              Certificados
+              {i18n._(t`Certificados`)}
             </h2>
             <p className="text-sm md:text-base opacity-70">
-              Nosso compromisso com a excelência e transparência é reconhecido
-              por diversas instituições.
+              {i18n._(
+                t`Our commitment to excellence and transparency is recognized by several institutions.`
+              )}
             </p>
           </div>
 

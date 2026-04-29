@@ -32,7 +32,8 @@ describe('IntroducaoSection (unit) — hero overlay and CTA', () => {
     expect(toggleBtn).toBeTruthy()
 
     // CTA exact label and href
-    const cta = screen.getByRole('link', { name: 'Comece sua Jornada' })
+    // accept either Portuguese or English label depending on active catalog
+    const cta = screen.getByRole('link', { name: /Comece sua Jornada|Start your journey/i })
     expect(cta).toBeInTheDocument()
     // Link is mocked to <a> and renders a normal anchor — assert href points to the target fragment
     expect(cta.getAttribute('href')).toBe('#adote')

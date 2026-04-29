@@ -51,11 +51,13 @@ export function QuemSomosSection() {
                   <Heart size={32} />
                 </div>
                 <Card.Title className="text-lg md:text-2xl mb-2">
-                  Resgate & Cuidado
+                  <Trans>Resgate & Cuidado</Trans>
                 </Card.Title>
                 <p className="opacity-80">
-                  Resgatamos gatos em situação de risco, oferecendo tratamento
-                  veterinário completo e muito carinho até a recuperação.
+                  <Trans>
+                    Resgatamos gatos em situação de risco, oferecendo tratamento
+                    veterinário completo e muito carinho até a recuperação.
+                  </Trans>
                 </p>
               </Card.Body>
             </Card>
@@ -65,11 +67,13 @@ export function QuemSomosSection() {
                   <Home size={32} />
                 </div>
                 <Card.Title className="text-lg md:text-2xl mb-2">
-                  Lares Temporários
+                  <Trans>Lares Temporários</Trans>
                 </Card.Title>
                 <p className="opacity-80">
-                  Nossa rede de voluntários oferece lares temporários seguros,
-                  socializando os gatinhos para sua futura família.
+                  <Trans>
+                    Nossa rede de voluntários oferece lares temporários seguros,
+                    socializando os gatinhos para sua futura família.
+                  </Trans>
                 </p>
               </Card.Body>
             </Card>
@@ -79,11 +83,13 @@ export function QuemSomosSection() {
                   <Users size={32} />
                 </div>
                 <Card.Title className="text-lg md:text-2xl mb-2">
-                  Eventos & Adoção
+                  <Trans>Eventos & Adoção</Trans>
                 </Card.Title>
                 <p className="opacity-80">
-                  Promovemos feiras de adoção e eventos educativos para
-                  conscientizar sobre a posse responsável.
+                  <Trans>
+                    Promovemos feiras de adoção e eventos educativos para
+                    conscientizar sobre a posse responsável.
+                  </Trans>
                 </p>
               </Card.Body>
             </Card>

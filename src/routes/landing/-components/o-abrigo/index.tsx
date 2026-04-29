@@ -7,6 +7,7 @@ import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 
 export function OAbrigoSection() {
+  const { i18n } = useLingui()
   return (
     <SectionContainer
       containerId="c-o-abrigo"
@@ -44,10 +45,16 @@ export function OAbrigoSection() {
               <Trans>Estamos desde 2017 resgatando, cuidando e encontrando lares.</Trans>
             </p>
             <p className="text-sm md:text-base opacity-70">
-              <Trans>Cada dia no abrigo é uma jornada de amor, dedicação e superação. Enfrentamos desafios constantes, mas cada vida salva nos motiva a continuar.</Trans>
+              <Trans>
+                Cada dia no abrigo é uma jornada de amor, dedicação e
+                superação. Enfrentamos desafios constantes, mas cada vida salva
+                nos motiva a continuar.
+              </Trans>
             </p>
             <p className="pt-3 text-sm md:text-base opacity-70">
-              <Trans>Possuímos areás de cuidados de gatos em observação, tratamento e recuperação. Areas de filhotes, adultos e idosos. E uma área de quarentena para gatos recém resgatados. Além de áreas exclusivas para gatos com necessidades especiais, como os que vivem com FIV ou Felv, garantindo um ambiente seguro e acolhedor para todos.</Trans>
+              {i18n._(
+                t`We have areas for observation, treatment and recovery: kittens, adults and seniors. A quarantine area is used for newly rescued cats. We also maintain dedicated spaces for special-needs cats, such as those living with FIV or FeLV, ensuring a safe and welcoming environment for all.`
+              )}
             </p>
           </Flex>
           <Flex grow direction="col" justify="center">
@@ -57,51 +64,47 @@ export function OAbrigoSection() {
               className="bg-base-100 rounded-2xl p-6 shadow-xl"
             >
               <h3 className="text-base md:text-xl xl:text-3xl font-bold mb-4 text-center">
-                Nossos Maiores Desafios
+                {i18n._(t`Nossos Maiores Desafios`)}
               </h3>
               <Grid className="md:grid-cols-2 gap-4">
                 <div>
                   <h4 className="text-sm md:text-lg font-semibold mb-3 text-primary">
-                    Financeiro
+                    {i18n._(t`Financeiro`)}
                   </h4>
                   <p className="text-xs opacity-80 leading-relaxed">
-                    Manter o abrigo funcionando exige recursos constantes para
-                    alimentação, medicamentos, consultas veterinárias e
-                    infraestrutura. Dependemos inteiramente de doações e da
-                    generosidade da comunidade.
+                    {i18n._(
+                      t`Keeping the shelter running requires continuous resources for food, medication, veterinary care and infrastructure. We rely entirely on donations and the generosity of the community.`
+                    )}
                   </p>
                 </div>
                 <div>
                   <h4 className="text-sm md:text-lg font-semibold mb-3 text-secondary">
-                    Superlotação
+                    {i18n._(t`Superlotação`)}
                   </h4>
                   <p className="text-xs opacity-80 leading-relaxed">
-                    O número de gatos resgatados cresce constantemente, enquanto
-                    o espaço e recursos permanecem limitados. Cada novo resgate
-                    é um equilíbrio delicado entre salvar vidas e manter a
-                    qualidade do cuidado.
+                    {i18n._(
+                      t`The number of rescued cats keeps growing while space and resources remain limited. Each new rescue is a delicate balance between saving lives and maintaining quality care.`
+                    )}
                   </p>
                 </div>
                 <div>
                   <h4 className="text-sm md:text-lg font-semibold mb-3 text-accent">
-                    Casos Complexos
+                    {i18n._(t`Casos Complexos`)}
                   </h4>
                   <p className="text-xs opacity-80 leading-relaxed">
-                    Muitos gatos chegam com traumas físicos e emocionais
-                    profundos, exigindo tratamentos prolongados e cuidados
-                    especializados. A reabilitação é um processo longo, mas
-                    gratificante.
+                    {i18n._(
+                      t`Many cats arrive with deep physical and emotional traumas, requiring prolonged treatments and specialized care. Rehabilitation is a long but rewarding process.`
+                    )}
                   </p>
                 </div>
                 <div>
                   <h4 className="text-sm md:text-lg font-semibold mb-3 text-info">
-                    Conscientização
+                    {i18n._(t`Conscientização`)}
                   </h4>
                   <p className="text-xs opacity-80 leading-relaxed">
-                    Educar sobre posse responsável e a importância da castração
-                    é fundamental para reduzir o abandono. Trabalhamos
-                    constantemente para mudar mentalidades e criar uma
-                    comunidade mais compassiva.
+                    {i18n._(
+                      t`Educating about responsible ownership and the importance of spaying/neutering is essential to reduce abandonment. We continuously work to change mindsets and build a more compassionate community.`
+                    )}
                   </p>
                 </div>
               </Grid>

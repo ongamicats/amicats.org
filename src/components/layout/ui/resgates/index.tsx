@@ -19,7 +19,10 @@ export function Resgates({ count = 400, socorristas }: ResgatesProps) {
       <AvatarGroup>
         {socorristas.map((socorrista, index) => (
           <Avatar key={index} className="border-base-100">
-            <Img src={socorrista.img} alt={`Rescuer ${index + 1}`} />
+            <Img
+              src={socorrista.img}
+              alt={i18n._(t`Socorrista ${index + 1}`)}
+            />
           </Avatar>
         ))}
       </AvatarGroup>

@@ -7,7 +7,8 @@
         "src/routes/not-found/index.tsx"
       ]
     ],
-    "translation": "notfound.title"
+    "translation": "notfound.title",
+    "obsolete": true
   },
   "notfound.message": {
     "placeholders": {},
@@ -17,7 +18,8 @@
         "src/routes/not-found/index.tsx"
       ]
     ],
-    "translation": "notfound.message"
+    "translation": "notfound.message",
+    "obsolete": true
   },
   "nav.home": {
     "placeholders": {},
@@ -27,7 +29,8 @@
         "src/routes/not-found/index.tsx"
       ]
     ],
-    "translation": "nav.home"
+    "translation": "nav.home",
+    "obsolete": true
   },
   "nav.app": {
     "0": "A",
@@ -190,6 +193,29 @@
     ],
     "translation": "Estamos desde 2017 resgatando, cuidando e encontrando lares."
   },
+  "gb9_GI": {
+    "translation": "Eventos & Adoção",
+    "message": "Eventos & Adoção",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
+  },
+  "IDIOMA": {
+    "message": "Idioma",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/layout/ui/language-select/index.tsx"
+      ]
+    ],
+    "translation": "Idioma",
+    "obsolete": true
+  },
   "--yDRB": {
     "message": "Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande.",
     "placeholders": {},
@@ -201,6 +227,29 @@
     ],
     "translation": "Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande."
   },
+  "lTUidK": {
+    "translation": "Lares Temporários",
+    "message": "Lares Temporários",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
+  },
+  "MENU_LANG": {
+    "message": "Menu de idiomas",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/layout/ui/language-select/index.tsx"
+      ]
+    ],
+    "translation": "Menu de idiomas",
+    "obsolete": true
+  },
   "aaINyE": {
     "message": "Nossa História",
     "placeholders": {},
@@ -211,6 +260,17 @@
       ]
     ],
     "translation": "Nossa História"
+  },
+  "yET86w": {
+    "translation": "Nossa rede de voluntários oferece lares temporários seguros, socializando os gatinhos para sua futura família.",
+    "message": "Nossa rede de voluntários oferece lares temporários seguros, socializando os gatinhos para sua futura família.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
   },
   "gJuhRF": {
     "message": "Nosso Dia a Dia",
@@ -243,7 +303,19 @@
         "src/routes/landing/-components/o-abrigo/index.tsx"
       ]
     ],
-    "translation": "Possuímos areás de cuidados de gatos em observação, tratamento e recuperação. Areas de filhotes, adultos e idosos. E uma área de quarentena para gatos recém resgatados. Além de áreas exclusivas para gatos com necessidades especiais, como os que vivem com FIV ou Felv, garantindo um ambiente seguro e acolhedor para todos."
+    "translation": "Possuímos areás de cuidados de gatos em observação, tratamento e recuperação. Areas de filhotes, adultos e idosos. E uma área de quarentena para gatos recém resgatados. Além de áreas exclusivas para gatos com necessidades especiais, como os que vivem com FIV ou Felv, garantindo um ambiente seguro e acolhedor para todos.",
+    "obsolete": true
+  },
+  "qpxCWX": {
+    "translation": "Promovemos feiras de adoção e eventos educativos para conscientizar sobre a posse responsável.",
+    "message": "Promovemos feiras de adoção e eventos educativos para conscientizar sobre a posse responsável.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
   },
   "DlUBwL": {
     "message": "Quem Somos",
@@ -256,6 +328,40 @@
     ],
     "translation": "Quem Somos"
   },
+  "noDsYv": {
+    "translation": "Resgatamos gatos em situação de risco, oferecendo tratamento veterinário completo e muito carinho até a recuperação.",
+    "message": "Resgatamos gatos em situação de risco, oferecendo tratamento veterinário completo e muito carinho até a recuperação.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
+  },
+  "qxRLM7": {
+    "translation": "Resgate & Cuidado",
+    "message": "Resgate & Cuidado",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
+  },
+  "RESGATES": {
+    "message": "resgates realizados",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/layout/ui/resgates/index.tsx"
+      ]
+    ],
+    "translation": "resgates realizados",
+    "obsolete": true
+  },
   "j4aPJi": {
     "message": "Salvando Vidas Felinas",
     "placeholders": {},
@@ -266,5 +372,17 @@
       ]
     ],
     "translation": "Salvando Vidas Felinas"
+  },
+  "SEL_LANG": {
+    "message": "Selecionar idioma",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/layout/ui/language-select/index.tsx"
+      ]
+    ],
+    "translation": "Selecionar idioma",
+    "obsolete": true
   }
 }

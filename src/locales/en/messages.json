@@ -6,7 +6,8 @@
       [
         "src/routes/not-found/index.tsx"
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "notfound.message": {
     "placeholders": {},
@@ -15,7 +16,8 @@
       [
         "src/routes/not-found/index.tsx"
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "nav.home": {
     "placeholders": {},
@@ -24,7 +26,8 @@
       [
         "src/routes/not-found/index.tsx"
       ]
-    ]
+    ],
+    "obsolete": true
   },
   "nav.app": {
     "0": "A",
@@ -175,6 +178,29 @@
     ],
     "translation": "We have been rescuing, caring for, and finding homes since 2017."
   },
+  "gb9_GI": {
+    "translation": "",
+    "message": "Eventos & Adoção",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
+  },
+  "IDIOMA": {
+    "message": "Idioma",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/layout/ui/language-select/index.tsx"
+      ]
+    ],
+    "translation": "Language",
+    "obsolete": true
+  },
   "--yDRB": {
     "message": "Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande.",
     "placeholders": {},
@@ -186,6 +212,29 @@
     ],
     "translation": "Join us in the mission to protect, care for, and find homes for cats in Campo Grande."
   },
+  "lTUidK": {
+    "translation": "",
+    "message": "Lares Temporários",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
+  },
+  "MENU_LANG": {
+    "message": "Menu de idiomas",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/layout/ui/language-select/index.tsx"
+      ]
+    ],
+    "translation": "Language menu",
+    "obsolete": true
+  },
   "aaINyE": {
     "message": "Nossa História",
     "placeholders": {},
@@ -196,6 +245,17 @@
       ]
     ],
     "translation": "Our story"
+  },
+  "yET86w": {
+    "translation": "",
+    "message": "Nossa rede de voluntários oferece lares temporários seguros, socializando os gatinhos para sua futura família.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
   },
   "gJuhRF": {
     "message": "Nosso Dia a Dia",
@@ -228,7 +288,19 @@
         "src/routes/landing/-components/o-abrigo/index.tsx"
       ]
     ],
-    "translation": "We have areas for observing, treating, and recovering cats: spaces for kittens, adults, and seniors, plus a quarantine area for newly rescued cats. We also provide dedicated areas for cats with special needs, such as those living with FIV or FeLV, ensuring a safe, welcoming environment for all."
+    "translation": "We have areas for observing, treating, and recovering cats: spaces for kittens, adults, and seniors, plus a quarantine area for newly rescued cats. We also provide dedicated areas for cats with special needs, such as those living with FIV or FeLV, ensuring a safe, welcoming environment for all.",
+    "obsolete": true
+  },
+  "qpxCWX": {
+    "translation": "",
+    "message": "Promovemos feiras de adoção e eventos educativos para conscientizar sobre a posse responsável.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
   },
   "DlUBwL": {
     "message": "Quem Somos",
@@ -241,6 +313,40 @@
     ],
     "translation": "Who we are"
   },
+  "noDsYv": {
+    "translation": "",
+    "message": "Resgatamos gatos em situação de risco, oferecendo tratamento veterinário completo e muito carinho até a recuperação.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
+  },
+  "qxRLM7": {
+    "translation": "",
+    "message": "Resgate & Cuidado",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/routes/landing/-components/quem-somos/index.tsx"
+      ]
+    ]
+  },
+  "RESGATES": {
+    "message": "resgates realizados",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/layout/ui/resgates/index.tsx"
+      ]
+    ],
+    "translation": "rescues performed",
+    "obsolete": true
+  },
   "j4aPJi": {
     "message": "Salvando Vidas Felinas",
     "placeholders": {},
@@ -251,5 +357,17 @@
       ]
     ],
     "translation": "Saving cats' lives"
+  },
+  "SEL_LANG": {
+    "message": "Selecionar idioma",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/layout/ui/language-select/index.tsx"
+      ]
+    ],
+    "translation": "Language select",
+    "obsolete": true
   }
 }

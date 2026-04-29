@@ -5,6 +5,7 @@ import { Voluntario } from '@/components/layout/ui/voluntario'
 import { SectionContainer } from '@/components/layout/ui/container/section'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 
 type VoluntariosProps = {
   voluntarios: Array<{

@@ -1,0 +1,9 @@
+
+> dev
+> vite dev --port 3000
+
+
+  VITE v7.3.2  ready in 830 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose

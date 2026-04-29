@@ -1,14 +1,17 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { AlertCircle } from 'lucide-react'
 import { i18n } from '@lingui/core'
+import { t } from '@lingui/macro'
 import { resolveLocale } from '@/integrations/lingui/resolve-locale'
 
 export function NotFound() {
   const locale = resolveLocale().locale
 
-  const title = i18n._('notfound.title')
-  const message = i18n._('notfound.message')
-  const home = i18n._('nav.home')
+  const title = i18n._(t`Page not found`)
+  const message = i18n._(
+    t`We couldn't find the page you were looking for. It may have been moved or removed.`,
+  )
+  const home = i18n._(t`Home`)
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-base-200 text-center p-4">
