@@ -1,18 +1,20 @@
-// Lingui CLI configuration for @lingui/cli v6
+// Lingui CLI configuration
+// Phase 1: migrate to official .po workflow (gettext PO files)
 // Locales: pt-BR and en
-// Catalogs located at src/locales/{locale}/messages.json
+// Catalogs are written as PO files under src/locales/{locale}/messages.po
 
 module.exports = {
-  locales: ["pt-BR", "en"],
-  sourceLocale: "pt-BR",
+  locales: ['pt-BR', 'en'],
+  sourceLocale: 'pt-BR',
   catalogs: [
     {
-      path: "src/locales/{locale}/messages",
-      include: ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
+      // keep logical basename 'messages' — formatter determines final extension
+      path: 'src/locales/{locale}/messages',
+      include: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.jsx'],
     },
   ],
-  // Use json format for simple integration with the app (messages.json)
-  // Use the official @lingui/format-json formatter so catalogs are
-  // written as simple messages.json files.
-  format: require('@lingui/format-json')({ lineNumbers: false }),
+  // Use the official PO formatter so catalogs are produced as gettext .po files.
+  // This aligns with the Lingui Vite example (vite-project-react-babel) and
+  // enforces a single-source-of-truth .po workflow (no JSON hybrid catalogs).
+  format: require('@lingui/format-po').formatter({ lineNumbers: false }),
 };

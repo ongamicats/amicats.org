@@ -1,8 +1,8 @@
-import { HeroContent } from './content'
-import { HeroOverlay } from './overlay'
+import { HeroContent } from './content';
+import { HeroOverlay } from './overlay';
 
 export interface HeroRootProps extends React.HTMLAttributes<HTMLDivElement> {
-  backgroundImage?: string
+  backgroundImage?: string;
 }
 
 function HeroRoot({
@@ -14,7 +14,7 @@ function HeroRoot({
 }: HeroRootProps) {
   const bgStyle = backgroundImage
     ? { backgroundImage: `url(${backgroundImage})`, ...style }
-    : style
+    : style;
 
   return (
     <div
@@ -24,10 +24,10 @@ function HeroRoot({
     >
       {children}
     </div>
-  )
+  );
 }
 
 export const Hero = Object.assign(HeroRoot, {
   Content: HeroContent,
   Overlay: HeroOverlay,
-})
+});

@@ -2,6 +2,10 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    "**/*.js",
+    "lingui.config.js",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.js",
     "eslint.config.js",
     "prettier.config.js",
     "vite.config.js"

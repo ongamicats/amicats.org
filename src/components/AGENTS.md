@@ -1,6 +1,6 @@
 # components/
 
-> Inherits all rules from [`../../AGENTS.md`](../../AGENTS.md). Only component-specific additions below.
+> Inherits all rules from [`../AGENTS.md`](../AGENTS.md). Only component-specific additions below.
 
 ## Role
 
@@ -58,12 +58,12 @@ npm run storybook   # http://localhost:6006
 
 ```tsx
 // src/components/layout/ui/status-tag/index.tsx
-import { cn } from '@/components/layout/shared/helpers/class.helper'
-import { Badge } from '@/components/layout/daisy/data-display/badge'
+import { cn } from '@/components/layout/shared/helpers/class.helper';
+import { Badge } from '@/components/layout/daisy/data-display/badge';
 
 export interface StatusTagProps {
-  status: 'disponivel' | 'adotado' | 'apadrinhado'
-  className?: string
+  status: 'disponivel' | 'adotado' | 'apadrinhado';
+  className?: string;
 }
 
 export function StatusTag({ status, className }: StatusTagProps) {
@@ -71,9 +71,9 @@ export function StatusTag({ status, className }: StatusTagProps) {
     disponivel: 'badge-success',
     adotado: 'badge-info',
     apadrinhado: 'badge-warning',
-  }
+  };
 
-  return <Badge className={cn(variants[status], className)}>{status}</Badge>
+  return <Badge className={cn(variants[status], className)}>{status}</Badge>;
 }
 ```
 
@@ -81,27 +81,27 @@ export function StatusTag({ status, className }: StatusTagProps) {
 
 ```tsx
 // src/components/layout/daisy/actions/input/index.tsx
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
 import {
   cn,
   createDaisyClassBuilder,
-} from '@/components/layout/shared/helpers/class.helper'
+} from '@/components/layout/shared/helpers/class.helper';
 import {
   daisyColors,
   daisySizes,
-} from '@/components/layout/shared/constants/class.constants'
+} from '@/components/layout/shared/constants/class.constants';
 
 import type {
   ComponentColor,
   ComponentSize,
-} from '@/components/layout/shared/types/types.constants'
+} from '@/components/layout/shared/types/types.constants';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  variant?: ComponentColor
-  inputSize?: ComponentSize
+  variant?: ComponentColor;
+  inputSize?: ComponentSize;
 }
 
-const buildInputClass = createDaisyClassBuilder('input')
+const buildInputClass = createDaisyClassBuilder('input');
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, variant, inputSize, ...props }, ref) => {
@@ -116,23 +116,23 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
         {...props}
       />
-    )
+    );
   },
-)
-Input.displayName = 'Input'
+);
+Input.displayName = 'Input';
 ```
 
 ### Compound component
 
 ```tsx
 // src/components/layout/daisy/data-display/card/index.tsx
-import { cn } from '@/components/layout/shared/helpers/class.helper'
-import { CardBody } from './body'
-import { CardTitle } from './title'
-import { CardActions } from './actions'
+import { cn } from '@/components/layout/shared/helpers/class.helper';
+import { CardBody } from './body';
+import { CardTitle } from './title';
+import { CardActions } from './actions';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: 'normal' | 'compact' | 'side'
+  variant?: 'normal' | 'compact' | 'side';
 }
 
 export function Card({
@@ -154,22 +154,22 @@ export function Card({
     >
       {children}
     </div>
-  )
+  );
 }
 
 export const CardComponent = Object.assign(Card, {
   Body: CardBody,
   Title: CardTitle,
   Actions: CardActions,
-})
+});
 ```
 
 ### Storybook story (CSF3)
 
 ```tsx
 // src/components/layout/daisy/actions/button/button.stories.tsx
-import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from './index'
+import type { Meta, StoryObj } from '@storybook/react';
+import { Button } from './index';
 
 const meta = {
   title: 'Daisy/Actions/Button',
@@ -186,12 +186,12 @@ const meta = {
       options: ['lg', 'md', 'sm', 'xs'],
     },
   },
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Button>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: { variant: 'primary', children: 'Primary Button' },
-}
+};
 ```

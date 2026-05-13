@@ -1,11 +1,69 @@
 {
-  "nav.home": "Home",
-  "nav.app": "App",
-  "language.select": "Select language",
-  "notfound.title": "Page not found",
-  "notfound.message": "Oops! The page you were looking for could not be found.",
-  "landing.hero.title": "Amicats - Rescue and Adoption",
-  "app.home.title": "App Home",
-  "language.pt": "Português (BR)",
-  "language.en": "English"
+  "messages": {
+    "RESGATES": "rescues performed",
+    "SEL_LANG": "Language select",
+    "MENU_LANG": "Language menu",
+    "HuCIsi": "Rescuer {0}",
+    "IDIOMA": "Language",
+    "Sobre a AmiCat's": "About AmiCat's",
+    "Somos uma organização dedicada ao resgate, cuidado e adoção responsável de gatos em Campo Grande, MS. Transformando vidas, um miado de cada vez.": "We are an organization dedicated to rescuing, caring for, and responsibly adopting cats in Campo Grande, MS. Transforming lives, one meow at a time.",
+    "Institucional": "Institutional",
+    "Quem Somos": "Who We Are",
+    "Quero Adotar": "I want to adopt",
+    "Como Ajudar": "How to help",
+    "Contato": "Contact",
+    "Atendimento por WhatsApp e E-mail": "Support via WhatsApp and Email",
+    "Segunda a Sexta: 14h às 17h": "Monday to Friday: 14:00 - 17:00",
+    "Campo Grande, MS": "Campo Grande, MS",
+    "Seja um parceiro": "Become a partner",
+    "Abrir WhatsApp": "Open WhatsApp",
+    "Privacidade": "Privacy",
+    "Termos": "Terms",
+    "Nossos Parceiros": "Our Partners",
+    "Juntos, fazemos a diferença na vida dos felinos": "Together, we make a difference in the lives of felines",
+    "Seja um Parceiro da AmiCat's": "Be an AmiCat's Partner",
+    "Sua empresa pode fazer parte dessa transformação": "Your company can be part of this transformation",
+    "A parceria com a AmiCat's é uma oportunidade única de associar sua marca a uma causa nobre e fazer a diferença na vida de centenas de felinos em situação de vulnerabilidade.": "Partnering with AmiCat's is a unique opportunity to associate your brand with a noble cause and make a difference in the lives of hundreds of felines in vulnerable situations.",
+    "Como parceiro, sua empresa terá:": "As a partner, your company will have:",
+    "Divulgação da marca em nossas redes sociais e eventos": "Brand promotion on our social networks and events",
+    "Logo destacado em nosso site e materiais de comunicação": "Logo featured on our website and communication materials",
+    "Certificado de Empresa Parceira": "Partner Company Certificate",
+    "Possibilidade de ações conjuntas e eventos": "Possibility of joint actions and events",
+    "A satisfação de contribuir para uma causa importante": "The satisfaction of contributing to an important cause",
+    "Tipos de Parceria": "Types of Partnership",
+    "Empresas que desejam apoiar a ONG através de doações financeiras, produtos ou serviços": "Companies that want to support the NGO through financial donations, products, or services",
+    "Pet shops, clínicas veterinárias e fornecedores que queiram oferecer descontos ou doações": "Pet shops, veterinary clinics and suppliers that want to offer discounts or donations",
+    "Empresas interessadas em realizar eventos beneficentes ou ações conjuntas": "Companies interested in holding fundraising events or joint actions",
+    "Estamos construindo nossa rede de parceiros": "We are building our network of partners",
+    "Sua empresa pode ser a primeira a fazer parte dessa lista!": "Your company could be the first to join this list!",
+    "Para parcerias e mais informações entre em contato:": "For partnerships and more information contact:",
+    "amicatsong@gmail.com": "amicatsong@gmail.com"
+    ,"Olá! Gostaria de mais informações sobre parcerias com a AmiCat's.": "Hello! I would like more information about partnerships with AmiCat's."
+    ,"Gostaria de me tornar um parceiro": "I would like to become a partner"
+    ,"Como ser parceiro": "How to become a partner"
+    ,"Veja como sua empresa pode iniciar uma parceria prática e transparente com a AmiCat's.": "See how your company can start a practical, transparent partnership with AmiCat's."
+    ,"Como ser parceiro da AmiCat's": "How to become an AmiCat's partner"
+    ,"A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito.": "Partnership strengthens our work and gives visibility to your purpose-driven brand."
+    ,"Jornada para se tornar parceiro": "Journey to become a partner"
+    ,"Um caminho simples e direto para começar a colaborar com a AmiCat's.": "A simple, direct path to start collaborating with AmiCat's."
+    ,"Demonstre interesse": "Express interest"
+    ,"Envie um e-mail para iniciarmos a conversa sobre possibilidades e objetivos.": "Send an email to start the conversation about possibilities and goals."
+    ,"Converse com a equipe": "Talk with the team"
+    ,"Teremos uma reunião para entender seus interesses e o formato ideal de apoio.": "We'll have a meeting to understand your interests and the ideal support format."
+    ,"Defina o formato da parceria": "Define the partnership format"
+    ,"Escolha entre doações, descontos, patrocínios ou ações conjuntas, com regras claras.": "Choose between donations, discounts, sponsorships or joint actions, with clear terms."
+    ,"Alinhe divulgação e apoio": "Align promotion and support"
+    ,"Definimos como sua marca será divulgada e como a parceria será comunicada ao público.": "We define how your brand will be promoted and how the partnership will be communicated to the public."
+    ,"Comece a parceria": "Start the partnership"
+    ,"Iniciamos as ações previstas e acompanhamos o impacto e a comunicação.": "We start the planned activities and monitor impact and communication."
+    ,"Tipos de parceria": "Types of partnership"
+    ,"Doações": "Donations"
+    ,"Descontos": "Discounts"
+    ,"Eventos": "Events"
+    ,"Segue um caminho simples para começar:": "Follow a simple path to get started:" 
+    ,"Defina o formato": "Define the format"
+    ,"Doações, descontos, patrocínios ou ações conjuntas.": "Donations, discounts, sponsorships or joint actions."
+    ,"Alinhe divulgação": "Align promotion"
+    ,"Combinamos como a marca será divulgada e mensuramos o impacto.": "We agree how the brand will be promoted and measure impact."
+  }
 }

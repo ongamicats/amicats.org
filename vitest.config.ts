@@ -1,8 +1,8 @@
-import { fileURLToPath } from 'node:url'
-import { defineConfig } from 'vitest/config'
-import tsconfigPaths from 'vite-tsconfig-paths'
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vitest/config';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-const srcDir = fileURLToPath(new URL('./src', import.meta.url))
+const srcDir = fileURLToPath(new URL('./src', import.meta.url));
 
 export default defineConfig({
   test: {
@@ -15,4 +15,4 @@ export default defineConfig({
     deps: { inline: ['@tanstack/react-router'] },
   },
   plugins: [tsconfigPaths()],
-})
+});

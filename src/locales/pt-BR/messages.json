@@ -1,11 +1,69 @@
 {
-  "nav.home": "Início",
-  "nav.app": "App",
-  "language.select": "Selecionar idioma",
-  "notfound.title": "Página não encontrada",
-  "notfound.message": "Ops! A página que você procurou não foi encontrada.",
-  "landing.hero.title": "Amicats - Resgate e Adoção",
-  "app.home.title": "Página inicial do app",
-  "language.pt": "Português (BR)",
-  "language.en": "English"
+  "messages": {
+    "RESGATES": "resgates realizados",
+    "SEL_LANG": "Selecionar idioma",
+    "MENU_LANG": "Menu de idiomas",
+    "HuCIsi": "Socorrista {0}",
+    "IDIOMA": "Idioma",
+    "Sobre a AmiCat's": "Sobre a AmiCat's",
+    "Somos uma organização dedicada ao resgate, cuidado e adoção responsável de gatos em Campo Grande, MS. Transformando vidas, um miado de cada vez.": "Somos uma organização dedicada ao resgate, cuidado e adoção responsável de gatos em Campo Grande, MS. Transformando vidas, um miado de cada vez.",
+    "Institucional": "Institucional",
+    "Quem Somos": "Quem Somos",
+    "Quero Adotar": "Quero Adotar",
+    "Como Ajudar": "Como Ajudar",
+    "Contato": "Contato",
+    "Atendimento por WhatsApp e E-mail": "Atendimento por WhatsApp e E-mail",
+    "Segunda a Sexta: 14h às 17h": "Segunda a Sexta: 14h às 17h",
+    "Campo Grande, MS": "Campo Grande, MS",
+    "Seja um parceiro": "Seja um parceiro",
+    "Abrir WhatsApp": "Abrir WhatsApp",
+    "Privacidade": "Privacidade",
+    "Termos": "Termos",
+    "Nossos Parceiros": "Nossos Parceiros",
+    "Juntos, fazemos a diferença na vida dos felinos": "Juntos, fazemos a diferença na vida dos felinos",
+    "Seja um Parceiro da AmiCat's": "Seja um Parceiro da AmiCat's",
+    "Sua empresa pode fazer parte dessa transformação": "Sua empresa pode fazer parte dessa transformação",
+    "A parceria com a AmiCat's é uma oportunidade única de associar sua marca a uma causa nobre e fazer a diferença na vida de centenas de felinos em situação de vulnerabilidade.": "A parceria com a AmiCat's é uma oportunidade única de associar sua marca a uma causa nobre e fazer a diferença na vida de centenas de felinos em situação de vulnerabilidade.",
+    "Como parceiro, sua empresa terá:": "Como parceiro, sua empresa terá:",
+    "Divulgação da marca em nossas redes sociais e eventos": "Divulgação da marca em nossas redes sociais e eventos",
+    "Logo destacado em nosso site e materiais de comunicação": "Logo destacado em nosso site e materiais de comunicação",
+    "Certificado de Empresa Parceira": "Certificado de Empresa Parceira",
+    "Possibilidade de ações conjuntas e eventos": "Possibilidade de ações conjuntas e eventos",
+    "A satisfação de contribuir para uma causa importante": "A satisfação de contribuir para uma causa importante",
+    "Tipos de Parceria": "Tipos de Parceria",
+    "Empresas que desejam apoiar a ONG através de doações financeiras, produtos ou serviços": "Empresas que desejam apoiar a ONG através de doações financeiras, produtos ou serviços",
+    "Pet shops, clínicas veterinárias e fornecedores que queiram oferecer descontos ou doações": "Pet shops, clínicas veterinárias e fornecedores que queiram oferecer descontos ou doações",
+    "Empresas interessadas em realizar eventos beneficentes ou ações conjuntas": "Empresas interessadas em realizar eventos beneficentes ou ações conjuntas",
+    "Estamos construindo nossa rede de parceiros": "Estamos construindo nossa rede de parceiros",
+    "Sua empresa pode ser a primeira a fazer parte dessa lista!": "Sua empresa pode ser a primeira a fazer parte dessa lista!",
+    "Para parcerias e mais informações entre em contato:": "Para parcerias e mais informações entre em contato:",
+    "amicatsong@gmail.com": "amicatsong@gmail.com"
+    ,"Olá! Gostaria de mais informações sobre parcerias com a AmiCat's.": "Olá! Gostaria de mais informações sobre parcerias com a AmiCat's."
+    ,"Gostaria de me tornar um parceiro": "Gostaria de me tornar um parceiro"
+    ,"Como ser parceiro": "Como ser parceiro"
+    ,"Veja como sua empresa pode iniciar uma parceria prática e transparente com a AmiCat's.": "Veja como sua empresa pode iniciar uma parceria prática e transparente com a AmiCat's."
+    ,"Como ser parceiro da AmiCat's": "Como ser parceiro da AmiCat's"
+    ,"A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito.": "A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito."
+    ,"Jornada para se tornar parceiro": "Jornada para se tornar parceiro"
+    ,"Um caminho simples e direto para começar a colaborar com a AmiCat's.": "Um caminho simples e direto para começar a colaborar com a AmiCat's."
+    ,"Demonstre interesse": "Demonstre interesse"
+    ,"Envie um e-mail para iniciarmos a conversa sobre possibilidades e objetivos.": "Envie um e-mail para iniciarmos a conversa sobre possibilidades e objetivos."
+    ,"Converse com a equipe": "Converse com a equipe"
+    ,"Teremos uma reunião para entender seus interesses e o formato ideal de apoio.": "Teremos uma reunião para entender seus interesses e o formato ideal de apoio."
+    ,"Defina o formato da parceria": "Defina o formato da parceria"
+    ,"Escolha entre doações, descontos, patrocínios ou ações conjuntas, com regras claras.": "Escolha entre doações, descontos, patrocínios ou ações conjuntas, com regras claras."
+    ,"Alinhe divulgação e apoio": "Alinhe divulgação e apoio"
+    ,"Definimos como sua marca será divulgada e como a parceria será comunicada ao público.": "Definimos como sua marca será divulgada e como a parceria será comunicada ao público."
+    ,"Comece a parceria": "Comece a parceria"
+    ,"Iniciamos as ações previstas e acompanhamos o impacto e a comunicação.": "Iniciamos as ações previstas e acompanhamos o impacto e a comunicação."
+    ,"Tipos de parceria": "Tipos de parceria"
+    ,"Doações": "Doações"
+    ,"Descontos": "Descontos"
+    ,"Eventos": "Eventos"
+    ,"Segue um caminho simples para começar:": "Segue um caminho simples para começar:"
+    ,"Defina o formato": "Defina o formato"
+    ,"Doações, descontos, patrocínios ou ações conjuntas.": "Doações, descontos, patrocínios ou ações conjuntas."
+    ,"Alinhe divulgação": "Alinhe divulgação"
+    ,"Combinamos como a marca será divulgada e mensuramos o impacto.": "Combinamos como a marca será divulgada e mensuramos o impacto."
+  }
 }

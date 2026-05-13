@@ -1,15 +1,16 @@
-import { ChevronLeft } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react';
+import { useLingui } from '@lingui/react/macro';
 import type {
   ComponentColor,
   ComponentShape,
-} from '@/components/layout/shared/types/types.constants'
-import { cn } from '@/components/layout/shared/helpers/class.helper'
+} from '@/components/layout/shared/types/types.constants';
+import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 export interface AnteriorButtonProps {
-  shape?: ComponentShape
-  color?: ComponentColor
-  onClick?: () => void
-  className?: string
+  shape?: ComponentShape;
+  color?: ComponentColor;
+  onClick?: () => void;
+  className?: string;
 }
 
 export function AnteriorButton({
@@ -18,11 +19,13 @@ export function AnteriorButton({
   onClick,
   className,
 }: AnteriorButtonProps) {
+  const { t } = useLingui();
+
   return (
     <button
       type="button"
       onClick={onClick}
-      aria-label="Anterior"
+      aria-label={t`Anterior`}
       className={cn(
         'btn',
         `btn-${color}`,
@@ -34,5 +37,5 @@ export function AnteriorButton({
     >
       <ChevronLeft size={20} />
     </button>
-  )
+  );
 }

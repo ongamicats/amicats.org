@@ -1,4 +1,4 @@
-import { cn } from '@/components/layout/shared/helpers/class.helper'
+import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 export interface FigureProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -7,5 +7,5 @@ export function Figure({ children, className, ...props }: FigureProps) {
     <figure className={cn(className)} {...props}>
       {children}
     </figure>
-  )
+  );
 }

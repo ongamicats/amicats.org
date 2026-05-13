@@ -1,15 +1,16 @@
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react';
+import { useLingui } from '@lingui/react/macro';
 import type {
   ComponentColor,
   ComponentShape,
-} from '@/components/layout/shared/types/types.constants'
-import { cn } from '@/components/layout/shared/helpers/class.helper'
+} from '@/components/layout/shared/types/types.constants';
+import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 export interface ProximoButtonProps {
-  shape?: ComponentShape
-  color?: ComponentColor
-  onClick?: () => void
-  className?: string
+  shape?: ComponentShape;
+  color?: ComponentColor;
+  onClick?: () => void;
+  className?: string;
 }
 
 export function ProximoButton({
@@ -18,11 +19,12 @@ export function ProximoButton({
   onClick,
   className,
 }: ProximoButtonProps) {
+  const { t } = useLingui();
   return (
     <button
       type="button"
       onClick={onClick}
-      aria-label="Próximo"
+      aria-label={t`Próximo`}
       className={cn(
         'btn',
         `btn-${color}`,
@@ -34,5 +36,5 @@ export function ProximoButton({
     >
       <ChevronRight size={20} />
     </button>
-  )
+  );
 }

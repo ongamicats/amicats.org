@@ -1,5 +1,7 @@
 # amicats.org — Agent Context
 
+> Inherits all rules from [`../AGENTS.md`](../AGENTS.md).
+
 > Module-level `AGENTS.md` files inherit from this root.
 > They contain **only additions** — never duplicate rules stated here.
 
@@ -58,7 +60,7 @@ If tests exist: `npm run check && npm test && npm run build`
 
 ## Key conventions
 
-- **Formatter**: Prettier (`semi: false`, `singleQuote: true`, `trailingComma: "all"`)
+- **Formatter**: Prettier (`semi: true`, `singleQuote: true`, `trailingComma: "all"`)
 - **Linter**: ESLint with `@tanstack/eslint-config` (flat config)
 - **TypeScript**: strict mode, `noUnusedLocals`, `noUnusedParameters`
 - **Path alias**: `@/` → `./src/`

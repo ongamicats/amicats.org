@@ -73,7 +73,7 @@ amicats.org/
 ├── vite.config.ts               # Vite + TanStack Start + Nitro + Tailwind
 ├── tsconfig.json                # TypeScript strict
 ├── eslint.config.js             # @tanstack/eslint-config
-├── prettier.config.js           # semi: false, singleQuote: true
+├── prettier.config.js           # semi: true, singleQuote: true
 └── package.json
 ```
 

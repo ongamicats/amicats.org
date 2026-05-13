@@ -1,0 +1,461 @@
+vite v7.3.2 building client environment for production...
+transforming...
+
+[@tanstack/devtools-vite] Removed devtools code from: /src/routes/__root.tsx
+
+/*! 🌼 daisyUI 5.5.14 */
+Found 1 warning while optimizing generated CSS:
+
+[2m│ }[22m
+[2m│ @layer base {[22m
+[2m│[22m   @property --radialprogress {
+[2m┆[22m            [33m[2m^--[22m Unknown at rule: @property[39m
+[2m┆[22m
+[2m│     syntax: "<percentage>";[22m
+[2m│     inherits: true;[22m
+
+✓ 1943 modules transformed.
+rendering chunks...
+computing gzip size...
+.output/public/assets/gu-SbvrH0uZ.svg                   4.19 kB │ gzip:   1.76 kB
+.output/public/assets/gu-Di1JYREk.svg                   4.33 kB │ gzip:   1.84 kB
+.output/public/assets/sz-D39eIL5d.svg                   4.63 kB │ gzip:   1.92 kB
+.output/public/assets/sz-qxMwa2gs.svg                   4.66 kB │ gzip:   1.92 kB
+.output/public/assets/kg-B0FsxZiL.svg                   4.74 kB │ gzip:   1.92 kB
+.output/public/assets/kg-CjfitMyT.svg                   4.79 kB │ gzip:   1.95 kB
+.output/public/assets/gq-Cag8QTk2.svg                   4.94 kB │ gzip:   2.02 kB
+.output/public/assets/gq-CPnMO1hT.svg                   5.07 kB │ gzip:   2.12 kB
+.output/public/assets/zm-D8B-0kdx.svg                   5.31 kB │ gzip:   2.25 kB
+.output/public/assets/nf-DGrQb42O.svg                   5.37 kB │ gzip:   2.37 kB
+.output/public/assets/zm-BmsW91ne.svg                   5.42 kB │ gzip:   2.27 kB
+.output/public/assets/cy-bZuP8hmf.svg                   5.47 kB │ gzip:   2.37 kB
+.output/public/assets/cy-DJKnEFYW.svg                   5.51 kB │ gzip:   2.42 kB
+.output/public/assets/nf-Dl00mlk2.svg                   5.56 kB │ gzip:   2.46 kB
+.output/public/assets/ki-p_fAQGbS.svg                   5.63 kB │ gzip:   1.64 kB
+.output/public/assets/ki-fuIMkEYQ.svg                   5.81 kB │ gzip:   1.70 kB
+.output/public/assets/ms-DxciGbUu.svg                   5.83 kB │ gzip:   2.55 kB
+.output/public/assets/ms-B-w7hFKu.svg                   5.91 kB │ gzip:   2.50 kB
+.output/public/assets/zw-CSuuaw9K.svg                   6.17 kB │ gzip:   2.46 kB
+.output/public/assets/zw-U0m7oJ5e.svg                   6.19 kB │ gzip:   2.49 kB
+.output/public/assets/br-Dr5rMAMb.svg                   6.75 kB │ gzip:   2.21 kB
+.output/public/assets/tc-CJHJmJj1.svg                   7.09 kB │ gzip:   2.99 kB
+.output/public/assets/kz-CwKXYZ8s.svg                   7.09 kB │ gzip:   2.92 kB
+.output/public/assets/kz-Dkyx6q-p.svg                   7.10 kB │ gzip:   2.91 kB
+.output/public/assets/tc-dtelpZmc.svg                   7.12 kB │ gzip:   2.99 kB
+.output/public/assets/kh-BeWfuE30.svg                   7.12 kB │ gzip:   2.72 kB
+.output/public/assets/kh-BBvObpUS.svg                   7.12 kB │ gzip:   2.74 kB
+.output/public/assets/br-Cu5YU29T.svg                   7.14 kB │ gzip:   2.41 kB
+.output/public/assets/li-CHdhvNcr.svg                   7.32 kB │ gzip:   2.96 kB
+.output/public/assets/li-CMlf0YU8.svg                   7.34 kB │ gzip:   2.97 kB
+.output/public/assets/xk-Cdz2uTvR.svg                   7.74 kB │ gzip:   3.05 kB
+.output/public/assets/pt-DZ2ADgIR.svg                   8.00 kB │ gzip:   3.25 kB
+.output/public/assets/xk-Bj15g7cp.svg                   8.27 kB │ gzip:   3.26 kB
+.output/public/assets/pt-BTevY6N2.svg                   8.37 kB │ gzip:   3.27 kB
+.output/public/assets/vi-BSdsyIxY.svg                   8.45 kB │ gzip:   3.55 kB
+.output/public/assets/vi-BC_zcciE.svg                   8.52 kB │ gzip:   3.59 kB
+.output/public/assets/eg-YC70hswZ.svg                   8.73 kB │ gzip:   3.55 kB
+.output/public/assets/eg-DwOkwyQ0.svg                   8.74 kB │ gzip:   3.57 kB
+.output/public/assets/aw-W0PWLK5p.svg                   9.00 kB │ gzip:   1.67 kB
+.output/public/assets/gb-wls-CK0XlKT-.svg               9.01 kB │ gzip:   4.03 kB
+.output/public/assets/gb-wls-Bxz9hxvX.svg               9.10 kB │ gzip:   4.14 kB
+.output/public/assets/im--VPIqfkF.svg                   9.13 kB │ gzip:   3.51 kB
+.output/public/assets/im-Dd9p-0-T.svg                   9.70 kB │ gzip:   3.81 kB
+.output/public/assets/sa-DnlyVVKx.svg                   9.85 kB │ gzip:   4.19 kB
+.output/public/assets/sa-Dh79zbT9.svg                   9.97 kB │ gzip:   4.25 kB
+.output/public/assets/vg-ClZ-0KpG.svg                  10.00 kB │ gzip:   4.14 kB
+.output/public/assets/vg-C7xY6pic.svg                  10.02 kB │ gzip:   4.14 kB
+.output/public/assets/aw-CLCX8uk5.svg                  10.36 kB │ gzip:   1.79 kB
+.output/public/assets/lk-DUkgV9Tq.svg                  10.72 kB │ gzip:   4.46 kB
+.output/public/assets/lk-DSQoDxn_.svg                  10.74 kB │ gzip:   4.46 kB
+.output/public/assets/md-DRlxvNwm.svg                  11.13 kB │ gzip:   2.84 kB
+.output/public/assets/md-DTi94M3M.svg                  11.24 kB │ gzip:   2.71 kB
+.output/public/assets/sx-RKKs0ph6.svg                  12.16 kB │ gzip:   4.12 kB
+.output/public/assets/sx-nDhIaDNb.svg                  12.21 kB │ gzip:   4.30 kB
+.output/public/assets/mt-YDa8zgzO.svg                  12.71 kB │ gzip:   5.37 kB
+.output/public/assets/ht-DIMg4gti.svg                  13.30 kB │ gzip:   4.75 kB
+.output/public/assets/bn-B6T3O78g.svg                  13.34 kB │ gzip:   5.64 kB
+.output/public/assets/pn-BPAlH32D.svg                  13.44 kB │ gzip:   4.93 kB
+.output/public/assets/ht-pweRl6ZP.svg                  13.46 kB │ gzip:   4.82 kB
+.output/public/assets/bn-CPQcA8Ol.svg                  13.47 kB │ gzip:   5.68 kB
+.output/public/assets/pn-DgxdtieE.svg                  13.47 kB │ gzip:   4.98 kB
+.output/public/assets/eac-CwGQsyAM.svg                 13.63 kB │ gzip:   4.81 kB
+.output/public/assets/eac-h4QKADRE.svg                 13.64 kB │ gzip:   4.81 kB
+.output/public/assets/mt-YqzKx9xl.svg                  13.93 kB │ gzip:   5.86 kB
+.output/public/assets/ir-Q03Mij62.svg                  15.30 kB │ gzip:   2.28 kB
+.output/public/assets/ir-cCIgaNf6.svg                  15.40 kB │ gzip:   2.24 kB
+.output/public/assets/sm-BKrUHzrq.svg                  15.54 kB │ gzip:   5.35 kB
+.output/public/assets/sm-DGBIRFB_.svg                  15.68 kB │ gzip:   5.27 kB
+.output/public/assets/dm-Cbhezfe1.svg                  15.79 kB │ gzip:   3.08 kB
+.output/public/assets/py-mNzh0mZC.svg                  16.18 kB │ gzip:   5.77 kB
+.output/public/assets/dm-DPPHwW2M.svg                  16.27 kB │ gzip:   3.23 kB
+.output/public/assets/py-BKi5dxWt.svg                  16.36 kB │ gzip:   5.84 kB
+.output/public/assets/ni-CcFCSQxm.svg                  17.25 kB │ gzip:   5.36 kB
+.output/public/assets/ni-BX2WCaNt.svg                  17.29 kB │ gzip:   5.43 kB
+.output/public/assets/un-Bqg4Cbbh.svg                  18.70 kB │ gzip:   7.44 kB
+.output/public/assets/af-Bc2fqp73.svg                  18.98 kB │ gzip:   7.68 kB
+.output/public/assets/un-DabL4p35.svg                  19.00 kB │ gzip:   7.58 kB
+.output/public/assets/af-C77Rf6cE.svg                  19.19 kB │ gzip:   7.76 kB
+.output/public/assets/om-nN8zP2Bu.svg                  22.21 kB │ gzip:   4.38 kB
+.output/public/assets/om-DcqxRdQL.svg                  22.22 kB │ gzip:   4.37 kB
+.output/public/assets/gb-nir-D4gikpNq.svg              22.28 kB │ gzip:   5.97 kB
+.output/public/assets/bm-DvNWWcPM.svg                  22.39 kB │ gzip:   7.17 kB
+.output/public/assets/bm-BeYgB2z9.svg                  22.46 kB │ gzip:   7.18 kB
+.output/public/assets/mp-CrOApEqW.svg                  22.57 kB │ gzip:   6.98 kB
+.output/public/assets/io-BImhNBcd.svg                  22.72 kB │ gzip:   4.11 kB
+.output/public/assets/dg-DqkWLbnk.svg                  22.72 kB │ gzip:   4.11 kB
+.output/public/assets/mp-CuaQmCLf.svg                  22.80 kB │ gzip:   7.02 kB
+.output/public/assets/io-13HOfeJD.svg                  23.02 kB │ gzip:   4.11 kB
+.output/public/assets/dg-CJPJrjiZ.svg                  23.02 kB │ gzip:   4.11 kB
+.output/public/assets/ky-BqaZHuhf.svg                  23.37 kB │ gzip:   8.57 kB
+.output/public/assets/ky-Dpsu1myA.svg                  23.39 kB │ gzip:   8.56 kB
+.output/public/assets/gb-nir-vEp1ZXy6.svg              23.92 kB │ gzip:   5.49 kB
+.output/public/assets/fj-DEAVMg38.svg                  24.10 kB │ gzip:   9.09 kB
+.output/public/assets/fj-u3dAPoew.svg                  24.14 kB │ gzip:   9.13 kB
+.output/public/assets/arab-C4CYPgyC.svg                24.43 kB │ gzip:   8.53 kB
+.output/public/assets/bt-SxWnbWW0.svg                  24.50 kB │ gzip:   9.95 kB
+.output/public/assets/arab-C-KgnQEz.svg                24.59 kB │ gzip:   8.58 kB
+.output/public/assets/bt-BTo4qm10.svg                  24.78 kB │ gzip:  10.09 kB
+.output/public/assets/es-ga-D9xG2hYr.svg               28.21 kB │ gzip:   6.26 kB
+.output/public/assets/sh-ta-BFo5zkKU.svg               28.29 kB │ gzip:  10.82 kB
+.output/public/assets/es-ga-DXhVZ333.svg               28.34 kB │ gzip:   6.26 kB
+.output/public/assets/fk-B-RvQ4Hz.svg                  28.49 kB │ gzip:   8.83 kB
+.output/public/assets/va-s7kyhqIM.svg                  28.66 kB │ gzip:   9.67 kB
+.output/public/assets/va-B9-hqIE-.svg                  28.72 kB │ gzip:   9.68 kB
+.output/public/assets/fk-nuUF_Ak3.svg                  28.74 kB │ gzip:   9.20 kB
+.output/public/assets/sh-ta-CPJublpi.svg               28.78 kB │ gzip:  11.03 kB
+.output/public/assets/ec-CaVOFQ3t.svg                  28.78 kB │ gzip:   6.83 kB
+.output/public/assets/ad-Blhdm5jl.svg                  29.14 kB │ gzip:  10.60 kB
+.output/public/assets/ec-cwfBJlvF.svg                  29.35 kB │ gzip:   6.72 kB
+.output/public/assets/as-Dekqy8Of.svg                  30.45 kB │ gzip:  11.46 kB
+.output/public/assets/ad-B18i8NGa.svg                  30.51 kB │ gzip:  11.15 kB
+.output/public/assets/hr-fzLfaANM.svg                  30.73 kB │ gzip:  13.14 kB
+.output/public/assets/as-BTEVCXG-.svg                  30.98 kB │ gzip:  11.62 kB
+.output/public/assets/hr-BpiVVBoV.svg                  31.28 kB │ gzip:  13.31 kB
+.output/public/assets/gt-CJo5DI-7.svg                  31.35 kB │ gzip:  11.30 kB
+.output/public/assets/gt-BLpn5qMn.svg                  31.35 kB │ gzip:  11.30 kB
+.output/public/assets/gs-DiiNa0F5.svg                  31.50 kB │ gzip:  11.41 kB
+.output/public/assets/gs-DOgYbHsY.svg                  31.92 kB │ gzip:  11.09 kB
+.output/public/assets/je-DyWbhIiC.svg                  34.19 kB │ gzip:   9.81 kB
+.output/public/assets/sh-hl-CgxUDvtv.svg               34.78 kB │ gzip:  12.58 kB
+.output/public/assets/je-vXe0Dr49.svg                  35.03 kB │ gzip:  10.03 kB
+.output/public/assets/sh-hl-CqtQPzWZ.svg               35.43 kB │ gzip:  12.88 kB
+.output/public/assets/tm-DGBJvQay.svg                  38.22 kB │ gzip:  11.99 kB
+.output/public/assets/tm-C_WSgUcv.svg                  38.35 kB │ gzip:  12.09 kB
+.output/public/assets/do-B86d445t.svg                  40.35 kB │ gzip:  14.40 kB
+.output/public/assets/do-DeRnbj4d.svg                  41.34 kB │ gzip:  14.76 kB
+.output/public/assets/bz-BCKHR4_q.svg                  42.51 kB │ gzip:  15.61 kB
+.output/public/assets/bz-CoBdB-p8.svg                  42.68 kB │ gzip:  15.60 kB
+.output/public/assets/me-Cv4Gwqah.svg                  56.37 kB │ gzip:  21.28 kB
+.output/public/assets/me-CfGorN3b.svg                  56.95 kB │ gzip:  21.57 kB
+.output/public/assets/sv-CJIHhYwF.svg                  77.27 kB │ gzip:  21.83 kB
+.output/public/assets/sv-RZ39q5hO.svg                  77.72 kB │ gzip:  22.08 kB
+.output/public/assets/mx-CvCwYHGF.svg                  80.21 kB │ gzip:  27.77 kB
+.output/public/assets/es-d5m8M5h8.svg                  80.96 kB │ gzip:  14.80 kB
+.output/public/assets/es-BuSGTZm_.svg                  82.15 kB │ gzip:  15.47 kB
+.output/public/assets/mx-Cc8Ccfe8.svg                  84.75 kB │ gzip:  29.50 kB
+.output/public/assets/amicats-logo-full-DA7MXGGb.png   92.99 kB
+.output/public/assets/bo-CcUiMqkJ.svg                 102.88 kB │ gzip:  24.83 kB
+.output/public/assets/bo-Dry0C6UA.svg                 104.73 kB │ gzip:  25.14 kB
+.output/public/assets/sh-ac-D-aE2xRW.svg              140.52 kB │ gzip:  47.08 kB
+.output/public/assets/sh-ac-FjwY7RYr.svg              143.37 kB │ gzip:  47.70 kB
+.output/public/assets/amicats-name-logo-DFQLa-K_.png  167.20 kB
+.output/public/assets/rs-CnTO3ehk.svg                 181.48 kB │ gzip:  49.93 kB
+.output/public/assets/rs-BfwKwXtn.svg                 181.63 kB │ gzip:  50.19 kB
+.output/public/assets/styles-CQj2xlKB.css             509.64 kB │ gzip: 100.41 kB
+.output/public/assets/index-zRh33zZ_.js                 0.05 kB │ gzip:   0.07 kB
+.output/public/assets/index-9DUooTvs.js                 0.05 kB │ gzip:   0.07 kB
+.output/public/assets/index-Dm2Jw4vV.js                 0.05 kB │ gzip:   0.07 kB
+.output/public/assets/index-mluPTJJp.js                 0.20 kB │ gzip:   0.18 kB
+.output/public/assets/not-found-LTiccpZz.js             0.20 kB │ gzip:   0.18 kB
+.output/public/assets/app-CeHeDdCi.js                   0.20 kB │ gzip:   0.18 kB
+.output/public/assets/app-CpSLPokW.js                   0.20 kB │ gzip:   0.18 kB
+.output/public/assets/index-DkCgDoiV.js                 0.23 kB │ gzip:   0.20 kB
+.output/public/assets/_locale--z_mnI4o.js               6.23 kB │ gzip:   2.50 kB
+.output/public/assets/messages-Cx-92fSX.js              6.81 kB │ gzip:   2.91 kB
+.output/public/assets/messages-DdDi4pbs.js              7.04 kB │ gzip:   3.39 kB
+.output/public/assets/index-Bsh6gYZ1.js                82.11 kB │ gzip:  26.09 kB
+.output/public/assets/index-_a1CFcPo.js               357.04 kB │ gzip: 113.83 kB
+✓ built in 4.52s
+vite v7.3.2 building ssr environment for production...
+transforming...
+
+[@tanstack/devtools-vite] Removed devtools code from: /src/routes/__root.tsx
+
+Found 1 warning while optimizing generated CSS:
+
+[2m│ }[22m
+[2m│ @layer base {[22m
+[2m│[22m   @property --radialprogress {
+[2m┆[22m            [33m[2m^--[22m Unknown at rule: @property[39m
+[2m┆[22m
+[2m│     syntax: "<percentage>";[22m
+[2m│     inherits: true;[22m
+
+"createRequestHandler", "defineHandlerCallback", "transformPipeableStreamWithRouter" and "transformReadableStreamWithRouter" are imported from external module "@tanstack/router-core/ssr/server" but never used in "node_modules/@tanstack/start-server-core/dist/esm/index.js".
+"RawStream" is imported from external module "@tanstack/router-core" but never used in "node_modules/@tanstack/start-client-core/dist/esm/index.js".
+"hydrate" and "json" are imported from external module "@tanstack/router-core/ssr/client" but never used in "node_modules/@tanstack/start-client-core/dist/esm/index.js".
+✓ 109 modules transformed.
+rendering chunks...
+node_modules/.nitro/vite/services/ssr/assets/gu-SbvrH0uZ.svg                                   4.19 kB
+node_modules/.nitro/vite/services/ssr/assets/gu-Di1JYREk.svg                                   4.33 kB
+node_modules/.nitro/vite/services/ssr/assets/sz-D39eIL5d.svg                                   4.63 kB
+node_modules/.nitro/vite/services/ssr/assets/sz-qxMwa2gs.svg                                   4.66 kB
+node_modules/.nitro/vite/services/ssr/assets/kg-B0FsxZiL.svg                                   4.74 kB
+node_modules/.nitro/vite/services/ssr/assets/kg-CjfitMyT.svg                                   4.79 kB
+node_modules/.nitro/vite/services/ssr/assets/gq-Cag8QTk2.svg                                   4.94 kB
+node_modules/.nitro/vite/services/ssr/assets/gq-CPnMO1hT.svg                                   5.07 kB
+node_modules/.nitro/vite/services/ssr/assets/zm-D8B-0kdx.svg                                   5.31 kB
+node_modules/.nitro/vite/services/ssr/assets/nf-DGrQb42O.svg                                   5.37 kB
+node_modules/.nitro/vite/services/ssr/assets/zm-BmsW91ne.svg                                   5.42 kB
+node_modules/.nitro/vite/services/ssr/assets/cy-bZuP8hmf.svg                                   5.47 kB
+node_modules/.nitro/vite/services/ssr/assets/cy-DJKnEFYW.svg                                   5.51 kB
+node_modules/.nitro/vite/services/ssr/assets/nf-Dl00mlk2.svg                                   5.56 kB
+node_modules/.nitro/vite/services/ssr/assets/ki-p_fAQGbS.svg                                   5.63 kB
+node_modules/.nitro/vite/services/ssr/assets/ki-fuIMkEYQ.svg                                   5.81 kB
+node_modules/.nitro/vite/services/ssr/assets/ms-DxciGbUu.svg                                   5.83 kB
+node_modules/.nitro/vite/services/ssr/assets/ms-B-w7hFKu.svg                                   5.91 kB
+node_modules/.nitro/vite/services/ssr/assets/zw-CSuuaw9K.svg                                   6.17 kB
+node_modules/.nitro/vite/services/ssr/assets/zw-U0m7oJ5e.svg                                   6.19 kB
+node_modules/.nitro/vite/services/ssr/assets/br-Dr5rMAMb.svg                                   6.75 kB
+node_modules/.nitro/vite/services/ssr/assets/tc-CJHJmJj1.svg                                   7.09 kB
+node_modules/.nitro/vite/services/ssr/assets/kz-CwKXYZ8s.svg                                   7.09 kB
+node_modules/.nitro/vite/services/ssr/assets/kz-Dkyx6q-p.svg                                   7.10 kB
+node_modules/.nitro/vite/services/ssr/assets/tc-dtelpZmc.svg                                   7.12 kB
+node_modules/.nitro/vite/services/ssr/assets/kh-BeWfuE30.svg                                   7.12 kB
+node_modules/.nitro/vite/services/ssr/assets/kh-BBvObpUS.svg                                   7.12 kB
+node_modules/.nitro/vite/services/ssr/assets/br-Cu5YU29T.svg                                   7.14 kB
+node_modules/.nitro/vite/services/ssr/assets/li-CHdhvNcr.svg                                   7.32 kB
+node_modules/.nitro/vite/services/ssr/assets/li-CMlf0YU8.svg                                   7.34 kB
+node_modules/.nitro/vite/services/ssr/assets/xk-Cdz2uTvR.svg                                   7.74 kB
+node_modules/.nitro/vite/services/ssr/assets/pt-DZ2ADgIR.svg                                   8.00 kB
+node_modules/.nitro/vite/services/ssr/assets/xk-Bj15g7cp.svg                                   8.27 kB
+node_modules/.nitro/vite/services/ssr/assets/pt-BTevY6N2.svg                                   8.37 kB
+node_modules/.nitro/vite/services/ssr/assets/vi-BSdsyIxY.svg                                   8.45 kB
+node_modules/.nitro/vite/services/ssr/assets/vi-BC_zcciE.svg                                   8.52 kB
+node_modules/.nitro/vite/services/ssr/assets/eg-YC70hswZ.svg                                   8.73 kB
+node_modules/.nitro/vite/services/ssr/assets/eg-DwOkwyQ0.svg                                   8.74 kB
+node_modules/.nitro/vite/services/ssr/assets/aw-W0PWLK5p.svg                                   9.00 kB
+node_modules/.nitro/vite/services/ssr/assets/gb-wls-CK0XlKT-.svg                               9.01 kB
+node_modules/.nitro/vite/services/ssr/assets/gb-wls-Bxz9hxvX.svg                               9.10 kB
+node_modules/.nitro/vite/services/ssr/assets/im--VPIqfkF.svg                                   9.13 kB
+node_modules/.nitro/vite/services/ssr/assets/im-Dd9p-0-T.svg                                   9.70 kB
+node_modules/.nitro/vite/services/ssr/assets/sa-DnlyVVKx.svg                                   9.85 kB
+node_modules/.nitro/vite/services/ssr/assets/sa-Dh79zbT9.svg                                   9.97 kB
+node_modules/.nitro/vite/services/ssr/assets/vg-ClZ-0KpG.svg                                  10.00 kB
+node_modules/.nitro/vite/services/ssr/assets/vg-C7xY6pic.svg                                  10.02 kB
+node_modules/.nitro/vite/services/ssr/assets/aw-CLCX8uk5.svg                                  10.36 kB
+node_modules/.nitro/vite/services/ssr/assets/lk-DUkgV9Tq.svg                                  10.72 kB
+node_modules/.nitro/vite/services/ssr/assets/lk-DSQoDxn_.svg                                  10.74 kB
+node_modules/.nitro/vite/services/ssr/assets/md-DRlxvNwm.svg                                  11.13 kB
+node_modules/.nitro/vite/services/ssr/assets/md-DTi94M3M.svg                                  11.24 kB
+node_modules/.nitro/vite/services/ssr/assets/sx-RKKs0ph6.svg                                  12.16 kB
+node_modules/.nitro/vite/services/ssr/assets/sx-nDhIaDNb.svg                                  12.21 kB
+node_modules/.nitro/vite/services/ssr/assets/mt-YDa8zgzO.svg                                  12.71 kB
+node_modules/.nitro/vite/services/ssr/assets/ht-DIMg4gti.svg                                  13.30 kB
+node_modules/.nitro/vite/services/ssr/assets/bn-B6T3O78g.svg                                  13.34 kB
+node_modules/.nitro/vite/services/ssr/assets/pn-BPAlH32D.svg                                  13.44 kB
+node_modules/.nitro/vite/services/ssr/assets/ht-pweRl6ZP.svg                                  13.46 kB
+node_modules/.nitro/vite/services/ssr/assets/bn-CPQcA8Ol.svg                                  13.47 kB
+node_modules/.nitro/vite/services/ssr/assets/pn-DgxdtieE.svg                                  13.47 kB
+node_modules/.nitro/vite/services/ssr/assets/eac-CwGQsyAM.svg                                 13.63 kB
+node_modules/.nitro/vite/services/ssr/assets/eac-h4QKADRE.svg                                 13.64 kB
+node_modules/.nitro/vite/services/ssr/assets/mt-YqzKx9xl.svg                                  13.93 kB
+node_modules/.nitro/vite/services/ssr/assets/ir-Q03Mij62.svg                                  15.30 kB
+node_modules/.nitro/vite/services/ssr/assets/ir-cCIgaNf6.svg                                  15.40 kB
+node_modules/.nitro/vite/services/ssr/assets/sm-BKrUHzrq.svg                                  15.54 kB
+node_modules/.nitro/vite/services/ssr/assets/sm-DGBIRFB_.svg                                  15.68 kB
+node_modules/.nitro/vite/services/ssr/assets/dm-Cbhezfe1.svg                                  15.79 kB
+node_modules/.nitro/vite/services/ssr/assets/py-mNzh0mZC.svg                                  16.18 kB
+node_modules/.nitro/vite/services/ssr/assets/dm-DPPHwW2M.svg                                  16.27 kB
+node_modules/.nitro/vite/services/ssr/assets/py-BKi5dxWt.svg                                  16.36 kB
+node_modules/.nitro/vite/services/ssr/assets/ni-CcFCSQxm.svg                                  17.25 kB
+node_modules/.nitro/vite/services/ssr/assets/ni-BX2WCaNt.svg                                  17.29 kB
+node_modules/.nitro/vite/services/ssr/assets/un-Bqg4Cbbh.svg                                  18.70 kB
+node_modules/.nitro/vite/services/ssr/assets/af-Bc2fqp73.svg                                  18.98 kB
+node_modules/.nitro/vite/services/ssr/assets/un-DabL4p35.svg                                  19.00 kB
+node_modules/.nitro/vite/services/ssr/assets/af-C77Rf6cE.svg                                  19.19 kB
+node_modules/.nitro/vite/services/ssr/assets/om-nN8zP2Bu.svg                                  22.21 kB
+node_modules/.nitro/vite/services/ssr/assets/om-DcqxRdQL.svg                                  22.22 kB
+node_modules/.nitro/vite/services/ssr/assets/gb-nir-D4gikpNq.svg                              22.28 kB
+node_modules/.nitro/vite/services/ssr/assets/bm-DvNWWcPM.svg                                  22.39 kB
+node_modules/.nitro/vite/services/ssr/assets/bm-BeYgB2z9.svg                                  22.46 kB
+node_modules/.nitro/vite/services/ssr/assets/mp-CrOApEqW.svg                                  22.57 kB
+node_modules/.nitro/vite/services/ssr/assets/io-BImhNBcd.svg                                  22.72 kB
+node_modules/.nitro/vite/services/ssr/assets/dg-DqkWLbnk.svg                                  22.72 kB
+node_modules/.nitro/vite/services/ssr/assets/mp-CuaQmCLf.svg                                  22.80 kB
+node_modules/.nitro/vite/services/ssr/assets/io-13HOfeJD.svg                                  23.02 kB
+node_modules/.nitro/vite/services/ssr/assets/dg-CJPJrjiZ.svg                                  23.02 kB
+node_modules/.nitro/vite/services/ssr/assets/ky-BqaZHuhf.svg                                  23.37 kB
+node_modules/.nitro/vite/services/ssr/assets/ky-Dpsu1myA.svg                                  23.39 kB
+node_modules/.nitro/vite/services/ssr/assets/gb-nir-vEp1ZXy6.svg                              23.92 kB
+node_modules/.nitro/vite/services/ssr/assets/fj-DEAVMg38.svg                                  24.10 kB
+node_modules/.nitro/vite/services/ssr/assets/fj-u3dAPoew.svg                                  24.14 kB
+node_modules/.nitro/vite/services/ssr/assets/arab-C4CYPgyC.svg                                24.43 kB
+node_modules/.nitro/vite/services/ssr/assets/bt-SxWnbWW0.svg                                  24.50 kB
+node_modules/.nitro/vite/services/ssr/assets/arab-C-KgnQEz.svg                                24.59 kB
+node_modules/.nitro/vite/services/ssr/assets/bt-BTo4qm10.svg                                  24.78 kB
+node_modules/.nitro/vite/services/ssr/assets/es-ga-D9xG2hYr.svg                               28.21 kB
+node_modules/.nitro/vite/services/ssr/assets/sh-ta-BFo5zkKU.svg                               28.29 kB
+node_modules/.nitro/vite/services/ssr/assets/es-ga-DXhVZ333.svg                               28.34 kB
+node_modules/.nitro/vite/services/ssr/assets/fk-B-RvQ4Hz.svg                                  28.49 kB
+node_modules/.nitro/vite/services/ssr/assets/va-s7kyhqIM.svg                                  28.66 kB
+node_modules/.nitro/vite/services/ssr/assets/va-B9-hqIE-.svg                                  28.72 kB
+node_modules/.nitro/vite/services/ssr/assets/fk-nuUF_Ak3.svg                                  28.74 kB
+node_modules/.nitro/vite/services/ssr/assets/sh-ta-CPJublpi.svg                               28.78 kB
+node_modules/.nitro/vite/services/ssr/assets/ec-CaVOFQ3t.svg                                  28.78 kB
+node_modules/.nitro/vite/services/ssr/assets/ad-Blhdm5jl.svg                                  29.14 kB
+node_modules/.nitro/vite/services/ssr/assets/ec-cwfBJlvF.svg                                  29.35 kB
+node_modules/.nitro/vite/services/ssr/assets/as-Dekqy8Of.svg                                  30.45 kB
+node_modules/.nitro/vite/services/ssr/assets/ad-B18i8NGa.svg                                  30.51 kB
+node_modules/.nitro/vite/services/ssr/assets/hr-fzLfaANM.svg                                  30.73 kB
+node_modules/.nitro/vite/services/ssr/assets/as-BTEVCXG-.svg                                  30.98 kB
+node_modules/.nitro/vite/services/ssr/assets/hr-BpiVVBoV.svg                                  31.28 kB
+node_modules/.nitro/vite/services/ssr/assets/gt-CJo5DI-7.svg                                  31.35 kB
+node_modules/.nitro/vite/services/ssr/assets/gt-BLpn5qMn.svg                                  31.35 kB
+node_modules/.nitro/vite/services/ssr/assets/gs-DiiNa0F5.svg                                  31.50 kB
+node_modules/.nitro/vite/services/ssr/assets/gs-DOgYbHsY.svg                                  31.92 kB
+node_modules/.nitro/vite/services/ssr/assets/je-DyWbhIiC.svg                                  34.19 kB
+node_modules/.nitro/vite/services/ssr/assets/sh-hl-CgxUDvtv.svg                               34.78 kB
+node_modules/.nitro/vite/services/ssr/assets/je-vXe0Dr49.svg                                  35.03 kB
+node_modules/.nitro/vite/services/ssr/assets/sh-hl-CqtQPzWZ.svg                               35.43 kB
+node_modules/.nitro/vite/services/ssr/assets/tm-DGBJvQay.svg                                  38.22 kB
+node_modules/.nitro/vite/services/ssr/assets/tm-C_WSgUcv.svg                                  38.35 kB
+node_modules/.nitro/vite/services/ssr/assets/do-B86d445t.svg                                  40.35 kB
+node_modules/.nitro/vite/services/ssr/assets/do-DeRnbj4d.svg                                  41.34 kB
+node_modules/.nitro/vite/services/ssr/assets/bz-BCKHR4_q.svg                                  42.51 kB
+node_modules/.nitro/vite/services/ssr/assets/bz-CoBdB-p8.svg                                  42.68 kB
+node_modules/.nitro/vite/services/ssr/assets/me-Cv4Gwqah.svg                                  56.37 kB
+node_modules/.nitro/vite/services/ssr/assets/me-CfGorN3b.svg                                  56.95 kB
+node_modules/.nitro/vite/services/ssr/assets/sv-CJIHhYwF.svg                                  77.27 kB
+node_modules/.nitro/vite/services/ssr/assets/sv-RZ39q5hO.svg                                  77.72 kB
+node_modules/.nitro/vite/services/ssr/assets/mx-CvCwYHGF.svg                                  80.21 kB
+node_modules/.nitro/vite/services/ssr/assets/es-d5m8M5h8.svg                                  80.96 kB
+node_modules/.nitro/vite/services/ssr/assets/es-BuSGTZm_.svg                                  82.15 kB
+node_modules/.nitro/vite/services/ssr/assets/mx-Cc8Ccfe8.svg                                  84.75 kB
+node_modules/.nitro/vite/services/ssr/assets/amicats-logo-full-DA7MXGGb.png                   92.99 kB
+node_modules/.nitro/vite/services/ssr/assets/bo-CcUiMqkJ.svg                                 102.88 kB
+node_modules/.nitro/vite/services/ssr/assets/bo-Dry0C6UA.svg                                 104.73 kB
+node_modules/.nitro/vite/services/ssr/assets/sh-ac-D-aE2xRW.svg                              140.52 kB
+node_modules/.nitro/vite/services/ssr/assets/sh-ac-FjwY7RYr.svg                              143.37 kB
+node_modules/.nitro/vite/services/ssr/assets/amicats-name-logo-DFQLa-K_.png                  167.20 kB
+node_modules/.nitro/vite/services/ssr/assets/rs-CnTO3ehk.svg                                 181.48 kB
+node_modules/.nitro/vite/services/ssr/assets/rs-BfwKwXtn.svg                                 181.63 kB
+node_modules/.nitro/vite/services/ssr/assets/styles-CQj2xlKB.css                             509.64 kB
+node_modules/.nitro/vite/services/ssr/assets/start-HYkvq4Ni.js                                 0.06 kB
+node_modules/.nitro/vite/services/ssr/assets/index-QUL14Cm_.js                                 0.08 kB
+node_modules/.nitro/vite/services/ssr/assets/index-C8z4Z6Z2.js                                 0.08 kB
+node_modules/.nitro/vite/services/ssr/assets/index-CmVTJ0-n.js                                 0.08 kB
+node_modules/.nitro/vite/services/ssr/assets/__23tanstack-start-plugin-adapters-Cwee5PKy.js    0.14 kB
+node_modules/.nitro/vite/services/ssr/assets/index-D2RVRf3i.js                                 0.16 kB
+node_modules/.nitro/vite/services/ssr/assets/index-DcGUKvyU.js                                 0.19 kB
+node_modules/.nitro/vite/services/ssr/assets/app-DKORzbn-.js                                   0.21 kB
+node_modules/.nitro/vite/services/ssr/assets/app-BS7HSMyk.js                                   0.21 kB
+node_modules/.nitro/vite/services/ssr/assets/not-found-DjhX0ll5.js                             0.37 kB
+node_modules/.nitro/vite/services/ssr/assets/_locale-DOwpkJDl.js                               1.92 kB
+node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CUvipMuz.js            2.37 kB
+node_modules/.nitro/vite/services/ssr/assets/messages-DLD8doso.js                              6.82 kB
+node_modules/.nitro/vite/services/ssr/assets/messages-BnPCD4aA.js                              7.05 kB
+node_modules/.nitro/vite/services/ssr/assets/router-D6xcF1NS.js                               12.68 kB
+node_modules/.nitro/vite/services/ssr/index.js                                                38.66 kB
+node_modules/.nitro/vite/services/ssr/assets/index-BAOg9GV8.js                                57.69 kB
+✓ built in 854ms
+
+[nitro] ◐ Building [Nitro] (preset: node-server, compatibility: 2026-04-25)
+[nitro] ✔ Generated public .output/public
+vite v7.3.2 building nitro environment for production...
+transforming...
+node_modules/@tanstack/react-router/dist/esm/index.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/index.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/ClientOnly.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/ClientOnly.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/useNavigate.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/useNavigate.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/RouterProvider.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/RouterProvider.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/useBlocker.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/useBlocker.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/useRouterState.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/useRouterState.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/HeadContent.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/HeadContent.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/CatchBoundary.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/CatchBoundary.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/useRouter.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/useRouter.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/useMatch.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/useMatch.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/link.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/link.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/Matches.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/Matches.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/Match.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/Match.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/Asset.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/Asset.js" was ignored.
+node_modules/@lingui/react/dist/index.mjs (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@lingui/react/dist/index.mjs" was ignored.
+node_modules/@tanstack/react-router/dist/esm/utils.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/utils.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/routerContext.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/routerContext.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useQueries.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useQueries.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useQuery.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useQuery.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/QueryErrorResetBoundary.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/QueryErrorResetBoundary.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/HydrationBoundary.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/HydrationBoundary.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useIsFetching.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useIsFetching.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useMutationState.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useMutationState.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useMutation.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useMutation.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/IsRestoringProvider.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/IsRestoringProvider.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useSuspenseQuery.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useSuspenseQuery.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useSuspenseInfiniteQuery.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useSuspenseInfiniteQuery.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useSuspenseQueries.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useSuspenseQueries.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/matchContext.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/matchContext.js" was ignored.
+node_modules/@tanstack/react-router/dist/esm/Transitioner.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-router/dist/esm/Transitioner.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/errorBoundaryUtils.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/errorBoundaryUtils.js" was ignored.
+node_modules/@tanstack/react-query/build/modern/useBaseQuery.js (1:0): Module level directives cause errors when bundled, "use client" in "node_modules/@tanstack/react-query/build/modern/useBaseQuery.js" was ignored.
+✓ 1942 modules transformed.
+rendering chunks...
+.output/server/_libs/crossws.mjs                                   0.00 kB
+.output/server/_libs/hookable.mjs                                  0.00 kB
+.output/server/_libs/unctx.mjs                                     0.00 kB
+.output/server/_libs/ohash.mjs                                     0.00 kB
+.output/server/_libs/ocache.mjs                                    0.00 kB
+.output/server/_libs/unstorage.mjs                                 0.00 kB
+.output/server/_libs/croner.mjs                                    0.00 kB
+.output/server/_libs/tanstack__store.mjs                           0.00 kB
+.output/server/_libs/use-sync-external-store.mjs                   0.00 kB
+.output/server/_libs/messageformat__parser.mjs                     0.00 kB
+.output/server/_libs/moo.mjs                                       0.00 kB
+.output/server/_libs/lingui__message-utils.mjs                     0.00 kB
+.output/server/_libs/tanstack__react-store.mjs                     0.02 kB
+.output/server/_ssr/start-HYkvq4Ni.mjs                             0.06 kB
+.output/server/_ssr/index-QUL14Cm_.mjs                             0.08 kB
+.output/server/_ssr/index-C8z4Z6Z2.mjs                             0.08 kB
+.output/server/_ssr/index-CmVTJ0-n.mjs                             0.08 kB
+.output/server/__23tanstack-start-plugin-adapters-Cwee5PKy.mjs     0.14 kB
+.output/server/_ssr/index-D2RVRf3i.mjs                             0.20 kB
+.output/server/_libs/rou3.mjs                                      0.21 kB
+.output/server/_ssr/index-DcGUKvyU.mjs                             0.23 kB
+.output/server/_libs/tanstack__react-query.mjs                     0.46 kB
+.output/server/_libs/clsx.mjs                                      0.51 kB
+.output/server/_chunks/ssr-renderer.mjs                            0.61 kB
+.output/server/_ssr/app-DKORzbn-.mjs                               0.63 kB
+.output/server/_ssr/app-BS7HSMyk.mjs                               0.63 kB
+.output/server/_libs/@tanstack/react-router-ssr-query+[...].mjs    0.73 kB
+.output/server/_ssr/not-found-DjhX0ll5.mjs                         0.96 kB
+.output/server/_libs/ufo.mjs                                       1.31 kB
+.output/server/_libs/cookie-es.mjs                                 1.46 kB
+.output/server/_libs/seroval-plugins.mjs                           1.47 kB
+.output/server/_tanstack-start-manifest_v-CUvipMuz.mjs             2.37 kB
+.output/server/_libs/isbot.mjs                                     2.40 kB
+.output/server/_locale-DOwpkJDl.mjs                                2.56 kB
+.output/server/_libs/@tanstack/router-ssr-query-core+[...].mjs     2.69 kB
+.output/server/_libs/lucide-react.mjs                              5.03 kB
+.output/server/_libs/lingui__react.mjs                             5.77 kB
+.output/server/_libs/tanstack__history.mjs                         5.99 kB
+.output/server/_ssr/messages-DLD8doso.mjs                          6.82 kB
+.output/server/_ssr/messages-BnPCD4aA.mjs                          7.05 kB
+.output/server/_libs/h3-v2.mjs                                     9.98 kB
+.output/server/_libs/lingui__core.mjs                             12.79 kB
+.output/server/_ssr/router-D6xcF1NS.mjs                           13.58 kB
+.output/server/_libs/h3.mjs                                       14.27 kB
+.output/server/_libs/react.mjs                                    19.26 kB
+.output/server/_libs/srvx.mjs                                     27.42 kB
+.output/server/_ssr/index.mjs                                     39.04 kB
+.output/server/_libs/tanstack__react-router.mjs                   39.77 kB
+.output/server/_libs/seroval.mjs                                  48.03 kB
+.output/server/index.mjs                                          48.11 kB
+.output/server/_libs/tanstack__query-core.mjs                     56.08 kB
+.output/server/_ssr/index-BAOg9GV8.mjs                            63.55 kB
+.output/server/_libs/tailwind-merge.mjs                           91.07 kB
+.output/server/_libs/tanstack__router-core.mjs                   155.56 kB
+.output/server/_libs/react-dom.mjs                               509.03 kB
+✓ built in 3.40s
+ℹ Generated .output/nitro.json
+
+[nitro] ✔ You can preview this build using npx vite preview

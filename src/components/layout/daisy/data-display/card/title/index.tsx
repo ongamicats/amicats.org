@@ -1,4 +1,4 @@
-import { cn } from '@/components/layout/shared/helpers/class.helper'
+import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 export function CardTitle({
   children,
@@ -9,5 +9,5 @@ export function CardTitle({
     <h2 className={cn('card-title', className)} {...props}>
       {children}
     </h2>
-  )
+  );
 }

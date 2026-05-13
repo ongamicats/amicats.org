@@ -1,14 +1,14 @@
-import { Container } from '..'
-import { Section } from '../../section'
-import { cn } from '@/components/layout/shared/helpers/class.helper'
+import { Container } from '..';
+import { Section } from '../../section';
+import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 type SectionContainerProps = {
-  containerId: string
-  sectionId: string
-  children: React.ReactNode
-  background?: string
-  className?: string
-}
+  containerId: string;
+  sectionId: string;
+  children: React.ReactNode;
+  background?: string;
+  className?: string;
+};
 
 export const SectionContainer = ({
   containerId,
@@ -23,5 +23,5 @@ export const SectionContainer = ({
         {children}
       </Section>
     </Container>
-  )
-}
+  );
+};

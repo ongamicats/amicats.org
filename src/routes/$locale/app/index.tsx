@@ -1,11 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { Route as AppRoute } from '@/routes/app'
+import { createFileRoute } from '@tanstack/react-router';
 
-// Localized app index: reuse the main app route component if available.
 export const Route = createFileRoute('/$locale/app/')({
-  component: AppRoute.component ?? AppIndexShim,
-})
+  component: AppIndex,
+});
 
-function AppIndexShim() {
-  return <div />
+function AppIndex() {
+  return <>HELICOPTER HELICOPTER</>;
 }

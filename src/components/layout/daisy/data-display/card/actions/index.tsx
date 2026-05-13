@@ -1,7 +1,7 @@
-import { cn } from '@/components/layout/shared/helpers/class.helper'
+import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 export interface CardActionsProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export function CardActions({
@@ -13,5 +13,5 @@ export function CardActions({
     <div className={cn('card-actions', className)} {...props}>
       {children}
     </div>
-  )
+  );
 }
