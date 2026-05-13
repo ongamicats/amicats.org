@@ -1,388 +1,69 @@
 {
-  "notfound.title": {
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/not-found/index.tsx"
-      ]
-    ],
-    "translation": "notfound.title",
-    "obsolete": true
-  },
-  "notfound.message": {
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/not-found/index.tsx"
-      ]
-    ],
-    "translation": "notfound.message",
-    "obsolete": true
-  },
-  "nav.home": {
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/not-found/index.tsx"
-      ]
-    ],
-    "translation": "nav.home",
-    "obsolete": true
-  },
-  "nav.app": {
-    "0": "A",
-    "1": "p",
-    "2": "p",
-    "obsolete": true
-  },
-  "language.select": {
-    "0": "S",
-    "1": "e",
-    "2": "l",
-    "3": "e",
-    "4": "c",
-    "5": "i",
-    "6": "o",
-    "7": "n",
-    "8": "a",
-    "9": "r",
-    "10": " ",
-    "11": "i",
-    "12": "d",
-    "13": "i",
-    "14": "o",
-    "15": "m",
-    "16": "a",
-    "obsolete": true
-  },
-  "landing.hero.title": {
-    "0": "A",
-    "1": "m",
-    "2": "i",
-    "3": "c",
-    "4": "a",
-    "5": "t",
-    "6": "s",
-    "7": " ",
-    "8": "-",
-    "9": " ",
-    "10": "R",
-    "11": "e",
-    "12": "s",
-    "13": "g",
-    "14": "a",
-    "15": "t",
-    "16": "e",
-    "17": " ",
-    "18": "e",
-    "19": " ",
-    "20": "A",
-    "21": "d",
-    "22": "o",
-    "23": "ç",
-    "24": "ã",
-    "25": "o",
-    "obsolete": true
-  },
-  "app.home.title": {
-    "0": "P",
-    "1": "á",
-    "2": "g",
-    "3": "i",
-    "4": "n",
-    "5": "a",
-    "6": " ",
-    "7": "i",
-    "8": "n",
-    "9": "i",
-    "10": "c",
-    "11": "i",
-    "12": "a",
-    "13": "l",
-    "14": " ",
-    "15": "d",
-    "16": "o",
-    "17": " ",
-    "18": "a",
-    "19": "p",
-    "20": "p",
-    "obsolete": true
-  },
-  "language.pt": {
-    "0": "P",
-    "1": "o",
-    "2": "r",
-    "3": "t",
-    "4": "u",
-    "5": "g",
-    "6": "u",
-    "7": "ê",
-    "8": "s",
-    "9": " ",
-    "10": "(",
-    "11": "B",
-    "12": "R",
-    "13": ")",
-    "obsolete": true
-  },
-  "language.en": {
-    "0": "E",
-    "1": "n",
-    "2": "g",
-    "3": "l",
-    "4": "i",
-    "5": "s",
-    "6": "h",
-    "obsolete": true
-  },
-  "IQNL5p": {
-    "message": "A AmiCat's nasceu do desejo genuíno de mudar o destino de centenas de felinos nas ruas de Campo Grande. Somos voluntários apaixonados que dedicam tempo e recursos para resgatar, tratar e encontrar lares amorosos. Acreditamos que cada vida importa e que o amor pode curar as feridas mais profundas.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ],
-    "translation": "A AmiCat's nasceu do desejo genuíno de mudar o destino de centenas de felinos nas ruas de Campo Grande. Somos voluntários apaixonados que dedicam tempo e recursos para resgatar, tratar e encontrar lares amorosos. Acreditamos que cada vida importa e que o amor pode curar as feridas mais profundas."
-  },
-  "sH6QdJ": {
-    "message": "Cada dia no abrigo é uma jornada de amor, dedicação e superação. Enfrentamos desafios constantes, mas cada vida salva nos motiva a continuar.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/o-abrigo/index.tsx"
-      ]
-    ],
-    "translation": "Cada dia no abrigo é uma jornada de amor, dedicação e superação. Enfrentamos desafios constantes, mas cada vida salva nos motiva a continuar."
-  },
-  "k1nKn9": {
-    "message": "Comece sua Jornada",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/introducao/index.tsx"
-      ]
-    ],
-    "translation": "Comece sua Jornada"
-  },
-  "fz0xDB": {
-    "message": "Como funciona?",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/introducao/index.tsx"
-      ]
-    ],
-    "translation": "Como funciona?"
-  },
-  "JFiWW0": {
-    "message": "Estamos desde 2017 resgatando, cuidando e encontrando lares.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/o-abrigo/index.tsx"
-      ]
-    ],
-    "translation": "Estamos desde 2017 resgatando, cuidando e encontrando lares."
-  },
-  "gb9_GI": {
-    "translation": "Eventos & Adoção",
-    "message": "Eventos & Adoção",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ]
-  },
-  "IDIOMA": {
-    "message": "Idioma",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/components/layout/ui/language-select/index.tsx"
-      ]
-    ],
-    "translation": "Idioma",
-    "obsolete": true
-  },
-  "--yDRB": {
-    "message": "Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/introducao/index.tsx"
-      ]
-    ],
-    "translation": "Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande."
-  },
-  "lTUidK": {
-    "translation": "Lares Temporários",
-    "message": "Lares Temporários",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ]
-  },
-  "MENU_LANG": {
-    "message": "Menu de idiomas",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/components/layout/ui/language-select/index.tsx"
-      ]
-    ],
-    "translation": "Menu de idiomas",
-    "obsolete": true
-  },
-  "aaINyE": {
-    "message": "Nossa História",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ],
-    "translation": "Nossa História"
-  },
-  "yET86w": {
-    "translation": "Nossa rede de voluntários oferece lares temporários seguros, socializando os gatinhos para sua futura família.",
-    "message": "Nossa rede de voluntários oferece lares temporários seguros, socializando os gatinhos para sua futura família.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ]
-  },
-  "gJuhRF": {
-    "message": "Nosso Dia a Dia",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/o-abrigo/index.tsx"
-      ]
-    ],
-    "translation": "Nosso Dia a Dia"
-  },
-  "3IoT7D": {
-    "message": "O Abrigo",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/o-abrigo/index.tsx"
-      ]
-    ],
-    "translation": "O Abrigo"
-  },
-  "UuOVfT": {
-    "message": "Possuímos areás de cuidados de gatos em observação, tratamento e recuperação. Areas de filhotes, adultos e idosos. E uma área de quarentena para gatos recém resgatados. Além de áreas exclusivas para gatos com necessidades especiais, como os que vivem com FIV ou Felv, garantindo um ambiente seguro e acolhedor para todos.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/o-abrigo/index.tsx"
-      ]
-    ],
-    "translation": "Possuímos areás de cuidados de gatos em observação, tratamento e recuperação. Areas de filhotes, adultos e idosos. E uma área de quarentena para gatos recém resgatados. Além de áreas exclusivas para gatos com necessidades especiais, como os que vivem com FIV ou Felv, garantindo um ambiente seguro e acolhedor para todos.",
-    "obsolete": true
-  },
-  "qpxCWX": {
-    "translation": "Promovemos feiras de adoção e eventos educativos para conscientizar sobre a posse responsável.",
-    "message": "Promovemos feiras de adoção e eventos educativos para conscientizar sobre a posse responsável.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ]
-  },
-  "DlUBwL": {
-    "message": "Quem Somos",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ],
-    "translation": "Quem Somos"
-  },
-  "noDsYv": {
-    "translation": "Resgatamos gatos em situação de risco, oferecendo tratamento veterinário completo e muito carinho até a recuperação.",
-    "message": "Resgatamos gatos em situação de risco, oferecendo tratamento veterinário completo e muito carinho até a recuperação.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ]
-  },
-  "qxRLM7": {
-    "translation": "Resgate & Cuidado",
-    "message": "Resgate & Cuidado",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/quem-somos/index.tsx"
-      ]
-    ]
-  },
-  "RESGATES": {
-    "message": "resgates realizados",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/components/layout/ui/resgates/index.tsx"
-      ]
-    ],
-    "translation": "resgates realizados",
-    "obsolete": true
-  },
-  "j4aPJi": {
-    "message": "Salvando Vidas Felinas",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/routes/landing/-components/introducao/index.tsx"
-      ]
-    ],
-    "translation": "Salvando Vidas Felinas"
-  },
-  "SEL_LANG": {
-    "message": "Selecionar idioma",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/components/layout/ui/language-select/index.tsx"
-      ]
-    ],
-    "translation": "Selecionar idioma",
-    "obsolete": true
+  "messages": {
+    "RESGATES": "resgates realizados",
+    "SEL_LANG": "Selecionar idioma",
+    "MENU_LANG": "Menu de idiomas",
+    "HuCIsi": "Socorrista {0}",
+    "IDIOMA": "Idioma",
+    "Sobre a AmiCat's": "Sobre a AmiCat's",
+    "Somos uma organização dedicada ao resgate, cuidado e adoção responsável de gatos em Campo Grande, MS. Transformando vidas, um miado de cada vez.": "Somos uma organização dedicada ao resgate, cuidado e adoção responsável de gatos em Campo Grande, MS. Transformando vidas, um miado de cada vez.",
+    "Institucional": "Institucional",
+    "Quem Somos": "Quem Somos",
+    "Quero Adotar": "Quero Adotar",
+    "Como Ajudar": "Como Ajudar",
+    "Contato": "Contato",
+    "Atendimento por WhatsApp e E-mail": "Atendimento por WhatsApp e E-mail",
+    "Segunda a Sexta: 14h às 17h": "Segunda a Sexta: 14h às 17h",
+    "Campo Grande, MS": "Campo Grande, MS",
+    "Seja um parceiro": "Seja um parceiro",
+    "Abrir WhatsApp": "Abrir WhatsApp",
+    "Privacidade": "Privacidade",
+    "Termos": "Termos",
+    "Nossos Parceiros": "Nossos Parceiros",
+    "Juntos, fazemos a diferença na vida dos felinos": "Juntos, fazemos a diferença na vida dos felinos",
+    "Seja um Parceiro da AmiCat's": "Seja um Parceiro da AmiCat's",
+    "Sua empresa pode fazer parte dessa transformação": "Sua empresa pode fazer parte dessa transformação",
+    "A parceria com a AmiCat's é uma oportunidade única de associar sua marca a uma causa nobre e fazer a diferença na vida de centenas de felinos em situação de vulnerabilidade.": "A parceria com a AmiCat's é uma oportunidade única de associar sua marca a uma causa nobre e fazer a diferença na vida de centenas de felinos em situação de vulnerabilidade.",
+    "Como parceiro, sua empresa terá:": "Como parceiro, sua empresa terá:",
+    "Divulgação da marca em nossas redes sociais e eventos": "Divulgação da marca em nossas redes sociais e eventos",
+    "Logo destacado em nosso site e materiais de comunicação": "Logo destacado em nosso site e materiais de comunicação",
+    "Certificado de Empresa Parceira": "Certificado de Empresa Parceira",
+    "Possibilidade de ações conjuntas e eventos": "Possibilidade de ações conjuntas e eventos",
+    "A satisfação de contribuir para uma causa importante": "A satisfação de contribuir para uma causa importante",
+    "Tipos de Parceria": "Tipos de Parceria",
+    "Empresas que desejam apoiar a ONG através de doações financeiras, produtos ou serviços": "Empresas que desejam apoiar a ONG através de doações financeiras, produtos ou serviços",
+    "Pet shops, clínicas veterinárias e fornecedores que queiram oferecer descontos ou doações": "Pet shops, clínicas veterinárias e fornecedores que queiram oferecer descontos ou doações",
+    "Empresas interessadas em realizar eventos beneficentes ou ações conjuntas": "Empresas interessadas em realizar eventos beneficentes ou ações conjuntas",
+    "Estamos construindo nossa rede de parceiros": "Estamos construindo nossa rede de parceiros",
+    "Sua empresa pode ser a primeira a fazer parte dessa lista!": "Sua empresa pode ser a primeira a fazer parte dessa lista!",
+    "Para parcerias e mais informações entre em contato:": "Para parcerias e mais informações entre em contato:",
+    "amicatsong@gmail.com": "amicatsong@gmail.com"
+    ,"Olá! Gostaria de mais informações sobre parcerias com a AmiCat's.": "Olá! Gostaria de mais informações sobre parcerias com a AmiCat's."
+    ,"Gostaria de me tornar um parceiro": "Gostaria de me tornar um parceiro"
+    ,"Como ser parceiro": "Como ser parceiro"
+    ,"Veja como sua empresa pode iniciar uma parceria prática e transparente com a AmiCat's.": "Veja como sua empresa pode iniciar uma parceria prática e transparente com a AmiCat's."
+    ,"Como ser parceiro da AmiCat's": "Como ser parceiro da AmiCat's"
+    ,"A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito.": "A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito."
+    ,"Jornada para se tornar parceiro": "Jornada para se tornar parceiro"
+    ,"Um caminho simples e direto para começar a colaborar com a AmiCat's.": "Um caminho simples e direto para começar a colaborar com a AmiCat's."
+    ,"Demonstre interesse": "Demonstre interesse"
+    ,"Envie um e-mail para iniciarmos a conversa sobre possibilidades e objetivos.": "Envie um e-mail para iniciarmos a conversa sobre possibilidades e objetivos."
+    ,"Converse com a equipe": "Converse com a equipe"
+    ,"Teremos uma reunião para entender seus interesses e o formato ideal de apoio.": "Teremos uma reunião para entender seus interesses e o formato ideal de apoio."
+    ,"Defina o formato da parceria": "Defina o formato da parceria"
+    ,"Escolha entre doações, descontos, patrocínios ou ações conjuntas, com regras claras.": "Escolha entre doações, descontos, patrocínios ou ações conjuntas, com regras claras."
+    ,"Alinhe divulgação e apoio": "Alinhe divulgação e apoio"
+    ,"Definimos como sua marca será divulgada e como a parceria será comunicada ao público.": "Definimos como sua marca será divulgada e como a parceria será comunicada ao público."
+    ,"Comece a parceria": "Comece a parceria"
+    ,"Iniciamos as ações previstas e acompanhamos o impacto e a comunicação.": "Iniciamos as ações previstas e acompanhamos o impacto e a comunicação."
+    ,"Tipos de parceria": "Tipos de parceria"
+    ,"Doações": "Doações"
+    ,"Descontos": "Descontos"
+    ,"Eventos": "Eventos"
+    ,"Segue um caminho simples para começar:": "Segue um caminho simples para começar:"
+    ,"Defina o formato": "Defina o formato"
+    ,"Doações, descontos, patrocínios ou ações conjuntas.": "Doações, descontos, patrocínios ou ações conjuntas."
+    ,"Alinhe divulgação": "Alinhe divulgação"
+    ,"Combinamos como a marca será divulgada e mensuramos o impacto.": "Combinamos como a marca será divulgada e mensuramos o impacto."
   }
 }

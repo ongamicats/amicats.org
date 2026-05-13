@@ -11,8 +11,8 @@ export type ComponentColor =
   | 'link'
   | 'outline'
   | 'active'
-  | 'disabled'
+  | 'disabled';
 
-export type ComponentSize = 'lg' | 'md' | 'sm' | 'xs'
+export type ComponentSize = 'lg' | 'md' | 'sm' | 'xs';
 
-export type ComponentShape = 'square' | 'circle'
+export type ComponentShape = 'square' | 'circle';

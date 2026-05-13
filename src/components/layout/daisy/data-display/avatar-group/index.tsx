@@ -1,4 +1,4 @@
-import { cn } from '../../../shared/helpers/class.helper'
+import { cn } from '../../../shared/helpers/class.helper';
 
 export interface AvatarGroupProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -14,5 +14,5 @@ export function AvatarGroup({
     >
       {children}
     </div>
-  )
+  );
 }

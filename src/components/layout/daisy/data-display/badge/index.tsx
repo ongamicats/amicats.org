@@ -1,13 +1,13 @@
-import { cn } from '../../../shared/helpers/class.helper'
+import { cn } from '../../../shared/helpers/class.helper';
 import type {
   ComponentColor,
   ComponentSize,
-} from '../../../shared/types/types.constants'
+} from '../../../shared/types/types.constants';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: ComponentColor
-  size?: ComponentSize
-  outline?: boolean
+  variant?: ComponentColor;
+  size?: ComponentSize;
+  outline?: boolean;
 }
 
 export function Badge({
@@ -18,9 +18,9 @@ export function Badge({
   outline,
   ...props
 }: BadgeProps) {
-  const variantClass = variant ? `badge-${variant}` : ''
-  const sizeClass = size ? `badge-${size}` : ''
-  const outlineClass = outline ? 'badge-outline' : ''
+  const variantClass = variant ? `badge-${variant}` : '';
+  const sizeClass = size ? `badge-${size}` : '';
+  const outlineClass = outline ? 'badge-outline' : '';
 
   return (
     <div
@@ -29,5 +29,5 @@ export function Badge({
     >
       {children}
     </div>
-  )
+  );
 }

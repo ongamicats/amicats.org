@@ -1,19 +1,25 @@
-import type { Locale } from './locales'
+import type { Locale } from './locales';
 
-export async function loadCatalog(
-  locale: Locale,
-): Promise<Record<string, string>> {
+// Load a Lingui .po catalog at runtime via Vite's Lingui plugin.
+// Official pattern: import(`./locales/${locale}/messages.po`) and use
+// the returned catalog.messages shape. We intentionally do NOT support
+// any JSON fallback — the project uses a pure .po workflow.
+export async function loadCatalog(locale: Locale) {
   try {
-    // Try project alias first (when tsconfig paths are active), otherwise
-    // fall back to a relative import that matches the file layout.
-    let catalog: any
+    let mod: unknown;
     try {
-      catalog = await import(`@/locales/${locale}/messages.json`)
+      mod = await import(`@/locales/${locale}/messages.po`);
     } catch {
-      catalog = await import(`../../locales/${locale}/messages.json`)
+      // fallback relative path for different bundler resolutions
+      mod = await import(`../../locales/${locale}/messages.po`);
     }
-    return (catalog && (catalog.default ?? catalog)) as Record<string, string>
+
+    if (!mod) return null;
+
+    // Vite Lingui plugin returns an object with `messages` export.
+    const catalog = (mod as any).default ?? mod;
+    return catalog as { messages?: Record<string, string> } | null;
   } catch (e) {
-    return {}
+    return null;
   }
 }

@@ -60,7 +60,7 @@ If tests exist: `npm run check && npm test && npm run build`
 
 ## Key conventions
 
-- **Formatter**: Prettier (`semi: false`, `singleQuote: true`, `trailingComma: "all"`)
+- **Formatter**: Prettier (`semi: true`, `singleQuote: true`, `trailingComma: "all"`)
 - **Linter**: ESLint with `@tanstack/eslint-config` (flat config)
 - **TypeScript**: strict mode, `noUnusedLocals`, `noUnusedParameters`
 - **Path alias**: `@/` → `./src/`

@@ -1,12 +1,12 @@
-import { clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
-import type { ClassValue } from 'clsx'
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import type { ClassValue } from 'clsx';
 
 /**
  * Merges Tailwind classes safely.
  */
 export function cn(...inputs: Array<ClassValue>) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 /**
@@ -16,7 +16,7 @@ export function cn(...inputs: Array<ClassValue>) {
  */
 export function createDaisyClassBuilder(componentPrefix: string) {
   return (modifier?: string | null | false) => {
-    if (!modifier) return ''
-    return `${componentPrefix}-${modifier}`
-  }
+    if (!modifier) return '';
+    return `${componentPrefix}-${modifier}`;
+  };
 }

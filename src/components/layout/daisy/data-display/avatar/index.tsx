@@ -1,10 +1,10 @@
-import { cn } from '../../../shared/helpers/class.helper'
+import { cn } from '../../../shared/helpers/class.helper';
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
-  online?: boolean
-  offline?: boolean
-  placeholder?: boolean
-  rounded?: boolean
+  online?: boolean;
+  offline?: boolean;
+  placeholder?: boolean;
+  rounded?: boolean;
 }
 
 export function Avatar({
@@ -29,5 +29,5 @@ export function Avatar({
     >
       <div className={cn('w-10', rounded && 'rounded-full')}>{children}</div>
     </div>
-  )
+  );
 }

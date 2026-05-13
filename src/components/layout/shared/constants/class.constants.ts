@@ -2,7 +2,7 @@ import type {
   ComponentColor,
   ComponentShape,
   ComponentSize,
-} from '../types/types.constants'
+} from '../types/types.constants';
 
 export const daisyColors: Record<ComponentColor, string> = {
   neutral: 'neutral',
@@ -18,16 +18,16 @@ export const daisyColors: Record<ComponentColor, string> = {
   outline: 'outline',
   active: 'active',
   disabled: 'disabled',
-}
+};
 
 export const daisySizes: Record<ComponentSize, string> = {
   lg: 'lg',
   md: 'md',
   sm: 'sm',
   xs: 'xs',
-}
+};
 
 export const daisyShapes: Record<ComponentShape, string> = {
   square: 'square',
   circle: 'circle',
-}
+};

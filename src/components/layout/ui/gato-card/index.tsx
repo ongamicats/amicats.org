@@ -1,18 +1,18 @@
-import { CardComponent as Card } from '@/components/layout/daisy/data-display/card'
-import { Figure } from '@/components/layout/ui/figure'
-import { Img } from '@/components/layout/ui/img'
-import { Badge } from '@/components/layout/daisy/data-display/badge'
-import { Button } from '@/components/layout/daisy/actions/button'
-import { useLingui } from '@lingui/react'
-import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react/macro';
+import { msg } from '@lingui/core/macro';
+import { CardComponent as Card } from '@/components/layout/daisy/data-display/card';
+import { Figure } from '@/components/layout/ui/figure';
+import { Img } from '@/components/layout/ui/img';
+import { Badge } from '@/components/layout/daisy/data-display/badge';
+import { Button } from '@/components/layout/daisy/actions/button';
 
 export interface GatoCardProps {
-  nome: string
-  descricao: string
-  imagem: string
-  status?: string
-  onAdotar?: () => void
-  onApadrinhar?: () => void
+  nome: string;
+  descricao: string;
+  imagem: string;
+  status?: string;
+  onAdotar?: () => void;
+  onApadrinhar?: () => void;
 }
 
 export function GatoCard({
@@ -23,8 +23,8 @@ export function GatoCard({
   onAdotar,
   onApadrinhar,
 }: GatoCardProps) {
-  const { i18n } = useLingui()
-  const displayStatus = status ?? i18n._(t`Disponível`)
+  const { t } = useLingui();
+  const displayStatus = status ?? t`Disponível`;
 
   return (
     <Card className="bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-transparent hover:border-primary/20">
@@ -48,7 +48,7 @@ export function GatoCard({
             className="w-full btn-soft"
             onClick={onApadrinhar}
           >
-            {i18n._(t`Apadrinhe`)}
+            {t`Apadrinhe`}
           </Button>
           <Button
             variant="primary"
@@ -56,10 +56,10 @@ export function GatoCard({
             className="w-full btn-outline"
             onClick={onAdotar}
           >
-            {i18n._(t`Quero Adotar`)}
+            {t`Quero Adotar`}
           </Button>
         </Card.Actions>
       </Card.Body>
     </Card>
-  )
+  );
 }

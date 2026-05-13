@@ -1,10 +1,10 @@
-import { CardBody } from './body'
-import { CardTitle } from './title'
-import { CardActions } from './actions'
-import { cn } from '@/components/layout/shared/helpers/class.helper'
+import { CardBody } from './body';
+import { CardTitle } from './title';
+import { CardActions } from './actions';
+import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: 'normal' | 'compact' | 'side'
+  variant?: 'normal' | 'compact' | 'side';
 }
 
 export function Card({
@@ -26,11 +26,11 @@ export function Card({
     >
       {children}
     </div>
-  )
+  );
 }
 
 export const CardComponent = Object.assign(Card, {
   Body: CardBody,
   Title: CardTitle,
   Actions: CardActions,
-})
+});

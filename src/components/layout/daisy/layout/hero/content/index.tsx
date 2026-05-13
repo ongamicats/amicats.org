@@ -9,5 +9,5 @@ export function HeroContent({
     <div className={`hero-content ${className || ''}`} {...props}>
       {children}
     </div>
-  )
+  );
 }

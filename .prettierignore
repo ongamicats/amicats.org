@@ -1,3 +1,9 @@
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+node_modules/**
+.output/**
+.tanstack/**
+src/locales/**/messages.js
+src/routeTree.gen.ts
+*.lock

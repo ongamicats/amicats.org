@@ -1,9 +1,9 @@
-import type React from 'react'
-import { cn } from '@/components/layout/shared/helpers/class.helper'
+import type React from 'react';
+import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
-  snap?: 'start' | 'center' | 'end'
-  vertical?: boolean
+  snap?: 'start' | 'center' | 'end';
+  vertical?: boolean;
 }
 
 export function Carousel({
@@ -26,7 +26,7 @@ export function Carousel({
     >
       {children}
     </div>
-  )
+  );
 }
 
 export interface CarouselItemProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -40,9 +40,9 @@ export function CarouselItem({
     <div className={cn('carousel-item', className)} {...props}>
       {children}
     </div>
-  )
+  );
 }
 
 export const CarouselComponent = Object.assign(Carousel, {
   Item: CarouselItem,
-})
+});

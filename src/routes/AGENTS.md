@@ -48,18 +48,18 @@ routes/
 
 ```tsx
 // src/routes/adocao/index.tsx
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/adocao/')({
   component: AdocaoPage,
-})
+});
 
 function AdocaoPage() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold">Adoção</h1>
     </div>
-  )
+  );
 }
 ```
 
@@ -75,13 +75,13 @@ routes/adocao/
 
 ```tsx
 // src/routes/adocao/index.tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { Filtros } from './-components/filtros'
-import { Listagem } from './-components/listagem'
+import { createFileRoute } from '@tanstack/react-router';
+import { Filtros } from './-components/filtros';
+import { Listagem } from './-components/listagem';
 
 export const Route = createFileRoute('/adocao/')({
   component: AdocaoPage,
-})
+});
 
 function AdocaoPage() {
   return (
@@ -89,7 +89,7 @@ function AdocaoPage() {
       <Filtros />
       <Listagem />
     </div>
-  )
+  );
 }
 ```
 
@@ -97,20 +97,20 @@ function AdocaoPage() {
 
 ```tsx
 // src/routes/gatos/index.tsx
-import { createFileRoute } from '@tanstack/react-router'
-import { useQuery } from '@tanstack/react-query'
+import { createFileRoute } from '@tanstack/react-router';
+import { useQuery } from '@tanstack/react-query';
 
 export const Route = createFileRoute('/gatos/')({
   component: GatosPage,
-})
+});
 
 function GatosPage() {
   const { data: gatos, isLoading } = useQuery({
     queryKey: ['gatos'],
     queryFn: () => fetch('/api/gatos').then((r) => r.json()),
-  })
+  });
 
-  if (isLoading) return <span className="loading loading-spinner" />
+  if (isLoading) return <span className="loading loading-spinner" />;
 
   return (
     <ul>
@@ -118,6 +118,6 @@ function GatosPage() {
         <li key={gato.id}>{gato.nome}</li>
       ))}
     </ul>
-  )
+  );
 }
 ```

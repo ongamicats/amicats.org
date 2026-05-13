@@ -1,16 +1,16 @@
-import { forwardRef } from 'react'
+import { forwardRef } from 'react';
 import {
   cn,
   createDaisyClassBuilder,
-} from '../../../shared/helpers/class.helper'
+} from '../../../shared/helpers/class.helper';
 import {
   daisyColors,
   daisySizes,
-} from '../../../shared/constants/class.constants'
-import type { ButtonProps } from './button.types'
-import type { ComponentProps } from 'react'
+} from '../../../shared/constants/class.constants';
+import type { ButtonProps } from './button.types';
+import type { ComponentProps } from 'react';
 
-const buildBtnClass = createDaisyClassBuilder('btn')
+const buildBtnClass = createDaisyClassBuilder('btn');
 
 export const Button = forwardRef<
   HTMLButtonElement | HTMLAnchorElement,
@@ -21,7 +21,7 @@ export const Button = forwardRef<
     buildBtnClass(variant && daisyColors[variant]),
     buildBtnClass(size && daisySizes[size]),
     className,
-  )
+  );
 
   if (href) {
     return (
@@ -33,7 +33,7 @@ export const Button = forwardRef<
       >
         {children}
       </a>
-    )
+    );
   }
 
   return (
@@ -44,7 +44,7 @@ export const Button = forwardRef<
     >
       {children}
     </button>
-  )
-})
+  );
+});
 
-Button.displayName = 'Button'
+Button.displayName = 'Button';

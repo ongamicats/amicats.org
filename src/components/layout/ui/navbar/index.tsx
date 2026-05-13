@@ -1,9 +1,9 @@
-import { Link } from '@tanstack/react-router'
-import { resolveLocale } from '@/integrations/lingui/resolve-locale'
+import { Link } from '@tanstack/react-router';
+import { resolveLocale } from '@/integrations/lingui/resolve-locale';
 
 export function Navbar(): JSX.Element {
-  const initial = resolveLocale()
-  const locale = initial.locale
+  const initial = resolveLocale();
+  const locale = initial.locale;
 
   return (
     <div className="sticky top-0 z-50 navbar bg-base-100 shadow-sm">
@@ -27,5 +27,5 @@ export function Navbar(): JSX.Element {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,9 +1,22 @@
-import { Outlet, createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, redirect } from '@tanstack/react-router';
+import { resolveLocale } from '@/integrations/lingui/resolve-locale';
 
+/*
+ *  Redireciona o usuário para a rota localizada de "/app".
+ */
 export const Route = createFileRoute('/app')({
-  component: AppLayout,
-})
+  loader: () => {
+    const { locale } = resolveLocale();
 
-function AppLayout({ children }: { children: React.ReactNode }) {
-  return <Outlet />
+    throw redirect({
+      to: `/$locale/app`,
+      replace: true,
+      params: { locale },
+    });
+  },
+  component: NullLayout,
+});
+
+function NullLayout() {
+  return null;
 }

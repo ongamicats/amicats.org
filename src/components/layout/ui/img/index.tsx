@@ -1,10 +1,10 @@
-import { cn } from '../../shared/helpers/class.helper'
+import { cn } from '../../shared/helpers/class.helper';
 
 export interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  mobileSrc?: string
-  mobileClassName?: string
-  landscapeSrc?: string
-  landscapeClassName?: string
+  mobileSrc?: string;
+  mobileClassName?: string;
+  landscapeSrc?: string;
+  landscapeClassName?: string;
 }
 
 export function Img({
@@ -44,5 +44,5 @@ export function Img({
         />
       )}
     </>
-  )
+  );
 }

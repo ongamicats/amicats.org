@@ -1,10 +1,10 @@
-import { Flex } from '../flex'
-import { Img } from '@/components/layout/ui/img'
+import { Flex } from '../flex';
+import { Img } from '@/components/layout/ui/img';
 
 export interface VoluntarioProps {
-  nome: string
-  funcao: string
-  imagem: string
+  nome: string;
+  funcao: string;
+  imagem: string;
 }
 
 export function Voluntario({ nome, funcao, imagem }: VoluntarioProps) {
@@ -22,5 +22,5 @@ export function Voluntario({ nome, funcao, imagem }: VoluntarioProps) {
         {funcao}
       </p>
     </Flex>
-  )
+  );
 }

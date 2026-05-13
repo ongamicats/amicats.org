@@ -1,12 +1,13 @@
-import { URL, fileURLToPath } from 'node:url'
-import { defineConfig } from 'vite'
-import { devtools } from '@tanstack/devtools-vite'
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
-import viteReact from '@vitejs/plugin-react'
-import viteTsConfigPaths from 'vite-tsconfig-paths'
+import { URL, fileURLToPath } from 'node:url';
+import { defineConfig } from 'vite';
+import { devtools } from '@tanstack/devtools-vite';
+import { tanstackStart } from '@tanstack/react-start/plugin/vite';
+import viteReact from '@vitejs/plugin-react';
+import { lingui } from '@lingui/vite-plugin';
+import viteTsConfigPaths from 'vite-tsconfig-paths';
 
-import tailwindcss from '@tailwindcss/vite'
-import { nitro } from 'nitro/vite'
+import tailwindcss from '@tailwindcss/vite';
+import { nitro } from 'nitro/vite';
 
 const config = defineConfig({
   ssr: {
@@ -39,16 +40,19 @@ const config = defineConfig({
     tanstackStart(),
     viteReact({
       babel: {
-        // Use the official Lingui babel plugin (v6) by name so resolution
-        // works in all environments instead of a brittle hard-coded path.
-        plugins: ['@lingui/babel-plugin-lingui-macro', 'babel-plugin-react-compiler'],
+        // Use the official Lingui babel macro plugin so `t`/`Trans` macros
+        // are compiled during build. Keep the react compiler plugin too.
+        plugins: [
+          '@lingui/babel-plugin-lingui-macro',
+          'babel-plugin-react-compiler',
+        ],
       },
     }),
-    // Note: we don't add @lingui/vite-plugin here to avoid pulling
-    // Node-only Lingui config code into the browser bundle during build.
-    // The app imports compiled catalogs (src/locales/*/messages.json)
-    // directly, which is sufficient for runtime.
+    // Add the official Lingui Vite plugin to enable catalog extraction
+    // and runtime compilation helpers aligned with the official example.
+    // This is safe because the plugin only affects build-time behavior.
+    lingui(),
   ],
-})
+});
 
-export default config
+export default config;
