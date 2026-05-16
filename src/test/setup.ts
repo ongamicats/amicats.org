@@ -308,8 +308,45 @@ vi.mock('@tanstack/react-router', async () => {
   return {
     ...actual,
     Link: (props: any) => {
-      const { children, ...rest } = props;
-      return createElement('a', rest, children);
+      // Render a real anchor with href derived from `to` so tests using
+      // getByRole('link') and anchor-specific attributes behave like the
+      // real router Link. Preserve `to` attribute for legacy assertions.
+      const { children, to, hash, ...rest } = props;
+      let href = '';
+      try {
+        if (typeof to === 'string') {
+          href = to;
+        }
+        // if a hash prop is present, append it to href
+        if (hash && typeof hash === 'string') {
+          // ensure trailing slash before hash when needed
+          href = href || '/';
+          // normalize hash value to not include leading '#'
+          const normalizedHash = hash.startsWith('#')
+            ? hash.replace(/^#/, '')
+            : hash;
+          href = `${href}#${normalizedHash}`;
+          // attach normalizedHash to rest attrs later so tests can read getAttribute('hash')
+          // We don't mutate `rest` here; we'll compute attrs after.
+        }
+      } catch (e) {
+        href = to || '';
+      }
+      // preserve `to` and expose a normalized `hash` attribute (no leading '#')
+      // so tests that call link.getAttribute('hash') receive a stable value.
+      const normalizedHashAttr =
+        typeof hash === 'string'
+          ? hash.startsWith('#')
+            ? hash.replace(/^#/, '')
+            : hash
+          : undefined;
+      const attrs: any = { ...(rest || {}), to, href };
+      if (
+        typeof normalizedHashAttr === 'string' &&
+        normalizedHashAttr.length > 0
+      )
+        attrs.hash = normalizedHashAttr;
+      return createElement('a', attrs, children);
     },
     // Provide a lightweight useNavigate mock for tests that call navigate({ to })
     // during migration. The real router will perform navigation; in tests a

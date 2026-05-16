@@ -49,9 +49,20 @@ describe('seja-um-parceiro route — UI contract (paranoid checks)', () => {
     // Scope to the main article to avoid duplicate matches from other
     // parts of the page (footer, etc.).
     const article = screen.getByRole('article');
-    expect(within(article).getByText(/Doações/i)).toBeInTheDocument();
-    expect(within(article).getByText(/Descontos/i)).toBeInTheDocument();
-    expect(within(article).getByText(/Eventos/i)).toBeInTheDocument();
+    // Scope to card titles within the types section to avoid footer duplicates
+    const typesHeading = within(article).getByRole('heading', {
+      name: /Tipos de Parceria/i,
+    });
+    const typesSection = typesHeading.closest('section');
+    const scope = typesSection || article;
+    // match the card titles which are rendered as <h5> in the implementation
+    const h5s = Array.from(scope.querySelectorAll('h5'));
+    // Ensure we are checking the H5 headings specifically so footer duplicates don't match
+    expect(h5s.some((n) => /Doações/i.test(n.textContent || ''))).toBeTruthy();
+    expect(
+      h5s.some((n) => /Descontos/i.test(n.textContent || '')),
+    ).toBeTruthy();
+    expect(h5s.some((n) => /Eventos/i.test(n.textContent || ''))).toBeTruthy();
   });
 
   test("CTA link 'Quero ser parceiro Amicat's!' points to WhatsApp, opens in new tab and has safe rel", () => {
@@ -62,10 +73,16 @@ describe('seja-um-parceiro route — UI contract (paranoid checks)', () => {
     // renders an anchor (<a>) with an href. Query by accessible name and
     // scope to the left column where the CTA is rendered to avoid picking
     // up the footer WhatsApp link.
-    const aside =
-      screen.getByRole('complementary') || document.querySelector('aside');
-    const cta = within(aside).getByRole('link', {
-      name: /Quero ser parceiro Amicat/i,
+    // Scope to left aside inside the content container to avoid footer
+    // WhatsApp button collisions. The container has id 'seja-um-parceiro-content'.
+    const container = document.getElementById('seja-um-parceiro-content');
+    const leftAside = container?.querySelector('aside') as HTMLElement | null;
+    const aside = leftAside || document.querySelector('aside');
+    // The Button used for CTA exposes an aria-label for tests and also
+    // renders visible text. Prefer the aria-label which is stable across
+    // translations in tests.
+    const cta = within(aside as HTMLElement).getByRole('link', {
+      name: /Abrir WhatsApp para parcerias|Quero ser parceiro Amicat/i,
     });
     expect(cta).toBeInTheDocument();
 

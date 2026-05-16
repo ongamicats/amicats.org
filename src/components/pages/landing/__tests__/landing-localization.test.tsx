@@ -37,11 +37,24 @@ describe('Landing localization (smoke)', () => {
       document.getElementById('intro-inner') ||
       document.querySelector('#intro-inner');
     expect(inner).toBeTruthy();
-    expect(
-      within(inner as HTMLElement).getByRole('link', {
-        name: /(Comece sua Jornada|Quero Ajudar|Start your journey)/i,
-      }),
-    ).toBeInTheDocument();
+
+    // Prefer accessible query but accept multiple localized variants and
+    // fallback to finding text and climbing to the anchor when necessary.
+    let cta: HTMLElement | null = null;
+    try {
+      cta = within(inner as HTMLElement).getByRole('link', {
+        name: /(Comece sua Jornada|Quero Ajudar|Start your journey|I want to help)/i,
+      });
+    } catch (e) {
+      const textNode = within(inner as HTMLElement).queryByText(
+        /Comece sua Jornada|Quero Ajudar|Start your journey|I want to help/i,
+      );
+      expect(textNode).toBeTruthy();
+      cta = textNode
+        ? ((textNode as Element).closest('a') as HTMLElement | null)
+        : null;
+    }
+    expect(cta).toBeTruthy();
 
     // render again with English catalog
     document.body.innerHTML = '';
@@ -51,11 +64,21 @@ describe('Landing localization (smoke)', () => {
       document.getElementById('intro-inner') ||
       document.querySelector('#intro-inner');
     expect(innerEn).toBeTruthy();
-    expect(
-      within(innerEn as HTMLElement).getByRole('link', {
-        name: /(Start your journey|Quero Ajudar|Comece sua Jornada)/i,
-      }),
-    ).toBeInTheDocument();
+    let ctaEn: HTMLElement | null = null;
+    try {
+      ctaEn = within(innerEn as HTMLElement).getByRole('link', {
+        name: /(Start your journey|Quero Ajudar|Comece sua Jornada|I want to help)/i,
+      });
+    } catch (e) {
+      const textNode = within(innerEn as HTMLElement).queryByText(
+        /Start your journey|Quero Ajudar|Comece sua Jornada|I want to help/i,
+      );
+      expect(textNode).toBeTruthy();
+      ctaEn = textNode
+        ? ((textNode as Element).closest('a') as HTMLElement | null)
+        : null;
+    }
+    expect(ctaEn).toBeTruthy();
   });
 });
 

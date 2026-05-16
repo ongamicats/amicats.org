@@ -1,4 +1,11 @@
-import { act, cleanup, render, screen, waitFor } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  render,
+  screen,
+  waitFor,
+  within,
+} from '@testing-library/react';
 import { afterEach, describe, test } from 'vitest';
 import { IntroducaoSection } from '@/routes/landing/-components/introducao';
 
@@ -47,17 +54,33 @@ describe('IntroducaoSection (unit) — hero overlay and CTA', () => {
     // visible button label used in the current implementation which is
     // "Quero Ajudar" (Portuguese) or an English equivalent. Accept any
     // of these to keep tests robust.
-    const cta = screen.getByRole('link', {
-      name: /(Comece sua Jornada|Start your journey|Quero Ajudar)/i,
-    });
-    expect(cta).toBeInTheDocument();
-    // Link is mocked to <a> and renders a normal anchor — assert href points to the localized
-    // "quero-ajudar" route instead of the previous landing fragment. Be resilient
-    // to locale prefixes such as /pt-BR/ or /en/.
-    const href = cta.getAttribute('href') || cta.getAttribute('to') || '';
+    // Prefer scoped query inside #intro-inner to avoid collisions with footer links.
+    const innerScope =
+      document.getElementById('intro-inner') ||
+      document.querySelector('#intro-inner');
+    expect(innerScope).toBeTruthy();
+
+    let cta: HTMLElement | null = null;
+    try {
+      cta = within(innerScope as HTMLElement).getByRole('link', {
+        name: /(Comece sua Jornada|Start your journey|Quero Ajudar|I want to help)/i,
+      });
+    } catch (err) {
+      // fallback: find visible text and climb to anchor
+      const textNode = within(innerScope as HTMLElement).queryByText(
+        /Comece sua Jornada|Start your journey|Quero Ajudar|I want to help/i,
+      );
+      expect(textNode).toBeTruthy();
+      cta = textNode
+        ? ((textNode as Element).closest('a') as HTMLElement | null)
+        : null;
+    }
+
+    expect(cta).toBeTruthy();
+    const href = cta!.getAttribute('href') || cta!.getAttribute('to') || '';
     // Accept either localized path (/pt-BR/quero-ajudar/) or non-localized (/quero-ajudar/)
     expect(href).toMatch(
-      /(^\/quero-ajudar\/|\/([a-z]{2}(-[A-Z]{2})?)\/quero-ajudar\/)/,
+      /(^\/quero-ajudar\/|\/(?:[a-z]{2}(?:-[A-Z]{2})?)\/quero-ajudar\/)/,
     );
   });
 

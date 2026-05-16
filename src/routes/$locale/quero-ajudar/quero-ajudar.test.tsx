@@ -37,16 +37,21 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
     const content = document.getElementById('quero-ajudar-content');
     expect(content).toBeTruthy();
 
-    const cardTitles = [
-      /Quero Adotar/i,
-      /Apadrinhar/i,
-      /Ser Voluntário/i,
-      /Ser Parceiro/i,
-    ];
-
-    for (const t of cardTitles) {
-      expect(within(content as HTMLElement).getByText(t)).toBeInTheDocument();
-    }
+    // Prefer querying headings by role within the content to avoid
+    // ambiguous matches (e.g., footer links that reuse the same labels).
+    const headings = within(content as HTMLElement).getAllByRole('heading');
+    expect(
+      headings.some((h) => /Quero Adotar/i.test(h.textContent || '')),
+    ).toBeTruthy();
+    expect(
+      headings.some((h) => /Apadrinhar/i.test(h.textContent || '')),
+    ).toBeTruthy();
+    expect(
+      headings.some((h) => /Ser Voluntário/i.test(h.textContent || '')),
+    ).toBeTruthy();
+    expect(
+      headings.some((h) => /Ser Parceiro/i.test(h.textContent || '')),
+    ).toBeTruthy();
 
     // Links/buttons point to expected destinations. Scope to the same
     // content area to avoid footer/header collisions. Link may render as
