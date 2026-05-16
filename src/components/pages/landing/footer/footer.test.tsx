@@ -33,7 +33,8 @@ describe('Footer (unit) — focused contract checks', () => {
     // ensure we pick up the accessible link even when multiple anchors exist.
     const parceiro = screen.getByRole('link', { name: /Seja um parceiro/i });
     expect(parceiro).toBeInTheDocument();
-    const parceiroAttr = parceiro.getAttribute('to') || parceiro.getAttribute('href') || '';
+    const parceiroAttr =
+      parceiro.getAttribute('to') || parceiro.getAttribute('href') || '';
     expect(parceiroAttr).toMatch(/\/pt-BR\/seja-um-parceiro\//);
 
     // 'Como Ajudar' points to localized /quero-ajudar/

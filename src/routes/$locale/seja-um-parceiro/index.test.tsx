@@ -62,8 +62,9 @@ describe('seja-um-parceiro route — UI contract (paranoid checks)', () => {
     // renders an anchor (<a>) with an href. Query by accessible name and
     // scope to the left column where the CTA is rendered to avoid picking
     // up the footer WhatsApp link.
-    const aside = screen.getByRole('complementary') || document.querySelector('aside');
-    const cta = within(aside as HTMLElement).getByRole('link', {
+    const aside =
+      screen.getByRole('complementary') || document.querySelector('aside');
+    const cta = within(aside).getByRole('link', {
       name: /Quero ser parceiro Amicat/i,
     });
     expect(cta).toBeInTheDocument();

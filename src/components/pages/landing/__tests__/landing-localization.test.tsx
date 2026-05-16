@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { afterEach, describe, test } from 'vitest';
 import React from 'react';
 
@@ -31,8 +31,14 @@ describe('Landing localization (smoke)', () => {
     // CTA in pt-BR may be "Comece sua Jornada" or the literal used in the
     // component ("Quero Ajudar"). Accept either Portuguese or English
     // variants so the smoke test is resilient to catalog shape differences.
+    // Scope to the component rendered to avoid collisions with other
+    // anchors present in global layout.
+    const inner =
+      document.getElementById('intro-inner') ||
+      document.querySelector('#intro-inner');
+    expect(inner).toBeTruthy();
     expect(
-      screen.getByRole('link', {
+      within(inner as HTMLElement).getByRole('link', {
         name: /(Comece sua Jornada|Quero Ajudar|Start your journey)/i,
       }),
     ).toBeInTheDocument();
@@ -41,8 +47,12 @@ describe('Landing localization (smoke)', () => {
     document.body.innerHTML = '';
     renderWithLocale(<IntroducaoSection />, 'en');
     // English translation should be present (or at least an English variant)
+    const innerEn =
+      document.getElementById('intro-inner') ||
+      document.querySelector('#intro-inner');
+    expect(innerEn).toBeTruthy();
     expect(
-      screen.getByRole('link', {
+      within(innerEn as HTMLElement).getByRole('link', {
         name: /(Start your journey|Quero Ajudar|Comece sua Jornada)/i,
       }),
     ).toBeInTheDocument();

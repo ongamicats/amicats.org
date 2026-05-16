@@ -55,25 +55,39 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
       name: /Saiba como adotar/i,
     });
     expect(saibaAdotar).toBeInTheDocument();
-    expect(saibaAdotar.getAttribute('to') || saibaAdotar.getAttribute('href') || '').toMatch(/\/como-funciona\//);
+    expect(
+      saibaAdotar.getAttribute('to') || saibaAdotar.getAttribute('href') || '',
+    ).toMatch(/\/como-funciona\//);
 
     const saibaApadrinhar = within(content as HTMLElement).getByRole('link', {
       name: /Saiba como apadrinhar/i,
     });
     expect(saibaApadrinhar).toBeInTheDocument();
-    expect(saibaApadrinhar.getAttribute('to') || saibaApadrinhar.getAttribute('href') || '').toContain('/como-funciona/?section=apadrinhamento');
+    expect(
+      saibaApadrinhar.getAttribute('to') ||
+        saibaApadrinhar.getAttribute('href') ||
+        '',
+    ).toContain('/como-funciona/?section=apadrinhamento');
 
     const saibaVoluntario = within(content as HTMLElement).getByRole('link', {
       name: /Saiba como ser voluntário/i,
     });
     expect(saibaVoluntario).toBeInTheDocument();
-    expect(saibaVoluntario.getAttribute('to') || saibaVoluntario.getAttribute('href') || '').toContain('/como-funciona/?section=voluntariado');
+    expect(
+      saibaVoluntario.getAttribute('to') ||
+        saibaVoluntario.getAttribute('href') ||
+        '',
+    ).toContain('/como-funciona/?section=voluntariado');
 
     const saibaParceiro = within(content as HTMLElement).getByRole('link', {
       name: /Saiba sobre parcerias/i,
     });
     expect(saibaParceiro).toBeInTheDocument();
-    expect(saibaParceiro.getAttribute('to') || saibaParceiro.getAttribute('href') || '').toMatch(/\/seja-um-parceiro\//);
+    expect(
+      saibaParceiro.getAttribute('to') ||
+        saibaParceiro.getAttribute('href') ||
+        '',
+    ).toMatch(/\/seja-um-parceiro\//);
   });
 });
 
