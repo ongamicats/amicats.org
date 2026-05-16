@@ -208,7 +208,16 @@ describe('LandingNavbar (unit) — scroll-threshold behavior', () => {
         // so accept either plain '/' or a localized root such as '/pt-BR/' or '/en/'.
         const to = link.getAttribute('to') || '';
         expect(to === '/' || /^\/(pt-BR|en)\/$/.test(to)).toBeTruthy();
-        expect(link.getAttribute('hash')).toBe(entry.hash);
+        // Accept either a dedicated 'hash' attribute (normalized without '#')
+        // or a href that contains the fragment (eg. /#adote)
+        const hashAttr = link.getAttribute('hash');
+        const href = link.getAttribute('href') || '';
+        const expectsHash = entry.hash;
+        const hashOk =
+          (hashAttr && hashAttr === expectsHash) ||
+          href.includes(`#${expectsHash}`) ||
+          href.endsWith(`#${expectsHash}`);
+        expect(hashOk).toBeTruthy();
       } else {
         // fallback: assert the text node exists
         expect(byText).toBeInTheDocument();

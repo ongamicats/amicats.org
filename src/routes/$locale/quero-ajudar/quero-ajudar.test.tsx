@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, test } from 'vitest';
-import RouteComponent from './index';
 import { i18n } from '@lingui/core';
+import RouteComponent from './index';
 
 describe('Route: /quero-ajudar/ — basic UI contract', () => {
   beforeEach(() => {
@@ -17,7 +17,8 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
 
   afterEach(() => {
     try {
-      document.cookie = 'locale=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie =
+        'locale=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
     } catch {}
   });
 
@@ -25,38 +26,73 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
     render(<RouteComponent />);
 
     // Hero heading
-    const heading = screen.getByRole('heading', { name: /Como Ajudar|How to help/i });
+    const heading = screen.getByRole('heading', {
+      name: /Como Ajudar|How to help/i,
+    });
     expect(heading).toBeInTheDocument();
 
-    // There should be four help card headings
-    const cardTitles = [
-      /Quero Adotar|Quero Adotar/i,
-      /Apadrinhar|Apadrinhar/i,
-      /Ser Voluntário|Ser Voluntário/i,
-      /Ser Parceiro|Ser Parceiro/i,
-    ];
+    // There should be four help card headings — scope queries to the page
+    // content so repeated site chrome (footer, header) doesn't produce
+    // ambiguous matches.
+    const content = document.getElementById('quero-ajudar-content');
+    expect(content).toBeTruthy();
 
-    for (const t of cardTitles) {
-      expect(screen.getByText(t)).toBeInTheDocument();
-    }
+    // Prefer querying headings by role within the content to avoid
+    // ambiguous matches (e.g., footer links that reuse the same labels).
+    const headings = within(content as HTMLElement).getAllByRole('heading');
+    expect(
+      headings.some((h) => /Quero Adotar/i.test(h.textContent || '')),
+    ).toBeTruthy();
+    expect(
+      headings.some((h) => /Apadrinhar/i.test(h.textContent || '')),
+    ).toBeTruthy();
+    expect(
+      headings.some((h) => /Ser Voluntário/i.test(h.textContent || '')),
+    ).toBeTruthy();
+    expect(
+      headings.some((h) => /Ser Parceiro/i.test(h.textContent || '')),
+    ).toBeTruthy();
 
-    // Links/buttons point to expected destinations. Link is mocked to <a> so
-    // its `to` prop appears as attribute; assert href/to contains expected paths.
-    const saibaAdotar = screen.getByRole('link', { name: /Saiba como adotar|Saiba como adotar/i });
+    // Links/buttons point to expected destinations. Scope to the same
+    // content area to avoid footer/header collisions. Link may render as
+    // an anchor (<a>) with either `href` or a mocked `to` attribute.
+    const saibaAdotar = within(content as HTMLElement).getByRole('link', {
+      name: /Saiba como adotar/i,
+    });
     expect(saibaAdotar).toBeInTheDocument();
-    expect((saibaAdotar.getAttribute('to') || '')).toMatch(/\/como-funciona\//);
+    expect(
+      saibaAdotar.getAttribute('to') || saibaAdotar.getAttribute('href') || '',
+    ).toMatch(/\/como-funciona\//);
 
-    const saibaApadrinhar = screen.getByRole('link', { name: /Saiba como apadrinhar/i });
+    const saibaApadrinhar = within(content as HTMLElement).getByRole('link', {
+      name: /Saiba como apadrinhar/i,
+    });
     expect(saibaApadrinhar).toBeInTheDocument();
-    expect((saibaApadrinhar.getAttribute('to') || '')).toContain('/como-funciona/?section=apadrinhamento');
+    expect(
+      saibaApadrinhar.getAttribute('to') ||
+        saibaApadrinhar.getAttribute('href') ||
+        '',
+    ).toContain('/como-funciona/?section=apadrinhamento');
 
-    const saibaVoluntario = screen.getByRole('link', { name: /Saiba como ser voluntário|Saiba como ser voluntário/i });
+    const saibaVoluntario = within(content as HTMLElement).getByRole('link', {
+      name: /Saiba como ser voluntário/i,
+    });
     expect(saibaVoluntario).toBeInTheDocument();
-    expect((saibaVoluntario.getAttribute('to') || '')).toContain('/como-funciona/?section=voluntariado');
+    expect(
+      saibaVoluntario.getAttribute('to') ||
+        saibaVoluntario.getAttribute('href') ||
+        '',
+    ).toContain('/como-funciona/?section=voluntariado');
 
-    const saibaParceiro = screen.getByRole('link', { name: /Saiba sobre parcerias|Saiba sobre parcerias/i });
+    const saibaParceiro = within(content as HTMLElement).getByRole('link', {
+      name: /Saiba sobre parcerias/i,
+    });
     expect(saibaParceiro).toBeInTheDocument();
-    expect((saibaParceiro.getAttribute('to') || '')).toMatch(/\/seja-um-parceiro\//);
+    expect(
+      saibaParceiro.getAttribute('to') ||
+        saibaParceiro.getAttribute('href') ||
+        '',
+    ).toMatch(/\/seja-um-parceiro\//);
   });
 });
 

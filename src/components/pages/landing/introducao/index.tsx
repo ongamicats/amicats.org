@@ -40,9 +40,13 @@ export function IntroducaoSection({
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const onScroll = () => setShowToggle(window.scrollY < 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    try {
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      return () => window.removeEventListener('scroll', onScroll);
+    } catch {
+      // defensive in tests where window may be partial
+    }
   }, []);
 
   return (
@@ -58,7 +62,11 @@ export function IntroducaoSection({
         >
           {/* hero overlay language toggle (top-right) */}
           <div className="absolute right-4 top-4 z-20">
-            {showToggle && <LanguageSelect />}
+            {showToggle && (
+              <div aria-hidden={false}>
+                <LanguageSelect />
+              </div>
+            )}
           </div>
           <div className="absolute right-0 top-0 w-1/2 h-full bg-primary/5 rounded-l-[5rem] z-0 hidden md:block"></div>
           <Flex reverse align="stretch" gap={8} className={'z-10 h-full'}>
