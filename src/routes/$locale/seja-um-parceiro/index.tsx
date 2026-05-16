@@ -20,7 +20,10 @@ export function RouteComponent(): JSX.Element {
       </Container>
 
       {/* Title / hero band — follow como-funciona rhythm */}
-      <Flex className="h-60 mb-6 bg-primary text-primary-content p-12" align="center">
+      <Flex
+        className="h-60 mb-6 bg-primary text-primary-content p-12"
+        align="center"
+      >
         <div className="w-full">
           <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mt-2 text-white">
             <Trans>Como ser parceiro</Trans>
@@ -29,7 +32,12 @@ export function RouteComponent(): JSX.Element {
         </div>
       </Flex>
 
-      <Container id="seja-um-parceiro-content" spacing="lg" className="pb-6 md:pb-10" fluid>
+      <Container
+        id="seja-um-parceiro-content"
+        spacing="lg"
+        className="pb-6 md:pb-10"
+        fluid
+      >
         <div className="mx-auto max-w-7xl">
           <div className="md:grid md:grid-cols-3 md:gap-10">
             {/* Left: support / benefits (supporting, not main) */}
@@ -39,25 +47,35 @@ export function RouteComponent(): JSX.Element {
                   <h2 className="text-lg font-semibold">{t`Como ser parceiro da AmiCat's`}</h2>
                   <p className="mt-2 text-sm text-base-content/80">{t`A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito.`}</p>
 
-                <div className="mt-4 space-y-2 text-sm text-base-content/80">
+                  <div className="mt-4 space-y-2 text-sm text-base-content/80">
                     <div className="flex items-start gap-3">
-                      <span className="badge badge-primary badge-outline">✓</span>
+                      <span className="badge badge-primary badge-outline">
+                        ✓
+                      </span>
                       <span>{t`Divulgação da marca em nossas redes sociais e eventos`}</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="badge badge-primary badge-outline">✓</span>
+                      <span className="badge badge-primary badge-outline">
+                        ✓
+                      </span>
                       <span>{t`Logo destacado em nosso site e materiais de comunicação`}</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="badge badge-primary badge-outline">✓</span>
+                      <span className="badge badge-primary badge-outline">
+                        ✓
+                      </span>
                       <span>{t`Certificado de Empresa Parceira`}</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="badge badge-primary badge-outline">✓</span>
+                      <span className="badge badge-primary badge-outline">
+                        ✓
+                      </span>
                       <span>{t`Possibilidade de ações conjuntas e eventos`}</span>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="badge badge-primary badge-outline">✓</span>
+                      <span className="badge badge-primary badge-outline">
+                        ✓
+                      </span>
                       <span>{t`A satisfação de contribuir para uma causa importante`}</span>
                     </div>
 
@@ -97,7 +115,9 @@ export function RouteComponent(): JSX.Element {
 
                 <ol className="mt-6 divide-y divide-base-200">
                   <li className="flex gap-4 py-6 items-start">
-                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">1</div>
+                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">
+                      1
+                    </div>
                     <div>
                       <h4 className="font-semibold">{t`Demonstre interesse`}</h4>
                       <p className="text-sm text-base-content/80">{t`Envie um e-mail para iniciarmos a conversa sobre possibilidades e objetivos.`}</p>
@@ -105,7 +125,9 @@ export function RouteComponent(): JSX.Element {
                   </li>
 
                   <li className="flex gap-4 py-6 items-start">
-                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">2</div>
+                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">
+                      2
+                    </div>
                     <div>
                       <h4 className="font-semibold">{t`Converse com a equipe`}</h4>
                       <p className="text-sm text-base-content/80">{t`Teremos uma reunião para entender seus interesses e o formato ideal de apoio.`}</p>
@@ -113,7 +135,9 @@ export function RouteComponent(): JSX.Element {
                   </li>
 
                   <li className="flex gap-4 py-6 items-start">
-                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">3</div>
+                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">
+                      3
+                    </div>
                     <div>
                       <h4 className="font-semibold">{t`Defina o formato da parceria`}</h4>
                       <p className="text-sm text-base-content/80">{t`Escolha entre doações, descontos, patrocínios ou ações conjuntas, com regras claras.`}</p>
@@ -121,7 +145,9 @@ export function RouteComponent(): JSX.Element {
                   </li>
 
                   <li className="flex gap-4 py-6 items-start">
-                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">4</div>
+                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">
+                      4
+                    </div>
                     <div>
                       <h4 className="font-semibold">{t`Alinhe divulgação e apoio`}</h4>
                       <p className="text-sm text-base-content/80">{t`Definimos como sua marca será divulgada e como a parceria será comunicada ao público.`}</p>
@@ -129,7 +155,9 @@ export function RouteComponent(): JSX.Element {
                   </li>
 
                   <li className="flex gap-4 py-6 items-start">
-                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">5</div>
+                    <div className="w-10 h-10 rounded-full bg-info text-info-content flex items-center justify-center font-bold">
+                      5
+                    </div>
                     <div>
                       <h4 className="font-semibold">{t`Comece a parceria`}</h4>
                       <p className="text-sm text-base-content/80">{t`Iniciamos as ações previstas e acompanhamos o impacto e a comunicação.`}</p>

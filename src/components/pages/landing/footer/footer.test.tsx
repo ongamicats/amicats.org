@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, test } from 'vitest';
-import { Footer } from './index';
 import { i18n } from '@lingui/core';
+import { Footer } from './index';
 
 describe('Footer (unit) — focused contract checks', () => {
   beforeEach(() => {
@@ -17,7 +17,8 @@ describe('Footer (unit) — focused contract checks', () => {
 
   afterEach(() => {
     try {
-      document.cookie = 'locale=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie =
+        'locale=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
     } catch {}
   });
 
@@ -30,12 +31,16 @@ describe('Footer (unit) — focused contract checks', () => {
     // 'Seja um parceiro' link should be present and have `to` attr that includes the localized partner path
     const parceiro = screen.getByRole('link', { name: /Seja um parceiro/i });
     expect(parceiro).toBeInTheDocument();
-    expect((parceiro.getAttribute('to') || '')).toMatch(/\/pt-BR\/seja-um-parceiro\//);
+    expect(parceiro.getAttribute('to') || '').toMatch(
+      /\/pt-BR\/seja-um-parceiro\//,
+    );
 
     // 'Como Ajudar' points to localized /quero-ajudar/
     const comoAjudar = screen.getByRole('link', { name: /Como Ajudar/i });
     expect(comoAjudar).toBeInTheDocument();
-    expect((comoAjudar.getAttribute('to') || '')).toMatch(/\/pt-BR\/quero-ajudar\//);
+    expect(comoAjudar.getAttribute('to') || '').toMatch(
+      /\/pt-BR\/quero-ajudar\//,
+    );
   });
 
   test('contact email uses mailto:amicatsong@gmail.com and privacy/terms are present but hidden', () => {
@@ -44,7 +49,9 @@ describe('Footer (unit) — focused contract checks', () => {
     const mail = document.querySelector('a[href^="mailto:"]');
     expect(mail).toBeTruthy();
     if (mail) {
-      expect((mail as HTMLAnchorElement).href).toContain('mailto:amicatsong@gmail.com');
+      expect((mail as HTMLAnchorElement).href).toContain(
+        'mailto:amicatsong@gmail.com',
+      );
     }
 
     // Privacidade and Termos exist but are hidden (have class 'hidden')

@@ -49,7 +49,9 @@ describe('IntroducaoSection (unit) — hero overlay and CTA', () => {
     // to locale prefixes such as /pt-BR/ or /en/.
     const href = cta.getAttribute('href') || cta.getAttribute('to') || '';
     // Accept either localized path (/pt-BR/quero-ajudar/) or non-localized (/quero-ajudar/)
-    expect(href).toMatch(/(^\/quero-ajudar\/|\/([a-z]{2}(-[A-Z]{2})?)\/quero-ajudar\/)/);
+    expect(href).toMatch(
+      /(^\/quero-ajudar\/|\/([a-z]{2}(-[A-Z]{2})?)\/quero-ajudar\/)/,
+    );
   });
 
   test('hides language toggle after scrolling past threshold', async () => {

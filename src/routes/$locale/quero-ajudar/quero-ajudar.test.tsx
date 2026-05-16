@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, test } from 'vitest';
-import RouteComponent from './index';
 import { i18n } from '@lingui/core';
+import RouteComponent from './index';
 
 describe('Route: /quero-ajudar/ — basic UI contract', () => {
   beforeEach(() => {
@@ -17,7 +17,8 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
 
   afterEach(() => {
     try {
-      document.cookie = 'locale=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
+      document.cookie =
+        'locale=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
     } catch {}
   });
 
@@ -25,7 +26,9 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
     render(<RouteComponent />);
 
     // Hero heading
-    const heading = screen.getByRole('heading', { name: /Como Ajudar|How to help/i });
+    const heading = screen.getByRole('heading', {
+      name: /Como Ajudar|How to help/i,
+    });
     expect(heading).toBeInTheDocument();
 
     // There should be four help card headings
@@ -42,21 +45,35 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
 
     // Links/buttons point to expected destinations. Link is mocked to <a> so
     // its `to` prop appears as attribute; assert href/to contains expected paths.
-    const saibaAdotar = screen.getByRole('link', { name: /Saiba como adotar|Saiba como adotar/i });
+    const saibaAdotar = screen.getByRole('link', {
+      name: /Saiba como adotar|Saiba como adotar/i,
+    });
     expect(saibaAdotar).toBeInTheDocument();
-    expect((saibaAdotar.getAttribute('to') || '')).toMatch(/\/como-funciona\//);
+    expect(saibaAdotar.getAttribute('to') || '').toMatch(/\/como-funciona\//);
 
-    const saibaApadrinhar = screen.getByRole('link', { name: /Saiba como apadrinhar/i });
+    const saibaApadrinhar = screen.getByRole('link', {
+      name: /Saiba como apadrinhar/i,
+    });
     expect(saibaApadrinhar).toBeInTheDocument();
-    expect((saibaApadrinhar.getAttribute('to') || '')).toContain('/como-funciona/?section=apadrinhamento');
+    expect(saibaApadrinhar.getAttribute('to') || '').toContain(
+      '/como-funciona/?section=apadrinhamento',
+    );
 
-    const saibaVoluntario = screen.getByRole('link', { name: /Saiba como ser voluntário|Saiba como ser voluntário/i });
+    const saibaVoluntario = screen.getByRole('link', {
+      name: /Saiba como ser voluntário|Saiba como ser voluntário/i,
+    });
     expect(saibaVoluntario).toBeInTheDocument();
-    expect((saibaVoluntario.getAttribute('to') || '')).toContain('/como-funciona/?section=voluntariado');
+    expect(saibaVoluntario.getAttribute('to') || '').toContain(
+      '/como-funciona/?section=voluntariado',
+    );
 
-    const saibaParceiro = screen.getByRole('link', { name: /Saiba sobre parcerias|Saiba sobre parcerias/i });
+    const saibaParceiro = screen.getByRole('link', {
+      name: /Saiba sobre parcerias|Saiba sobre parcerias/i,
+    });
     expect(saibaParceiro).toBeInTheDocument();
-    expect((saibaParceiro.getAttribute('to') || '')).toMatch(/\/seja-um-parceiro\//);
+    expect(saibaParceiro.getAttribute('to') || '').toMatch(
+      /\/seja-um-parceiro\//,
+    );
   });
 });
 

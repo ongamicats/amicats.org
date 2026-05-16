@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 
 import RouteComponent from './index';
 
-describe("seja-um-parceiro route — UI contract (paranoid checks)", () => {
+describe('seja-um-parceiro route — UI contract (paranoid checks)', () => {
   beforeEach(() => {
     // ensure route-like URL for any code that inspects location
     window.history.pushState({}, '', '/pt-BR/seja-um-parceiro');
@@ -56,13 +56,15 @@ describe("seja-um-parceiro route — UI contract (paranoid checks)", () => {
     render(<RouteComponent />);
 
     // The primary CTA is rendered as a link/button. Query by accessible name.
-    const cta = screen.getByRole('link', { name: /Quero ser parceiro Amicat/i });
+    const cta = screen.getByRole('link', {
+      name: /Quero ser parceiro Amicat/i,
+    });
     expect(cta).toBeInTheDocument();
 
     // Exact href should match the WhatsApp deep link required by the product
     expect(cta).toHaveAttribute(
       'href',
-      "https://api.whatsapp.com/send/?phone=5567999300401&text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+como+me+tornar+parceiro+da+AmiCat%27s.&type=phone_number&app_absent=0",
+      'https://api.whatsapp.com/send/?phone=5567999300401&text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+como+me+tornar+parceiro+da+AmiCat%27s.&type=phone_number&app_absent=0',
     );
 
     // Should open in new tab and include security rel attributes
