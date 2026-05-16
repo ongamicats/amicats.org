@@ -38,10 +38,10 @@ export function GatoCard({
           {displayStatus}
         </Badge>
       </Figure>
-      <Card.Body className="p-6">
-        <Card.Title className="text-sm md:text-lg">{nome}</Card.Title>
+      <Card.Body className="p-6 flex flex-col flex-1">
+        <Card.Title className="text-sm md:text-lg truncate">{nome}</Card.Title>
         <p className="text-xs opacity-70 mb-4 line-clamp-2">{descricao}</p>
-        <Card.Actions>
+        <Card.Actions className="mt-auto flex gap-2">
           <Button
             variant="primary"
             size="sm"

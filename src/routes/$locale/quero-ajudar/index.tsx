@@ -1,4 +1,4 @@
-import { Link, createFileRoute, useParams  } from '@tanstack/react-router';
+import { Link, createFileRoute, useParams } from '@tanstack/react-router';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { Container } from '@/components/layout/ui/container';
 import { Navbar as LandingNavbar } from '@/components/pages/landing/navbar';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { Trans, useLingui } from '@lingui/react/macro';
-import { CreditCard, Repeat, Copy, FileText, Info } from 'lucide-react';
+import { Copy, CreditCard, FileText, Info, Repeat } from 'lucide-react';
 import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 interface Props {
@@ -23,14 +23,17 @@ export function DonationCard({ locale }: Props) {
       await navigator.clipboard.writeText(PIX);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch {}
+    } catch (err) {
+      // swallow but log in dev for diagnostics
+      if (process.env.NODE_ENV !== 'test') console.warn('copy failed', err);
+    }
   }
 
   return (
     <section className={cn('rounded-lg bg-base-200 p-6 shadow-sm')}>
       <div className="grid gap-6 md:grid-cols-2">
         {/* Left: One-time donation */}
-        <div className={cn('bg-base-100 rounded-md p-4')}> 
+        <div className={cn('bg-base-100 rounded-md p-4')}>
           <div className="flex items-start justify-between">
             <div>
               <h3 className="text-xl font-semibold mb-1">{t`Doação Única`}</h3>
@@ -59,7 +62,12 @@ export function DonationCard({ locale }: Props) {
           </div>
 
           <div className="mt-4 flex flex-col sm:flex-row gap-2">
-            <a className="btn btn-outline w-full sm:w-auto flex items-center gap-2" href={boleto} target="_blank" rel="noreferrer">
+            <a
+              className="btn btn-outline w-full sm:w-auto flex items-center gap-2"
+              href={boleto}
+              target="_blank"
+              rel="noreferrer"
+            >
               <FileText className="h-4 w-4" />
               <Trans>Doe por Boleto</Trans>
             </a>
@@ -78,11 +86,21 @@ export function DonationCard({ locale }: Props) {
           </div>
 
           <div className="mt-4 grid grid-cols-1 gap-2">
-            <a className="btn btn-outline flex items-center gap-2" href={recurring1} target="_blank" rel="noreferrer">
+            <a
+              className="btn btn-outline flex items-center gap-2"
+              href={recurring1}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Repeat className="h-4 w-4" />
               <Trans>Doação recorrente (Asaas)</Trans>
             </a>
-            <a className="btn btn-outline flex items-center gap-2" href={recurring2} target="_blank" rel="noreferrer">
+            <a
+              className="btn btn-outline flex items-center gap-2"
+              href={recurring2}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Repeat className="h-4 w-4" />
               <Trans>Doação recorrente (Apoia.se)</Trans>
             </a>
@@ -91,7 +109,10 @@ export function DonationCard({ locale }: Props) {
       </div>
 
       <div className="mt-6">
-        <Link to={`/${locale}/como-funciona/?section=apadrinhamento`} className="btn btn-ghost flex items-center gap-2">
+        <Link
+          to={`/${locale}/como-funciona/?section=apadrinhamento`}
+          className="btn btn-ghost flex items-center gap-2"
+        >
           <Info className="h-4 w-4" />
           <Trans>Saiba como apadrinhar</Trans>
         </Link>

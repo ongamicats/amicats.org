@@ -28,12 +28,13 @@ describe('Footer (unit) — focused contract checks', () => {
     // Section title
     expect(screen.getByText(/Institucional/i)).toBeInTheDocument();
 
-    // 'Seja um parceiro' link should be present and have `to` attr that includes the localized partner path
+    // 'Seja um parceiro' link should be present and have `to` or `href` attr
+    // that includes the localized partner path. Use role-based query to
+    // ensure we pick up the accessible link even when multiple anchors exist.
     const parceiro = screen.getByRole('link', { name: /Seja um parceiro/i });
     expect(parceiro).toBeInTheDocument();
-    expect(parceiro.getAttribute('to') || '').toMatch(
-      /\/pt-BR\/seja-um-parceiro\//,
-    );
+    const parceiroAttr = parceiro.getAttribute('to') || parceiro.getAttribute('href') || '';
+    expect(parceiroAttr).toMatch(/\/pt-BR\/seja-um-parceiro\//);
 
     // 'Como Ajudar' points to localized /quero-ajudar/
     const comoAjudar = screen.getByRole('link', { name: /Como Ajudar/i });

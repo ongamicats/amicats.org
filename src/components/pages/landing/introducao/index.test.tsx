@@ -28,10 +28,17 @@ describe('IntroducaoSection (unit) — hero overlay and CTA', () => {
       document.querySelector('#intro-inner');
     expect(inner).toBeTruthy();
 
-    // LandingLanguageToggle has been replaced by a custom LanguageSelect — assert by button with locale label
+    // LandingLanguageToggle has been replaced by a custom LanguageSelect —
+    // the component renders a button with an aria-label. The test setup
+    // normalizes aria-labels; assert presence via a case-insensitive
+    // attribute query to avoid fragility.
     const toggleBtn =
       document.querySelector('button[aria-label="Language select"]') ||
-      document.querySelector('button[aria-label="language select"]');
+      document.querySelector('button[aria-label="language select"]') ||
+      // fallback: any button whose aria-label contains 'language' (case-insensitive)
+      Array.from(document.querySelectorAll('button')).find((b) =>
+        (b.getAttribute('aria-label') || '').toLowerCase().includes('language'),
+      );
     expect(toggleBtn).toBeTruthy();
 
     // CTA exact label and href

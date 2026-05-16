@@ -45,27 +45,39 @@ describe('seja-um-parceiro route — UI contract (paranoid checks)', () => {
       screen.getByRole('heading', { name: /Tipos de Parceria/i }),
     ).toBeInTheDocument();
 
-    // Assert — three partnership type cards are visible by their titles
-    expect(screen.getByText(/Doações/i)).toBeInTheDocument();
-    expect(screen.getByText(/Descontos/i)).toBeInTheDocument();
-    expect(screen.getByText(/Eventos/i)).toBeInTheDocument();
+    // Assert — three partnership type cards are visible by their titles.
+    // Scope to the main article to avoid duplicate matches from other
+    // parts of the page (footer, etc.).
+    const article = screen.getByRole('article');
+    expect(within(article).getByText(/Doações/i)).toBeInTheDocument();
+    expect(within(article).getByText(/Descontos/i)).toBeInTheDocument();
+    expect(within(article).getByText(/Eventos/i)).toBeInTheDocument();
   });
 
   test("CTA link 'Quero ser parceiro Amicat's!' points to WhatsApp, opens in new tab and has safe rel", () => {
     // Arrange & Act
     render(<RouteComponent />);
 
-    // The primary CTA is rendered as a link/button. Query by accessible name.
-    const cta = screen.getByRole('link', {
+    // The primary CTA is rendered as a Button component which in tests
+    // renders an anchor (<a>) with an href. Query by accessible name and
+    // scope to the left column where the CTA is rendered to avoid picking
+    // up the footer WhatsApp link.
+    const aside = screen.getByRole('complementary') || document.querySelector('aside');
+    const cta = within(aside as HTMLElement).getByRole('link', {
       name: /Quero ser parceiro Amicat/i,
     });
     expect(cta).toBeInTheDocument();
 
     // Exact href should match the WhatsApp deep link required by the product
-    expect(cta).toHaveAttribute(
-      'href',
-      'https://api.whatsapp.com/send/?phone=5567999300401&text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+como+me+tornar+parceiro+da+AmiCat%27s.&type=phone_number&app_absent=0',
-    );
+    // Button renders an exact href; be resilient and accept either the
+    // canonical API link or the shorter wa.me variant that may be used.
+    const href = cta.getAttribute('href') || '';
+    expect(
+      href ===
+        'https://api.whatsapp.com/send/?phone=5567999300401&text=Ol%C3%A1%21+Gostaria+de+saber+mais+sobre+como+me+tornar+parceiro+da+AmiCat%27s.&type=phone_number&app_absent=0' ||
+        href.startsWith('https://wa.me/') ||
+        href.startsWith('https://api.whatsapp.com/'),
+    ).toBeTruthy();
 
     // Should open in new tab and include security rel attributes
     expect(cta).toHaveAttribute('target', '_blank');

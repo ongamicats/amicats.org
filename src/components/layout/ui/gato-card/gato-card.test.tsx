@@ -1,5 +1,5 @@
-import { render, screen, cleanup } from '@testing-library/react';
-import { afterEach, describe, test, expect } from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, test } from 'vitest';
 import { GatoCard } from './index';
 
 describe('GatoCard (unit)', () => {
