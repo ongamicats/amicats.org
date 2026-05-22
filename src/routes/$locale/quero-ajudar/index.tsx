@@ -1,5 +1,11 @@
-import { Link, createFileRoute, useParams } from '@tanstack/react-router';
+import { createFileRoute, useParams } from '@tanstack/react-router';
 import { Trans, useLingui } from '@lingui/react/macro';
+<<<<<<< Updated upstream
+=======
+import { DonationCard } from './-components/donation-card';
+import { VoluntarieCard } from './-components/voluntarie-card';
+import { ItemsDonationCard } from './-components/items-donation-card';
+>>>>>>> Stashed changes
 import { Container } from '@/components/layout/ui/container';
 import { Navbar as LandingNavbar } from '@/components/pages/landing/navbar';
 import { Flex } from '@/components/layout/ui/flex';
@@ -21,17 +27,17 @@ export function RouteComponent(): JSX.Element {
         <LandingNavbar forceVisible />
       </Container>
 
-      <Flex
-        className="h-60 mb-6 bg-primary text-primary-content p-12"
-        align="center"
-      >
-        <div className="w-full">
-          <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mt-2 text-white">
-            <Trans>Como Ajudar</Trans>
-          </h1>
-          <p className="mt-2 text-base opacity-95 text-white">{t`Escolha a forma de ajudar que mais combina com você.`}</p>
+      {/* Full-bleed hero band: background spans full width, inner content aligned to main wrapper width */}
+      <div className="w-full bg-primary text-primary-content mb-6">
+        <div className="mx-auto w-full md:w-4/5 h-60 p-12 flex items-center">
+          <div className="w-full">
+            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mt-2 text-white">
+              <Trans>Como Ajudar</Trans>
+            </h1>
+            <p className="mt-2 text-base opacity-95 text-white">{t`Escolha a forma de ajudar que mais combina com você.`}</p>
+          </div>
         </div>
-      </Flex>
+      </div>
 
       <Container
         id="quero-ajudar-content"
@@ -39,6 +45,7 @@ export function RouteComponent(): JSX.Element {
         className="pb-6 md:pb-10"
         fluid
       >
+<<<<<<< Updated upstream
         <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
           <article className="rounded-lg bg-base-100 p-6 shadow-sm flex flex-col">
             <h3 className="text-xl font-semibold mb-2">{t`Quero Adotar`}</h3>
@@ -91,6 +98,16 @@ export function RouteComponent(): JSX.Element {
               </Link>
             </div>
           </article>
+=======
+        <div className="mx-auto w-full md:w-4/5 flex flex-col gap-6">
+          <DonationCard locale={locale} />
+
+          {/* Stacked vertically: ItemsDonationCard above VoluntarieCard */}
+          <div className="grid gap-6">
+            <ItemsDonationCard locale={locale} />
+            <VoluntarieCard locale={locale} />
+          </div>
+>>>>>>> Stashed changes
         </div>
       </Container>
 

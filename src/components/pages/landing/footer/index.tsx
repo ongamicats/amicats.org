@@ -46,6 +46,12 @@ export function Footer() {
               {t`Como Ajudar`}
             </Link>
             <Link
+              to={`/${locale}/como-funciona/`}
+              className="link link-hover hover:text-primary transition-colors"
+            >
+              {t`Como Funciona`}
+            </Link>
+            <Link
               to={`/${locale}/seja-um-parceiro/`}
               className="link link-hover hover:text-primary transition-colors"
             >
@@ -60,11 +66,7 @@ export function Footer() {
             <p className="text-xs opacity-90 mb-1">{t`Atendimento por WhatsApp e E-mail`}</p>
             <p className="text-xs opacity-90 mb-3">{t`Segunda a Sexta: 14h às 17h`}</p>
             <div className="flex flex-col gap-3">
-              <a
-                className="flex items-center gap-2 hover:text-primary transition-colors mt-4"
-                href="#footer-contact"
-                aria-label={t`Localização`}
-              >
+              <a className="flex items-center gap-2 hover:text-primary transition-colors mt-4">
                 <MapPin size={18} /> {t`Campo Grande, MS`}
               </a>
               <a

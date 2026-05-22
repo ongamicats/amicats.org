@@ -1,5 +1,4 @@
 import { Trans, useLingui } from '@lingui/react/macro';
-import { msg } from '@lingui/core/macro';
 import { Container } from '@/components/layout/ui/container';
 import { GatoCard } from '@/components/layout/ui/gato-card';
 import { Flex } from '@/components/layout/ui/flex';
@@ -40,6 +39,16 @@ export function AdoteSection({ images }: AdoteSectionProps) {
     },
   ];
 
+  const WHATSAPP_PHONE = '5567999300401';
+  const buildWhatsappUrl = (nome: string) => {
+    const text = t`Quero apadrinhar o ${nome} e saber como funciona.`;
+    const encoded = encodeURIComponent(text);
+    return `https://api.whatsapp.com/send/?phone=${WHATSAPP_PHONE}&text=${encoded}&type=phone_number&app_absent=0`;
+  };
+
+  const ADOPTION_FORM =
+    'https://docs.google.com/forms/d/e/1FAIpQLSfa1qdsHuOn6WeFLKrdMUYJrGzKsI6xW--c7XW-DPGQQbV4WA/viewform?pli=1';
+
   return (
     <SectionContainer
       containerId="c-adote"
@@ -77,6 +86,11 @@ export function AdoteSection({ images }: AdoteSectionProps) {
                 descricao={gato.descricao}
                 imagem={gato.imagem}
                 status={gato.status}
+<<<<<<< Updated upstream
+=======
+                hrefApadrinhar={buildWhatsappUrl(gato.nome)}
+                hrefAdotar={ADOPTION_FORM}
+>>>>>>> Stashed changes
               />
             ))}
           </GatosCarousel>

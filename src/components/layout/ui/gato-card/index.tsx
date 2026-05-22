@@ -1,5 +1,4 @@
 import { useLingui } from '@lingui/react/macro';
-import { msg } from '@lingui/core/macro';
 import { CardComponent as Card } from '@/components/layout/daisy/data-display/card';
 import { Figure } from '@/components/layout/ui/figure';
 import { Img } from '@/components/layout/ui/img';
@@ -13,6 +12,8 @@ export interface GatoCardProps {
   status?: string;
   onAdotar?: () => void;
   onApadrinhar?: () => void;
+  hrefAdotar?: string;
+  hrefApadrinhar?: string;
 }
 
 export function GatoCard({
@@ -22,12 +23,14 @@ export function GatoCard({
   status,
   onAdotar,
   onApadrinhar,
+  hrefAdotar,
+  hrefApadrinhar,
 }: GatoCardProps) {
   const { t } = useLingui();
   const displayStatus = status ?? t`Disponível`;
 
   return (
-    <Card className="bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-transparent hover:border-primary/20">
+    <Card className="h-full flex flex-col bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-transparent hover:border-primary/20">
       <Figure className="h-42 overflow-hidden relative">
         <Img
           src={imagem}
@@ -46,7 +49,17 @@ export function GatoCard({
             variant="primary"
             size="sm"
             className="w-full btn-soft"
+<<<<<<< Updated upstream
             onClick={onApadrinhar}
+=======
+            {...(hrefApadrinhar
+              ? {
+                  href: hrefApadrinhar,
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                }
+              : { onClick: onApadrinhar })}
+>>>>>>> Stashed changes
           >
             {t`Apadrinhe`}
           </Button>
@@ -54,7 +67,17 @@ export function GatoCard({
             variant="primary"
             size="sm"
             className="w-full btn-outline"
+<<<<<<< Updated upstream
             onClick={onAdotar}
+=======
+            {...(hrefAdotar
+              ? {
+                  href: hrefAdotar,
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                }
+              : { onClick: onAdotar })}
+>>>>>>> Stashed changes
           >
             {t`Quero Adotar`}
           </Button>
