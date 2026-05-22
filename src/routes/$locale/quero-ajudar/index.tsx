@@ -1,12 +1,11 @@
 import { createFileRoute, useParams } from '@tanstack/react-router';
 import { Trans, useLingui } from '@lingui/react/macro';
-import { Link } from '@tanstack/react-router';
 import { DonationCard } from './-components/donation-card';
 import { VoluntarieCard } from './-components/voluntarie-card';
 import { ItemsDonationCard } from './-components/items-donation-card';
 import { Container } from '@/components/layout/ui/container';
 import { Navbar as LandingNavbar } from '@/components/pages/landing/navbar';
-import { Flex } from '@/components/layout/ui/flex';
+
 import { Footer } from '@/components/pages/landing/footer';
 import { resolveLocale } from '@/integrations/lingui/resolve-locale';
 
@@ -43,58 +42,15 @@ export function RouteComponent(): JSX.Element {
         className="pb-6 md:pb-10"
         fluid
       >
-        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article className="rounded-lg bg-base-100 p-6 shadow-sm flex flex-col">
-            <h3 className="text-xl font-semibold mb-2">{t`Quero Adotar`}</h3>
-            <p className="text-base-content/80 mb-4">{t`Veja o processo completo de adoção e encontre o gatinho certo para seu lar.`}</p>
-            <div className="mt-auto">
-              <Link
-                to={`/${locale}/como-funciona/`}
-                className="btn btn-primary"
-              >
-                <Trans>Saiba como adotar</Trans>
-              </Link>
-            </div>
-          </article>
+        <div className="mx-auto max-w-5xl flex flex-col gap-6">
+          {/* Primary call-to-action: donations (financial) */}
+          <DonationCard locale={locale} />
 
-          <article className="rounded-lg bg-base-100 p-6 shadow-sm flex flex-col">
-            <h3 className="text-xl font-semibold mb-2">{t`Apadrinhar`}</h3>
-            <p className="text-base-content/80 mb-4">{t`Apoie financeiramente um gatinho sem precisar adotar — receba atualizações e participe da rotina.`}</p>
-            <div className="mt-auto">
-              <Link
-                to={`/${locale}/como-funciona/?section=apadrinhamento`}
-                className="btn btn-secondary"
-              >
-                <Trans>Saiba como apadrinhar</Trans>
-              </Link>
-            </div>
-          </article>
-
-          <article className="rounded-lg bg-base-100 p-6 shadow-sm flex flex-col">
-            <h3 className="text-xl font-semibold mb-2">{t`Ser Voluntário`}</h3>
-            <p className="text-base-content/80 mb-4">{t`Participe das rotinas de cuidado, resgates e eventos — sua ajuda faz a diferença.`}</p>
-            <div className="mt-auto">
-              <Link
-                to={`/${locale}/como-funciona/?section=voluntariado`}
-                className="btn btn-accent"
-              >
-                <Trans>Saiba como ser voluntário</Trans>
-              </Link>
-            </div>
-          </article>
-
-          <article className="rounded-lg bg-base-100 p-6 shadow-sm flex flex-col">
-            <h3 className="text-xl font-semibold mb-2">{t`Ser Parceiro`}</h3>
-            <p className="text-base-content/80 mb-4">{t`Empresas e profissionais podem apoiar com recursos, serviços e divulgação.`}</p>
-            <div className="mt-auto">
-              <Link
-                to={`/${locale}/seja-um-parceiro/`}
-                className="btn btn-ghost"
-              >
-                <Trans>Saiba sobre parcerias</Trans>
-              </Link>
-            </div>
-          </article>
+          {/* Secondary stack: items donation and volunteering */}
+          <div className="flex flex-col gap-6">
+            <ItemsDonationCard locale={locale} />
+            <VoluntarieCard locale={locale} />
+          </div>
         </div>
       </Container>
 

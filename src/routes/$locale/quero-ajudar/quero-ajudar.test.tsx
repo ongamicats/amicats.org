@@ -22,48 +22,44 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
     } catch {}
   });
 
-  test('renders hero heading and four help cards with expected links', () => {
+  test('renders hero and rich help cards (donation, items, volunteering) with expected CTAs and links', () => {
+    // Arrange
     render(<RouteComponent />);
 
-    // Hero heading
+    // Act — scope to the main content to avoid header/footer collisions
+    const content = document.getElementById('quero-ajudar-content');
+    expect(content).toBeTruthy();
+
+    // Assert — Hero heading
     const heading = screen.getByRole('heading', {
       name: /Como Ajudar|How to help/i,
     });
     expect(heading).toBeInTheDocument();
 
-    // There should be four help card headings — scope queries to the page
-    // content so repeated site chrome (footer, header) doesn't produce
-    // ambiguous matches.
-    const content = document.getElementById('quero-ajudar-content');
-    expect(content).toBeTruthy();
-
-    // Prefer querying headings by role within the content to avoid
-    // ambiguous matches (e.g., footer links that reuse the same labels).
-    const headings = within(content as HTMLElement).getAllByRole('heading');
-    expect(
-      headings.some((h) => /Quero Adotar/i.test(h.textContent || '')),
-    ).toBeTruthy();
-    expect(
-      headings.some((h) => /Apadrinhar/i.test(h.textContent || '')),
-    ).toBeTruthy();
-    expect(
-      headings.some((h) => /Ser Voluntário/i.test(h.textContent || '')),
-    ).toBeTruthy();
-    expect(
-      headings.some((h) => /Ser Parceiro/i.test(h.textContent || '')),
-    ).toBeTruthy();
-
-    // Links/buttons point to expected destinations. Scope to the same
-    // content area to avoid footer/header collisions. Link may render as
-    // an anchor (<a>) with either `href` or a mocked `to` attribute.
-    const saibaAdotar = within(content as HTMLElement).getByRole('link', {
-      name: /Saiba como adotar/i,
+    // DonationCard: one-time and recurring sections
+    const doacaoUnica = within(content as HTMLElement).getByRole('heading', {
+      name: /Doação Única/i,
     });
-    expect(saibaAdotar).toBeInTheDocument();
-    expect(
-      saibaAdotar.getAttribute('to') || saibaAdotar.getAttribute('href') || '',
-    ).toMatch(/\/como-funciona\//);
+    expect(doacaoUnica).toBeInTheDocument();
 
+    const doacaoRecorrente = within(content as HTMLElement).getByRole(
+      'heading',
+      {
+        name: /Doação Recorrente/i,
+      },
+    );
+    expect(doacaoRecorrente).toBeInTheDocument();
+
+    // Boleto / Asaas link present
+    const boleto = within(content as HTMLElement).getByRole('link', {
+      name: /Doe por Boleto/i,
+    });
+    expect(boleto).toBeInTheDocument();
+    expect(
+      boleto.getAttribute('href') || boleto.getAttribute('to') || '',
+    ).toMatch(/asaas\.com/);
+
+    // DonationCard: link to apadrinhamento (bottom ghost button)
     const saibaApadrinhar = within(content as HTMLElement).getByRole('link', {
       name: /Saiba como apadrinhar/i,
     });
@@ -74,25 +70,50 @@ describe('Route: /quero-ajudar/ — basic UI contract', () => {
         '',
     ).toContain('/como-funciona/?section=apadrinhamento');
 
-    const saibaVoluntario = within(content as HTMLElement).getByRole('link', {
-      name: /Saiba como ser voluntário/i,
+    // ItemsDonationCard: heading and WhatsApp CTA
+    const itensHeading = within(content as HTMLElement).getByRole('heading', {
+      name: /Doação de Itens/i,
     });
-    expect(saibaVoluntario).toBeInTheDocument();
+    expect(itensHeading).toBeInTheDocument();
+
+    const doarItens = within(content as HTMLElement).getByRole('link', {
+      name: /Quero doar itens/i,
+    });
+    expect(doarItens).toBeInTheDocument();
     expect(
-      saibaVoluntario.getAttribute('to') ||
-        saibaVoluntario.getAttribute('href') ||
+      (doarItens.getAttribute('href') || '').startsWith(
+        'https://api.whatsapp.com/',
+      ),
+    ).toBeTruthy();
+
+    // VoluntarieCard: heading and CTAs
+    const voluntarieHeading = within(content as HTMLElement).getByRole(
+      'heading',
+      {
+        name: /Doe Seu Tempo/i,
+      },
+    );
+    expect(voluntarieHeading).toBeInTheDocument();
+
+    const entrarContato = within(content as HTMLElement).getByRole('link', {
+      name: /Entrar em contato/i,
+    });
+    expect(entrarContato).toBeInTheDocument();
+    expect(
+      (entrarContato.getAttribute('href') || '').startsWith(
+        'https://api.whatsapp.com/',
+      ),
+    ).toBeTruthy();
+
+    const saibaVoluntariado = within(content as HTMLElement).getByRole('link', {
+      name: /Saiba como funciona/i,
+    });
+    expect(saibaVoluntariado).toBeInTheDocument();
+    expect(
+      saibaVoluntariado.getAttribute('to') ||
+        saibaVoluntariado.getAttribute('href') ||
         '',
     ).toContain('/como-funciona/?section=voluntariado');
-
-    const saibaParceiro = within(content as HTMLElement).getByRole('link', {
-      name: /Saiba sobre parcerias/i,
-    });
-    expect(saibaParceiro).toBeInTheDocument();
-    expect(
-      saibaParceiro.getAttribute('to') ||
-        saibaParceiro.getAttribute('href') ||
-        '',
-    ).toMatch(/\/seja-um-parceiro\//);
   });
 });
 

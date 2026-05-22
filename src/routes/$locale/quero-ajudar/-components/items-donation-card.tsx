@@ -103,7 +103,7 @@ export function ItemsDonationCard({ locale }: Props) {
               href={wa}
               target="_blank"
               rel="noreferrer"
-              aria-label={t`Doar itens via WhatsApp`}
+            aria-label={t`Quero doar itens`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
