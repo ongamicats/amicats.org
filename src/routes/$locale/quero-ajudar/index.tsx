@@ -1,11 +1,9 @@
 import { createFileRoute, useParams } from '@tanstack/react-router';
 import { Trans, useLingui } from '@lingui/react/macro';
-<<<<<<< Updated upstream
-=======
+import { Link } from '@tanstack/react-router';
 import { DonationCard } from './-components/donation-card';
 import { VoluntarieCard } from './-components/voluntarie-card';
 import { ItemsDonationCard } from './-components/items-donation-card';
->>>>>>> Stashed changes
 import { Container } from '@/components/layout/ui/container';
 import { Navbar as LandingNavbar } from '@/components/pages/landing/navbar';
 import { Flex } from '@/components/layout/ui/flex';
@@ -45,7 +43,6 @@ export function RouteComponent(): JSX.Element {
         className="pb-6 md:pb-10"
         fluid
       >
-<<<<<<< Updated upstream
         <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
           <article className="rounded-lg bg-base-100 p-6 shadow-sm flex flex-col">
             <h3 className="text-xl font-semibold mb-2">{t`Quero Adotar`}</h3>
@@ -98,16 +95,6 @@ export function RouteComponent(): JSX.Element {
               </Link>
             </div>
           </article>
-=======
-        <div className="mx-auto w-full md:w-4/5 flex flex-col gap-6">
-          <DonationCard locale={locale} />
-
-          {/* Stacked vertically: ItemsDonationCard above VoluntarieCard */}
-          <div className="grid gap-6">
-            <ItemsDonationCard locale={locale} />
-            <VoluntarieCard locale={locale} />
-          </div>
->>>>>>> Stashed changes
         </div>
       </Container>
 

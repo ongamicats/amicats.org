@@ -86,11 +86,8 @@ export function AdoteSection({ images }: AdoteSectionProps) {
                 descricao={gato.descricao}
                 imagem={gato.imagem}
                 status={gato.status}
-<<<<<<< Updated upstream
-=======
                 hrefApadrinhar={buildWhatsappUrl(gato.nome)}
                 hrefAdotar={ADOPTION_FORM}
->>>>>>> Stashed changes
               />
             ))}
           </GatosCarousel>

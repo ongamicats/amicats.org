@@ -49,9 +49,6 @@ export function GatoCard({
             variant="primary"
             size="sm"
             className="w-full btn-soft"
-<<<<<<< Updated upstream
-            onClick={onApadrinhar}
-=======
             {...(hrefApadrinhar
               ? {
                   href: hrefApadrinhar,
@@ -59,7 +56,6 @@ export function GatoCard({
                   rel: 'noopener noreferrer',
                 }
               : { onClick: onApadrinhar })}
->>>>>>> Stashed changes
           >
             {t`Apadrinhe`}
           </Button>
@@ -67,9 +63,6 @@ export function GatoCard({
             variant="primary"
             size="sm"
             className="w-full btn-outline"
-<<<<<<< Updated upstream
-            onClick={onAdotar}
-=======
             {...(hrefAdotar
               ? {
                   href: hrefAdotar,
@@ -77,7 +70,6 @@ export function GatoCard({
                   rel: 'noopener noreferrer',
                 }
               : { onClick: onAdotar })}
->>>>>>> Stashed changes
           >
             {t`Quero Adotar`}
           </Button>
