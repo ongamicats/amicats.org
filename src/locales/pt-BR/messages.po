@@ -915,6 +915,124 @@ msgstr "Doações, descontos, patrocínios ou ações conjuntas."
 msgid "Combinamos como a marca será divulgada e mensuramos o impacto."
 msgstr "Combinamos como a marca será divulgada e mensuramos o impacto."
 
+# Missing runtime keys for quero-ajudar and rich subcomponents
+msgid "Contribua com qualquer valor através de PIX, boleto ou cartão"
+msgstr "Contribua com qualquer valor através de PIX, boleto ou cartão"
+
+msgid "PIX (CNPJ):"
+msgstr "PIX (CNPJ):"
+
+msgid "Copiado"
+msgstr "Copiado"
+
+msgid "Copiar PIX"
+msgstr "Copiar PIX"
+
+msgid "Copiar"
+msgstr "Copiar"
+
+msgid "Doe por Boleto"
+msgstr "Doe por Boleto"
+
+msgid "Contribua mensalmente e nos ajude a planejar melhor"
+msgstr "Contribua mensalmente e nos ajude a planejar melhor"
+
+msgid "Escolha o valor mensal que cabe no seu orçamento"
+msgstr "Escolha o valor mensal que cabe no seu orçamento"
+
+msgid "Doação recorrente (Asaas)"
+msgstr "Doação recorrente (Asaas)"
+
+msgid "Doação recorrente (Apoia.se)"
+msgstr "Doação recorrente (Apoia.se)"
+
+msgid "Saiba como apadrinhar"
+msgstr "Saiba como apadrinhar"
+
+msgid "Olá! Gostaria de doar itens para a AmiCat's. Quais são os itens mais necessários?"
+msgstr "Olá! Gostaria de doar itens para a AmiCat's. Quais são os itens mais necessários?"
+
+msgid "Velhinhos ou novos, qualquer contribuição é bem-vinda"
+msgstr "Velhinhos ou novos, qualquer contribuição é bem-vinda"
+
+msgid "Itens para os Gatos"
+msgstr "Itens para os Gatos"
+
+msgid "Ração para gatos"
+msgstr "Ração para gatos"
+
+msgid "Areia higiênica"
+msgstr "Areia higiênica"
+
+msgid "Cobertores e mantas"
+msgstr "Cobertores e mantas"
+
+msgid "Arranhadores"
+msgstr "Arranhadores"
+
+msgid "Casinhas e tocas"
+msgstr "Casinhas e tocas"
+
+msgid "Remédios e suplementos"
+msgstr "Remédios e suplementos"
+
+msgid "Produtos de limpeza (desinfetantes, pás, vassouras, rodos)"
+msgstr "Produtos de limpeza (desinfetantes, pás, vassouras, rodos)"
+
+msgid "Jornais"
+msgstr "Jornais"
+
+msgid "Itens para Bazar"
+msgstr "Itens para Bazar"
+
+msgid "Doe itens em bom estado para nosso bazar beneficente:"
+msgstr "Doe itens em bom estado para nosso bazar beneficente:"
+
+msgid "Roupas em bom estado"
+msgstr "Roupas em bom estado"
+
+msgid "Móveis"
+msgstr "Móveis"
+
+msgid "Decoração"
+msgstr "Decoração"
+
+msgid "Livros"
+msgstr "Livros"
+
+msgid "Eletrônicos funcionando"
+msgstr "Eletrônicos funcionando"
+
+msgid "Outros itens em boas condições"
+msgstr "Outros itens em boas condições"
+
+msgid "Olá! Gostaria de me voluntariar na AmiCat's."
+msgstr "Olá! Gostaria de me voluntariar na AmiCat's."
+
+msgid "Existem várias formas de contribuir como voluntário"
+msgstr "Existem várias formas de contribuir como voluntário"
+
+msgid "Limpeza e Organização"
+msgstr "Limpeza e Organização"
+
+msgid "Ajude na limpeza e organização da ONG aos sábados e domingos à tarde"
+msgstr "Ajude na limpeza e organização da ONG aos sábados e domingos à tarde"
+
+msgid "Profissionais da Saúde"
+msgstr "Profissionais da Saúde"
+
+msgid "Médicos veterinários, auxiliares veterinários e outros profissionais da área"
+msgstr "Médicos veterinários, auxiliares veterinários e outros profissionais da área"
+
+msgid "Apoio e Comunicação"
+msgstr "Apoio e Comunicação"
+
+msgid "Auxílio em redes sociais, captação de recursos, feiras de adoção e eventos"
+msgstr "Auxílio em redes sociais, captação de recursos, feiras de adoção e eventos"
+
+msgid "Entrar em contato via WhatsApp"
+msgstr "Entrar em contato via WhatsApp"
+
 #: src/routes/$locale/seja-um-parceiro-3/index.tsx
 msgid "Tipos de parceria"
 msgstr "Tipos de parceria"
