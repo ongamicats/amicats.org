@@ -817,6 +817,40 @@ msgstr "Porque ser parceiro AmiCat's"
 msgid "A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito."
 msgstr "A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito."
 
+# Added exact-runtime keys required by the app
+msgid "Como Funciona"
+msgstr "Como Funciona"
+
+msgid "Como ser parceiro da AmiCat's"
+msgstr "Como ser parceiro da AmiCat's"
+
+msgid "Quero ser parceiro Amicat's!"
+msgstr "Quero ser parceiro Amicat's!"
+
+msgid "Escolha a forma de ajudar que mais combina com você."
+msgstr "Escolha a forma de ajudar que mais combina com você."
+
+msgid "Doação Única"
+msgstr "Doação Única"
+
+msgid "Doação Recorrente"
+msgstr "Doação Recorrente"
+
+msgid "Doação de Itens"
+msgstr "Doação de Itens"
+
+msgid "Doe Seu Tempo"
+msgstr "Doe Seu Tempo"
+
+msgid "Quero doar itens"
+msgstr "Quero doar itens"
+
+msgid "Entrar em contato"
+msgstr "Entrar em contato"
+
+msgid "Saiba como funciona"
+msgstr "Saiba como funciona"
+
 #: src/routes/$locale/seja-um-parceiro-1/index.tsx
 msgid "Jornada para se tornar parceiro"
 msgstr "Jornada para se tornar parceiro"
