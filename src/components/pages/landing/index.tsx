@@ -13,6 +13,10 @@ export const LandingPage = () => {
     'https://f005.backblazeb2.com/file/catalogo-gatos/Poliana+(1).jpg',
     'https://f005.backblazeb2.com/file/catalogo-gatos/Tulio.jpg',
     'https://f005.backblazeb2.com/file/catalogo-gatos/Chaplin.jpeg',
+    'https://f005.backblazeb2.com/file/catalogo-gatos/catalogo_gatos/elvis/IMG_0001.jpg',
+    'https://f005.backblazeb2.com/file/catalogo-gatos/catalogo_gatos/paola/IMG_0001.jpg',
+    'https://f005.backblazeb2.com/file/catalogo-gatos/catalogo_gatos/marilyn/IMG_0001.jpg',
+    'https://f005.backblazeb2.com/file/catalogo-gatos/catalogo_gatos/mozart/IMG_0001.jpg',
   ];
 
   const voluntarios = [
