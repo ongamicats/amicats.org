@@ -43,14 +43,54 @@ msgstr "Adoption transforms lives — both those who receive and those who give.
 msgid "A AmiCat's nasceu do desejo genuíno de mudar o destino de centenas de felinos nas ruas de Campo Grande. Somos voluntários apaixonados que dedicam tempo e recursos para resgatar, tratar e encontrar lares amorosos. Acreditamos que cada vida importa e que o amor pode curar as feridas mais profundas."
 msgstr "AmiCat's was born from a genuine desire to change the fate of hundreds of cats on the streets of Campo Grande. We are passionate volunteers who dedicate time and resources to rescue, treat, and find loving homes. We believe every life matters and that love can heal the deepest wounds."
 
-# Adote descriptions
 #: src/components/pages/landing/adote/index.tsx
-msgid "A fofura do abrigo, distribuidor de amor. Esqueceu de desligar a fofura."
-msgstr "The shelter's cuteness, a distributor of love. He forgot to turn off the cuteness."
+msgid "A diva do abrigo, linda e sabedora disso. Merece uma vida de estrela! ⭐"
+msgstr ""
 
 #: src/components/pages/landing/adote/index.tsx
-msgid "A Princesa da Ong, padeira de mão cheia, amor silencioso."
-msgstr "The shelter's princess, a talented baker, a quiet love."
+msgid "A estrela mais brilhante do abrigo, ilumina qualquer lar com sua presença."
+msgstr ""
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "A fofura do abrigo, distribuidor de amor. Esqueceu de desligar a fofura!"
+msgstr ""
+
+# Adote descriptions
+#: src/components/pages/landing/adote/index.tsx
+#~ msgid "A fofura do abrigo, distribuidor de amor. Esqueceu de desligar a fofura."
+#~ msgstr "The shelter's cuteness, a distributor of love. He forgot to turn off the cuteness."
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "A parceria com a AmiCat's é uma oportunidade única de associar sua marca a uma causa nobre e fazer a diferença na vida de centenas de felinos em situação de vulnerabilidade."
+#~ msgstr "Partnering with AmiCat's is a unique opportunity to associate your brand with a noble cause and make a difference in the lives of hundreds of felines in vulnerable situations."
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito."
+msgstr "Partnership strengthens our work and gives visibility to your purpose-driven brand."
+
+#: src/components/pages/landing/adote/index.tsx
+#~ msgid "A Princesa da Ong, padeira de mão cheia, amor silencioso."
+#~ msgstr "The shelter's princess, a talented baker, a quiet love."
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "A princesa mais charmosa do abrigo, digna de um conto de fadas."
+msgstr ""
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "A satisfação de contribuir para uma causa importante"
+msgstr "The satisfaction of contributing to an important cause"
+
+#: src/components/pages/landing/navbar/index.tsx
+msgid "Abrir menu"
+msgstr ""
+
+#: src/components/pages/landing/footer/index.tsx
+msgid "Abrir WhatsApp"
+msgstr "Open WhatsApp"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Abrir WhatsApp para parcerias"
+msgstr ""
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 msgid "Acesse sua conta na plataforma"
@@ -86,12 +126,17 @@ msgstr "Adopt responsibly"
 
 # Navbar links & labels
 #: src/components/pages/landing/navbar/index.tsx
+#: src/components/pages/landing/navbar/index.tsx
 msgid "Adote"
 msgstr "Adopt"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 msgid "Agendaremos contato e visita quando necessário"
 msgstr "We will schedule contact and a visit when necessary"
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "Ágil e veloz, o atleta do abrigo. Vida boa é correr e brincar sem parar!"
+msgstr ""
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 msgid "Aguarde a avaliação"
@@ -101,13 +146,25 @@ msgstr "Wait for the evaluation"
 msgid "Ajude continuamente, sem precisar adotar"
 msgstr "Provide ongoing help without adopting"
 
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Ajude na limpeza e organização da ONG aos sábados e domingos à tarde"
+msgstr "Help with the shelter's cleaning and organization on Saturday and Sunday afternoons"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Alinhe divulgação e apoio"
+msgstr "Align promotion and support"
+
 #: src/components/pages/landing/adote/index.tsx
 msgid "Ama um carinho e adora um abraço, galã de novela."
 msgstr "Loves affection and adores hugs, a soap-opera heartthrob."
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "amicatsong@gmail.com"
+#~ msgstr "amicatsong@gmail.com"
+
 #: src/components/pages/landing/adote/index.tsx
-msgid "Amigo estou aqui! Os seus problemas, são meus também... 🎶"
-msgstr "Friend, I'm here! Your problems are mine too... 🎶"
+#~ msgid "Amigo estou aqui! Os seus problemas, são meus também... 🎶"
+#~ msgstr "Friend, I'm here! Your problems are mine too... 🎶"
 
 # Carousel and card buttons
 #: src/components/layout/ui/gatos-carousel/button/anterior/index.tsx
@@ -127,17 +184,49 @@ msgstr "Sponsorship"
 msgid "Apadrinhe"
 msgstr "Sponsor"
 
+#: src/routes/$locale/quero-ajudar/index.tsx
+#~ msgid "Apoie financeiramente um gatinho sem precisar adotar — receba atualizações e participe da rotina."
+#~ msgstr "Support a kitten financially without adopting — receive updates and participate in the routine."
+
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Apoio e Comunicação"
+msgstr "Support and Communications"
+
 #: src/routes/$locale/como-funciona/-components/voluntariado.tsx
 msgid "Após o alinhamento você pode começar a colaborar de forma organizada e segura"
 msgstr "After alignment you can start collaborating in an organized and safe manner"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Areia higiênica"
+msgstr "Cat litter"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Arranhadores"
+msgstr "Scratching posts"
+
+#: src/components/pages/landing/footer/index.tsx
+msgid "Atendimento por WhatsApp e E-mail"
+msgstr "Support via WhatsApp and Email"
+
+#: src/routes/$locale/como-funciona/-components/voluntariado.tsx
+msgid "Atividades em grupo, escalas de atividade e acompanhamento da equipe — sua ajuda será coordenada para gerar o maior impacto."
+msgstr "Group activities, activity schedules, and team oversight — your help will be coordinated to maximize impact."
 
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 msgid "Atualizações regulares, fotos e a satisfação de saber que você faz a diferença na vida de um animal."
 msgstr "Regular updates, photos, and the satisfaction of knowing you make a difference in an animal's life."
 
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Auxílio em redes sociais, captação de recursos, feiras de adoção e eventos"
+msgstr "Help with social media, fundraising, adoption fairs, and events"
+
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 #~ msgid "Avaliação"
 #~ msgstr "Evaluation"
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "Aventureiro e curioso, adora explorar cada cantinho. Seu novo melhor amigo!"
+msgstr ""
 
 #: src/components/pages/landing/certificados/index.tsx
 msgid "Bem-Estar Animal"
@@ -152,6 +241,10 @@ msgstr "Each day at the shelter is a journey of love, dedication, and resilience
 msgid "Campo Grande, MS"
 msgstr "Campo Grande, MS"
 
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Casinhas e tocas"
+msgstr "Cat houses and beds"
+
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "Casos Complexos"
 msgstr "Complex Cases"
@@ -159,6 +252,10 @@ msgstr "Complex Cases"
 #: src/components/pages/landing/certificados/index.tsx
 msgid "Certificação de Bem-Estar Animal"
 msgstr "Animal welfare certification"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Certificado de Empresa Parceira"
+msgstr "Partner Company Certificate"
 
 #: src/components/pages/landing/certificados/index.tsx
 msgid "Certificados"
@@ -172,62 +269,34 @@ msgstr "Make sure your availability aligns with the needs and that you follow an
 msgid "Certifique-se de que todos na residência concordam, que o ambiente é seguro e que você tem disponibilidade para os cuidados."
 msgstr "Ensure everyone in the household agrees, the environment is safe, and that you have availability to provide care."
 
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Cobertores e mantas"
+msgstr "Blankets and throws"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Combinamos como a marca será divulgada e mensuramos o impacto."
+#~ msgstr "We agree how the brand will be promoted and measure impact."
+
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 msgid "Combine o valor mensal"
 msgstr "Agree on the monthly amount"
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Comece a parceria"
+msgstr "Start the partnership"
+
 #: src/components/pages/landing/footer/index.tsx
+#: src/routes/$locale/quero-ajudar/index.tsx
 msgid "Como Ajudar"
 msgstr "How to Help"
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Escolha a forma de ajudar que mais combina com você."
-msgstr "Choose the way to help that suits you best."
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Veja o processo completo de adoção e encontre o gatinho certo para seu lar."
-msgstr "See the complete adoption process and find the right kitten for your home."
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Apoie financeiramente um gatinho sem precisar adotar — receba atualizações e participe da rotina."
-msgstr "Support a kitten financially without adopting — receive updates and participate in the routine."
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Participe das rotinas de cuidado, resgates e eventos — sua ajuda faz a diferença."
-msgstr "Join care routines, rescues, and events — your help makes a difference."
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Empresas e profissionais podem apoiar com recursos, serviços e divulgação."
-msgstr "Companies and professionals can support with resources, services and promotion."
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Saiba como adotar"
-msgstr "Learn how to adopt"
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Saiba como apadrinhar"
-msgstr "Learn how to sponsor"
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Saiba como ser voluntário"
-msgstr "Learn how to volunteer"
-
-#: src/routes/$locale/quero-ajudar/index.tsx
-msgid "Saiba sobre parcerias"
-msgstr "Learn about partnerships"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Quero ser parceiro AmiCat's!"
-msgstr "I want to be an AmiCat's partner!"
-
-#. explicit entry — correct key as used in TSX (added 2026-05-20)
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Quero ser parceiro Amicat's!"
-msgstr "I want to be an AmiCat's partner!"
 
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 #: src/routes/$locale/como-funciona/-components/voluntariado.tsx
 msgid "Como funciona"
+msgstr "How it works"
+
+#: src/components/pages/landing/footer/index.tsx
+msgid "Como Funciona"
 msgstr "How it works"
 
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
@@ -239,6 +308,20 @@ msgstr "How it works"
 #: src/routes/$locale/como-funciona/index.tsx
 msgid "Como funciona?"
 msgstr "How does it work?"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Como parceiro, sua empresa terá:"
+#~ msgstr "As a partner, your company will have:"
+
+# New partner variant strings
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Como ser parceiro"
+msgstr "How to become a partner"
+
+# Added translations requested 2026-05-20
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Como ser parceiro da AmiCat's"
+msgstr "How to become an AmiCat's partner"
 
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 msgid "Como sua ajuda apoia o gatinho"
@@ -256,6 +339,10 @@ msgstr "Complete the adoption form"
 msgid "Compromissos de longo prazo"
 msgstr "Long-term commitments"
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Conheça as modalidades de parceria que oferecemos."
+msgstr ""
+
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 #~ msgid "Conheça os gatinhos disponíveis e escolha aquele que tocou seu coração"
 #~ msgstr "Meet the available kittens and choose the one that touched your heart"
@@ -272,9 +359,21 @@ msgstr "Contact"
 msgid "Contribua com apoio mensal e acompanhe o gatinho."
 msgstr "Provide monthly support and follow the kitten's progress."
 
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Contribua com qualquer valor através de PIX, boleto ou cartão"
+msgstr "Contribute any amount via PIX, boleto or card"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Contribua mensalmente e nos ajude a planejar melhor"
+msgstr "Contribute monthly and help us plan better"
+
 #: src/routes/$locale/como-funciona/-components/voluntariado.tsx
 msgid "Conversa inicial"
 msgstr "Initial conversation"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Converse com a equipe"
+msgstr "Talk with the team"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 msgid "Converse com a equipe / visita"
@@ -288,10 +387,35 @@ msgstr "Network & Care Coordination"
 msgid "Coordenação Geral & Resgates"
 msgstr "General Coordination & Rescues"
 
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Copiado"
+msgstr "Copied"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Copiar"
+msgstr "Copy"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Copiar PIX"
+msgstr "Copy PIX"
+
 #. placeholder {0}: new Date().getFullYear()
 #: src/components/pages/landing/footer/index.tsx
 msgid "Copyright © {0} - AmiCat's - Todos os direitos reservados"
 msgstr "Copyright © {0} - AmiCat's - All rights reserved"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Decoração"
+msgstr "Decor"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Defina o formato"
+#~ msgstr "Define the format"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Defina o formato da parceria"
+msgstr "Define the partnership format"
 
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 #~ msgid "Defina o Valor Mensal"
@@ -301,9 +425,21 @@ msgstr "Copyright © {0} - AmiCat's - All rights reserved"
 msgid "Defina um valor que caiba no seu orçamento"
 msgstr "Set an amount that fits your budget"
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Definimos como sua marca será divulgada e como a parceria será comunicada ao público."
+msgstr "We define how your brand will be promoted and how the partnership will be communicated to the public."
+
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 #~ msgid "Demanda cuidados, atenção e interação diária"
 #~ msgstr "Requires daily care, attention, and interaction"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Demonstre interesse"
+msgstr "Express interest"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Descontos"
+msgstr "Discounts"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 #~ msgid "Deve ser alimentado exclusivamente com ração de qualidade apropriada"
@@ -314,8 +450,76 @@ msgstr "Set an amount that fits your budget"
 #: src/components/pages/landing/adote/index.tsx
 #: src/components/pages/landing/adote/index.tsx
 #: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
+#: src/components/pages/landing/adote/index.tsx
 msgid "Disponível"
 msgstr "Available"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Divulgação da marca em nossas redes sociais e eventos"
+msgstr "Brand promotion on our social networks and events"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Doação de Itens"
+msgstr "Items donation"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Doação Recorrente"
+msgstr "Recurring donation"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Doação recorrente (Apoia.se)"
+msgstr "Recurring donation (Apoia.se)"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Doação recorrente (Asaas)"
+msgstr "Recurring donation (Asaas)"
+
+# Quero Ajudar — route strings (added to improve coverage)
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Doação Única"
+msgstr "One-time donation"
+
+# msgid "Tipos de parceria"
+# msgstr "Types of partnership"
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Doações"
+msgstr "Donations"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Doações, descontos, patrocínios ou ações conjuntas."
+#~ msgstr "Donations, discounts, sponsorships or joint actions."
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "Doce e carinhosa, faz ronronar de felicidade só de ver você chegar."
+msgstr ""
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Doe itens em bom estado para nosso bazar beneficente:"
+msgstr "Donate items in good condition for our charity bazaar:"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Doe por Boleto"
+msgstr "Donate by boleto"
+
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Doe Seu Tempo"
+msgstr "Donate Your Time"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 #~ msgid "É imprescindível considerar que um gato:"
@@ -325,9 +529,41 @@ msgstr "Available"
 msgid "Educar sobre a posse responsável e a importância da castração é essencial para reduzir o abandono. Trabalhamos continuamente para mudar mentalidades e construir uma comunidade mais compassiva."
 msgstr "Educating about responsible pet ownership and the importance of spaying and neutering is essential to reduce abandonment. We work continuously to change mindsets and build a more compassionate community."
 
+#: src/components/pages/landing/adote/index.tsx
+msgid "Elegante e cheia de charme, uma dama que merece um lar cheio de amor."
+msgstr ""
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Eletrônicos funcionando"
+msgstr "Working electronics"
+
+#: src/routes/$locale/quero-ajudar/index.tsx
+#~ msgid "Empresas e profissionais podem apoiar com recursos, serviços e divulgação."
+#~ msgstr "Companies and professionals can support with resources, services and promotion."
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Empresas interessadas em realizar eventos beneficentes ou ações conjuntas"
+msgstr "Companies interested in holding fundraising events or joint actions"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Empresas que desejam apoiar a ONG através de doações financeiras, produtos ou serviços"
+msgstr "Companies that want to support the NGO through financial donations, products, or services"
+
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 msgid "Encontre um gato para apoiar"
 msgstr "Find a cat to support"
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "Energia contagiante e alegria de viver. Vai trazer vida para sua casa!"
+msgstr ""
+
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Entrar em contato"
+msgstr "Get in touch"
+
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Entrar em contato via WhatsApp"
+msgstr "Contact via WhatsApp"
 
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 #~ msgid "Entre em contato pelo WhatsApp e defina o valor mensal que cabe no seu orçamento"
@@ -336,6 +572,22 @@ msgstr "Find a cat to support"
 #: src/routes/$locale/como-funciona/-components/voluntariado.tsx
 msgid "Entre na rotina"
 msgstr "Enter the routine"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Envie um e-mail para iniciarmos a conversa sobre possibilidades e objetivos."
+msgstr "Send an email to start the conversation about possibilities and goals."
+
+#: src/routes/$locale/quero-ajudar/index.tsx
+msgid "Escolha a forma de ajudar que mais combina com você."
+msgstr "Choose the way to help that suits you best."
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Escolha entre doações, descontos, patrocínios ou ações conjuntas, com regras claras."
+msgstr "Choose between donations, discounts, sponsorships or joint actions, with clear terms."
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Escolha o valor mensal que cabe no seu orçamento"
+msgstr "Choose a monthly amount that fits your budget"
 
 # Sponsorship steps
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
@@ -346,6 +598,10 @@ msgstr "Choose a kitten"
 #~ msgid "Escolha um Gatinho"
 #~ msgstr "Choose a Kitten"
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Estamos construindo nossa rede de parceiros"
+#~ msgstr "We are building our network of partners"
+
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "Estamos desde 2017 resgatando, cuidando e encontrando lares."
 msgstr "We have been rescuing, caring for, and finding homes since 2017."
@@ -354,9 +610,17 @@ msgstr "We have been rescuing, caring for, and finding homes since 2017."
 msgid "Estes pequenos estão prontos para encher sua casa de alegria."
 msgstr "These little ones are ready to fill your home with joy."
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Eventos"
+msgstr "Events"
+
 #: src/components/pages/landing/quem-somos/index.tsx
 msgid "Eventos & Adoção"
 msgstr "Events & Adoption"
+
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Existem várias formas de contribuir como voluntário"
+msgstr "There are many ways to contribute as a volunteer"
 
 # Adoption steps (extracted from components)
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
@@ -368,8 +632,8 @@ msgstr "Log in"
 #~ msgstr "Log in first"
 
 #: src/components/pages/landing/footer/index.tsx
-msgid "Fale Conosco"
-msgstr "Contact Us"
+#~ msgid "Fale Conosco"
+#~ msgstr "Contact Us"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 msgid "Finalize a adoção"
@@ -378,6 +642,10 @@ msgstr "Finalize the adoption"
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "Financeiro"
 msgstr "Financial"
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "Fortão e corajoso, mas com um coração gigante. O Rocky felino! 🥊"
+msgstr ""
 
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 msgid "Fotos e notícias do gatinho"
@@ -390,6 +658,10 @@ msgstr "Founder"
 #: src/components/pages/landing/adote/index.tsx
 msgid "Gatinhos Disponíveis"
 msgstr "Available Kittens"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Gostaria de me tornar um parceiro"
+#~ msgstr "I would like to become a partner"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 msgid "Guia de adoção"
@@ -413,9 +685,38 @@ msgstr "Language"
 #~ msgid "Importante:"
 #~ msgstr "Important:"
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Iniciamos as ações previstas e acompanhamos o impacto e a comunicação."
+msgstr "We start the planned activities and monitor impact and communication."
+
+# Footer / partner additions
+#: src/components/pages/landing/footer/index.tsx
+msgid "Institucional"
+msgstr "Institutional"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Itens para Bazar"
+msgstr "Items for the Bazaar"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Itens para os Gatos"
+msgstr "Items for the Cats"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Jornada para se tornar parceiro"
+msgstr "Journey to become a partner"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Jornais"
+msgstr "Newspapers"
+
 #: src/components/pages/landing/introducao/index.tsx
 msgid "Junte-se a nós na missão de proteger, cuidar e encontrar lares para gatos em Campo Grande."
 msgstr "Join us in the mission to protect, care for, and find homes for cats in Campo Grande."
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Juntos, fazemos a diferença na vida dos felinos"
+#~ msgstr "Together, we make a difference in the lives of felines"
 
 #: src/components/pages/landing/quem-somos/index.tsx
 msgid "Lares Temporários"
@@ -430,21 +731,45 @@ msgstr "Reminder:"
 msgid "Leve seu novo amigo para casa com segurança"
 msgstr "Take your new friend home safely"
 
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Limpeza e Organização"
+msgstr "Cleaning and Organization"
+
 #: src/components/pages/landing/footer/index.tsx
-msgid "Links Rápidos"
-msgstr "Quick Links"
+#~ msgid "Links Rápidos"
+#~ msgstr "Quick Links"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Livros"
+msgstr "Books"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Logo destacado em nosso site e materiais de comunicação"
+msgstr "Logo featured on our website and communication materials"
 
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "Manter o abrigo ativo requer recursos contínuos para alimentação, medicamentos, cuidados veterinários e infraestrutura. Dependemos inteiramente de doações e da generosidade da comunidade."
 msgstr "Keeping the shelter running requires continuous resources for food, medication, veterinary care, and infrastructure. We rely entirely on donations and the generosity of the community."
 
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Médicos veterinários, auxiliares veterinários e outros profissionais da área"
+msgstr "Veterinarians, veterinary assistants, and other professionals in the field"
+
 #: src/components/layout/ui/language-select/index.tsx
 #~ msgid "Menu de idiomas"
 #~ msgstr "Language menu"
 
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Móveis"
+msgstr "Furniture"
+
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "Muitos gatos chegam com traumas físicos e emocionais profundos, exigindo tratamentos prolongados e cuidados especializados. A reabilitação é um processo longo, mas gratificante."
 msgstr "Many cats arrive with deep physical and emotional traumas, requiring prolonged treatments and specialized care. Rehabilitation is a long but rewarding process."
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "Musical e cheio de energia, transforma cada momento em uma sinfonia de amor. 🎵"
+msgstr ""
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 #~ msgid "Não deve ter acesso à rua por questões de segurança e saúde"
@@ -502,6 +827,12 @@ msgstr "Our little friends"
 msgid "Nossos Maiores Desafios"
 msgstr "Our Biggest Challenges"
 
+# Partner page
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Nossos Parceiros"
+#~ msgstr "Our Partners"
+
+#: src/components/pages/landing/navbar/index.tsx
 #: src/components/pages/landing/navbar/index.tsx
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "O Abrigo"
@@ -510,6 +841,18 @@ msgstr "The Shelter"
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 #~ msgid "O apadrinhamento permite que você contribua mensalmente para os cuidados de um gatinho específico, recebendo atualizações regulares sobre ele."
 #~ msgstr "Sponsorship allows you to contribute monthly to the care of a specific kitten, receiving regular updates about them."
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "O companheiro fiel, aquele que sempre estará ao seu lado. Amor puro!"
+msgstr ""
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "O herói do dia a dia, sempre pronto para um cafuné e uma soneca."
+msgstr ""
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "O irmãozinho mais fofo que você vai conhecer. Amor em forma de gato!"
+msgstr ""
 
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "O número de gatos resgatados continua crescendo enquanto o espaço e os recursos permanecem limitados. Cada novo resgate é um delicado equilíbrio entre salvar vidas e manter a qualidade do cuidado."
@@ -523,14 +866,51 @@ msgstr "What to expect"
 msgid "O que você recebe em troca"
 msgstr "What you receive in return"
 
+#: src/components/pages/landing/adote/index.tsx
+msgid "O rei do rock felino, sempre fazendo pose para as câmeras. Carisma infinito! 🎸"
+msgstr ""
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "O ronronar mais alto do abrigo! Gosta de colo e de ser o centro das atenções. 😻"
+msgstr ""
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "O sábio da casa, tranquilo e cheio de histórias para contar."
+msgstr ""
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "O travesso da turma, sempre aprontando alguma. Diversão garantida! 😹"
+msgstr ""
+
+# Runtime WhatsApp helper strings used in quero-ajudar route
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Olá! Gostaria de doar itens para a AmiCat's. Quais são os itens mais necessários?"
+msgstr "Hello! I'd like to donate items to AmiCat's. Which items are most needed?"
+
+#: src/components/pages/landing/footer/index.tsx
+msgid "Olá! Gostaria de mais informações sobre parcerias com a AmiCat's."
+msgstr "Hello! I would like more information about partnerships with AmiCat's."
+
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Olá! Gostaria de me voluntariar na AmiCat's."
+msgstr "Hello! I'd like to volunteer at AmiCat's."
+
 #: src/components/pages/landing/certificados/index.tsx
 msgid "Organização sem fins lucrativos registrada"
 msgstr "Registered nonprofit organization"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Outros itens em boas condições"
+msgstr "Other items in good condition"
 
 # Not found (keep English strings)
 #: src/components/pages/not-found/index.tsx
 msgid "Page not found"
 msgstr "Page not found"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Para parcerias e mais informações entre em contato:"
+#~ msgstr "For partnerships and more information contact:"
 
 #: src/components/pages/landing/certificados/index.tsx
 msgid "Parceria com clínica veterinária local"
@@ -544,14 +924,34 @@ msgstr "Veterinary Partnership"
 msgid "Participe da rotina de cuidado e apoio aos gatos resgatados"
 msgstr "Join the care routine and support rescued cats"
 
+#: src/routes/$locale/quero-ajudar/index.tsx
+#~ msgid "Participe das rotinas de cuidado, resgates e eventos — sua ajuda faz a diferença."
+#~ msgstr "Join care routines, rescues, and events — your help makes a difference."
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Pet shops, clínicas veterinárias e fornecedores que queiram oferecer descontos ou doações"
+msgstr "Pet shops, veterinary clinics and suppliers that want to offer discounts or donations"
+
 # Certificados — normalize source to pt-BR; English translations here
 #: src/components/pages/landing/certificados/index.tsx
 msgid "PHOMENTA — Programa de fomento a atividades produtivas rurais"
 msgstr "PHOMENTA — Program to foster rural productive activities"
 
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "PIX (CNPJ):"
+msgstr "PIX (CNPJ):"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Por que ser parceiro AmiCat's"
+#~ msgstr "Why be a partner"
+
 #: src/components/pages/landing/voluntarios/index.tsx
 msgid "Por trás de cada resgate, existe um time dedicado de voluntários que trabalha incansavelmente."
 msgstr "Behind every rescue is a dedicated team of volunteers who work tirelessly."
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Possibilidade de ações conjuntas e eventos"
+msgstr "Possibility of joint actions and events"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 #~ msgid "Possui expectativa de vida superior a 15 anos"
@@ -586,6 +986,14 @@ msgstr "Process"
 #~ msgid "Processo de Adoção"
 #~ msgstr "Adoption Process"
 
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Produtos de limpeza (desinfetantes, pás, vassouras, rodos)"
+msgstr "Cleaning products (disinfectants, scoops, brooms, squeegees)"
+
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Profissionais da Saúde"
+msgstr "Health Professionals"
+
 #: src/components/pages/landing/quem-somos/index.tsx
 msgid "Promovemos feiras de adoção e eventos educativos para conscientizar sobre a posse responsável."
 msgstr "We organize adoption fairs and educational events to raise awareness about responsible pet ownership."
@@ -600,6 +1008,7 @@ msgstr "Who Makes It Happen"
 
 #: src/components/pages/landing/footer/index.tsx
 #: src/components/pages/landing/navbar/index.tsx
+#: src/components/pages/landing/navbar/index.tsx
 #: src/components/pages/landing/quem-somos/index.tsx
 msgid "Quem Somos"
 msgstr "About us"
@@ -611,8 +1020,34 @@ msgstr "I want to adopt"
 
 #: src/components/pages/landing/introducao/index.tsx
 #: src/components/pages/landing/navbar/index.tsx
+#: src/components/pages/landing/navbar/index.tsx
 msgid "Quero Ajudar"
 msgstr "I want to help"
+
+#: src/components/pages/landing/adote/index.tsx
+msgid "Quero apadrinhar o {nome} e saber como funciona."
+msgstr ""
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Quero doar itens"
+msgstr "I want to donate items"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+#~ msgid "Quero doar itens (WhatsApp)"
+#~ msgstr "I want to donate items (WhatsApp)"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Quero ser parceiro Amicat's!"
+msgstr "I want to be an AmiCat's partner!"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Quero ser parceiro AmiCat's!"
+#~ msgstr "I want to be an AmiCat's partner!"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Ração para gatos"
+msgstr "Cat food"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 #~ msgid "Realizaremos uma visita para conhecer o ambiente e finalizar o processo"
@@ -642,6 +1077,10 @@ msgstr "Networks & Rescues"
 msgid "Registro ONG"
 msgstr "Registered Nonprofit Organization"
 
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Remédios e suplementos"
+msgstr "Medicines and supplements"
+
 #: src/components/pages/landing/quem-somos/index.tsx
 msgid "Resgatamos gatos em situação de risco, oferecendo tratamento veterinário completo e muito carinho até a recuperação."
 msgstr "We rescue cats in risky situations, providing full veterinary treatment and lots of care until recovery."
@@ -655,10 +1094,54 @@ msgstr "Rescue & Care"
 msgid "resgates realizados"
 msgstr "rescues performed"
 
+#: src/components/pages/landing/adote/index.tsx
+msgid "Romântico e gentil, o galã que vai conquistar seu coração."
+msgstr ""
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Roupas em bom estado"
+msgstr "Clothes in good condition"
+
+#: src/routes/$locale/quero-ajudar/index.tsx
+#~ msgid "Saiba como adotar"
+#~ msgstr "Learn how to adopt"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Saiba como apadrinhar"
+msgstr "Learn how to sponsor"
+
+#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
+msgid "Saiba como funciona"
+msgstr "Learn how it works"
+
+#: src/routes/$locale/quero-ajudar/index.tsx
+#~ msgid "Saiba como ser voluntário"
+#~ msgstr "Learn how to volunteer"
+
+#: src/routes/$locale/quero-ajudar/index.tsx
+#~ msgid "Saiba sobre parcerias"
+#~ msgstr "Learn about partnerships"
+
 # Introducao / Navbar
 #: src/components/pages/landing/introducao/index.tsx
 msgid "Salvando Vidas Felinas"
 msgstr "Saving Feline Lives"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Segue um caminho simples para começar:"
+#~ msgstr "Follow a simple path to get started:"
+
+#: src/components/pages/landing/footer/index.tsx
+msgid "Segunda a Sexta: 14h às 17h"
+msgstr "Monday to Friday: 14:00 - 17:00"
+
+#: src/components/pages/landing/footer/index.tsx
+msgid "Seja um parceiro"
+msgstr "Become a partner"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Seja um Parceiro da AmiCat's"
+#~ msgstr "Be an AmiCat's Partner"
 
 #: src/components/layout/ui/language-select/index.tsx
 #~ msgid "Selecionar idioma"
@@ -696,212 +1179,17 @@ msgstr "Rescuer {0}"
 msgid "Somos uma organização dedicada ao resgate, cuidado e adoção responsável de gatos em Campo Grande, MS. Transformando vidas, um miado de cada vez."
 msgstr "We are an organization dedicated to the rescue, care, and responsible adoption of cats in Campo Grande, MS. Transforming lives, one meow at a time."
 
-# Footer / partner additions
-#: src/components/pages/landing/footer/index.tsx
-msgid "Institucional"
-msgstr "Institutional"
-
-#: src/components/pages/landing/footer/index.tsx
-msgid "Atendimento por WhatsApp e E-mail"
-msgstr "Support via WhatsApp and Email"
-
-#: src/components/pages/landing/footer/index.tsx
-msgid "Segunda a Sexta: 14h às 17h"
-msgstr "Monday to Friday: 14:00 - 17:00"
-
-#: src/components/pages/landing/footer/index.tsx
-msgid "Seja um parceiro"
-msgstr "Become a partner"
-
-#: src/components/pages/landing/footer/index.tsx
-msgid "Abrir WhatsApp"
-msgstr "Open WhatsApp"
-
-# Partner page
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Nossos Parceiros"
-msgstr "Our Partners"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Juntos, fazemos a diferença na vida dos felinos"
-msgstr "Together, we make a difference in the lives of felines"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Seja um Parceiro da AmiCat's"
-msgstr "Be an AmiCat's Partner"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Sua empresa pode fazer parte dessa transformação"
-msgstr "Your company can be part of this transformation"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "A parceria com a AmiCat's é uma oportunidade única de associar sua marca a uma causa nobre e fazer a diferença na vida de centenas de felinos em situação de vulnerabilidade."
-msgstr "Partnering with AmiCat's is a unique opportunity to associate your brand with a noble cause and make a difference in the lives of hundreds of felines in vulnerable situations."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Como parceiro, sua empresa terá:"
-msgstr "As a partner, your company will have:"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Divulgação da marca em nossas redes sociais e eventos"
-msgstr "Brand promotion on our social networks and events"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Logo destacado em nosso site e materiais de comunicação"
-msgstr "Logo featured on our website and communication materials"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Certificado de Empresa Parceira"
-msgstr "Partner Company Certificate"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Possibilidade de ações conjuntas e eventos"
-msgstr "Possibility of joint actions and events"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "A satisfação de contribuir para uma causa importante"
-msgstr "The satisfaction of contributing to an important cause"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Tipos de Parceria"
-msgstr "Types of Partnership"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Empresas que desejam apoiar a ONG através de doações financeiras, produtos ou serviços"
-msgstr "Companies that want to support the NGO through financial donations, products, or services"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Pet shops, clínicas veterinárias e fornecedores que queiram oferecer descontos ou doações"
-msgstr "Pet shops, veterinary clinics and suppliers that want to offer discounts or donations"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Empresas interessadas em realizar eventos beneficentes ou ações conjuntas"
-msgstr "Companies interested in holding fundraising events or joint actions"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Estamos construindo nossa rede de parceiros"
-msgstr "We are building our network of partners"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Sua empresa pode ser a primeira a fazer parte dessa lista!"
-msgstr "Your company could be the first to join this list!"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Para parcerias e mais informações entre em contato:"
-msgstr "For partnerships and more information contact:"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "amicatsong@gmail.com"
-msgstr "amicatsong@gmail.com"
-
-# New partner variant strings
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Como ser parceiro"
-msgstr "How to become a partner"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Veja como sua empresa pode iniciar uma parceria prática e transparente com a AmiCat's."
-msgstr "See how your company can start a practical, transparent partnership with AmiCat's."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Por que ser parceiro AmiCat's"
-msgstr "Why be a partner"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "A parceria fortalece nosso trabalho e dá visibilidade à sua marca com propósito."
-msgstr "Partnership strengthens our work and gives visibility to your purpose-driven brand."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Jornada para se tornar parceiro"
-msgstr "Journey to become a partner"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Um caminho simples e direto para começar a colaborar com a AmiCat's."
-msgstr "A simple, direct path to start collaborating with AmiCat's."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Demonstre interesse"
-msgstr "Express interest"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Envie um e-mail para iniciarmos a conversa sobre possibilidades e objetivos."
-msgstr "Send an email to start the conversation about possibilities and goals."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Converse com a equipe"
-msgstr "Talk with the team"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Teremos uma reunião para entender seus interesses e o formato ideal de apoio."
-msgstr "We'll have a meeting to understand your interests and the ideal support format."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Defina o formato da parceria"
-msgstr "Define the partnership format"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Escolha entre doações, descontos, patrocínios ou ações conjuntas, com regras claras."
-msgstr "Choose between donations, discounts, sponsorships or joint actions, with clear terms."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Alinhe divulgação e apoio"
-msgstr "Align promotion and support"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Definimos como sua marca será divulgada e como a parceria será comunicada ao público."
-msgstr "We define how your brand will be promoted and how the partnership will be communicated to the public."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Comece a parceria"
-msgstr "Start the partnership"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Iniciamos as ações previstas e acompanhamos o impacto e a comunicação."
-msgstr "We start the planned activities and monitor impact and communication."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Segue um caminho simples para começar:"
-msgstr "Follow a simple path to get started:"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Defina o formato"
-msgstr "Define the format"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Doações, descontos, patrocínios ou ações conjuntas."
-msgstr "Donations, discounts, sponsorships or joint actions."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Combinamos como a marca será divulgada e mensuramos o impacto."
-msgstr "We agree how the brand will be promoted and measure impact."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-# msgid "Tipos de parceria"
-# msgstr "Types of partnership"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Doações"
-msgstr "Donations"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Descontos"
-msgstr "Discounts"
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Eventos"
-msgstr "Events"
-
-#: src/components/pages/landing/footer/index.tsx
-msgid "Olá! Gostaria de mais informações sobre parcerias com a AmiCat's."
-msgstr "Hello! I would like more information about partnerships with AmiCat's."
-
-#: src/routes/$locale/seja-um-parceiro/index.tsx
-msgid "Gostaria de me tornar um parceiro"
-msgstr "I would like to become a partner"
-
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 msgid "Sua contribuição ajuda em alimentação, medicação, higiene e cuidados essenciais para o bem-estar do gatinho."
 msgstr "Your contribution helps with food, medication, hygiene, and essential care for the kitten's well-being."
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Sua empresa pode fazer parte dessa transformação"
+#~ msgstr "Your company can be part of this transformation"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+#~ msgid "Sua empresa pode ser a primeira a fazer parte dessa lista!"
+#~ msgstr "Your company could be the first to join this list!"
 
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "Superlotação"
@@ -915,22 +1203,46 @@ msgstr "Technology & Care"
 msgid "Temos áreas de observação, tratamento e recuperação: filhotes, adultos e idosos. Uma área de quarentena é usada para gatos recém-resgatados. Mantemos também espaços dedicados para gatos com necessidades especiais, como aqueles vivendo com FIV ou FeLV, garantindo um ambiente seguro e acolhedor para todos."
 msgstr "We have areas for observation, treatment, and recovery: kittens, adults, and seniors. A quarantine area is used for newly rescued cats. We also maintain dedicated spaces for special-needs cats, such as those living with FIV or FeLV, ensuring a safe and welcoming environment for all."
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Teremos uma reunião para entender seus interesses e o formato ideal de apoio."
+msgstr "We'll have a meeting to understand your interests and the ideal support format."
+
 #: src/components/pages/landing/footer/index.tsx
 msgid "Termos"
 msgstr "Terms"
 
-#: src/routes/$locale/como-funciona/-components/voluntariado.tsx
-msgid "Atividades em grupo, escalas de atividade e acompanhamento da equipe — sua ajuda será coordenada para gerar o maior impacto."
-msgstr "Group activities, activity schedules, and team oversight — your help will be coordinated to maximize impact."
+#: src/components/pages/landing/adote/index.tsx
+msgid "Tímido no início, mas quando ganha confiança é o maior grudento da casa. 💕"
+msgstr ""
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Tipos de Parceria"
+msgstr "Types of Partnership"
+
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Um caminho simples e direto para começar a colaborar com a AmiCat's."
+msgstr "A simple, direct path to start collaborating with AmiCat's."
 
 # Page subtitle (recently moved to t``)
 #: src/routes/$locale/como-funciona/index.tsx
 msgid "Veja como participar da AmiCat's de forma clara, prática e responsável."
 msgstr "See how to participate in AmiCat's in a clear, practical and responsible way."
 
+#: src/routes/$locale/seja-um-parceiro/index.tsx
+msgid "Veja como sua empresa pode iniciar uma parceria prática e transparente com a AmiCat's."
+msgstr "See how your company can start a practical, transparent partnership with AmiCat's."
+
+#: src/routes/$locale/quero-ajudar/index.tsx
+#~ msgid "Veja o processo completo de adoção e encontre o gatinho certo para seu lar."
+#~ msgstr "See the complete adoption process and find the right kitten for your home."
+
 #: src/routes/$locale/como-funciona/-components/apadrinhamento.tsx
 msgid "Veja o progresso do gatinho durante o apoio"
 msgstr "See the kitten's progress during the support"
+
+#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
+msgid "Velhinhos ou novos, qualquer contribuição é bem-vinda"
+msgstr "Old or new, any contribution is welcome"
 
 #: src/routes/$locale/como-funciona/-components/adocao.tsx
 #~ msgid "Visita"
@@ -952,20 +1264,7 @@ msgstr "Volunteering at AmiCat's — your help, organized and safe."
 msgid "Voluntariado transforma a nossa capacidade de ajudar — cada horário colaborado faz a diferença. Obrigado por considerar participar."
 msgstr "Volunteering transforms our ability to help — every volunteered shift makes a difference. Thank you for considering joining."
 
-# Runtime WhatsApp helper strings used in quero-ajudar route
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Olá! Gostaria de doar itens para a AmiCat's. Quais são os itens mais necessários?"
-msgstr "Hello! I'd like to donate items to AmiCat's. Which items are most needed?"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Olá! Gostaria de me voluntariar na AmiCat's."
-msgstr "Hello! I'd like to volunteer at AmiCat's."
-
-# Aria / button helper
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Copiar PIX"
-msgstr "Copy PIX"
-
+#: src/components/pages/landing/navbar/index.tsx
 #: src/components/pages/landing/navbar/index.tsx
 msgid "Voluntários"
 msgstr "Volunteers"
@@ -973,193 +1272,3 @@ msgstr "Volunteers"
 #: src/components/pages/not-found/index.tsx
 msgid "We couldn't find the page you were looking for. It may have been moved or removed."
 msgstr "We couldn't find the page you were looking for. It may have been moved or removed."
-
-# Quero Ajudar — route strings (added to improve coverage)
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Doação Única"
-msgstr "One-time donation"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Contribua com qualquer valor através de PIX, boleto ou cartão"
-msgstr "Contribute any amount via PIX, boleto or card"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "PIX (CNPJ):"
-msgstr "PIX (CNPJ):"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Copiar PIX"
-msgstr "Copy PIX"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Copiar"
-msgstr "Copy"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Copiado"
-msgstr "Copied"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Doe por Boleto"
-msgstr "Donate by boleto"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Doação Recorrente"
-msgstr "Recurring donation"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Contribua mensalmente e nos ajude a planejar melhor"
-msgstr "Contribute monthly and help us plan better"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Escolha o valor mensal que cabe no seu orçamento"
-msgstr "Choose a monthly amount that fits your budget"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Doação recorrente (Asaas)"
-msgstr "Recurring donation (Asaas)"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Doação recorrente (Apoia.se)"
-msgstr "Recurring donation (Apoia.se)"
-
-#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Saiba como apadrinhar"
-msgstr "Learn how to sponsor"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Doe Seu Tempo"
-msgstr "Donate Your Time"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Existem várias formas de contribuir como voluntário"
-msgstr "There are many ways to contribute as a volunteer"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Limpeza e Organização"
-msgstr "Cleaning and Organization"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Ajude na limpeza e organização da ONG aos sábados e domingos à tarde"
-msgstr "Help with the shelter's cleaning and organization on Saturday and Sunday afternoons"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Profissionais da Saúde"
-msgstr "Health Professionals"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Médicos veterinários, auxiliares veterinários e outros profissionais da área"
-msgstr "Veterinarians, veterinary assistants, and other professionals in the field"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Apoio e Comunicação"
-msgstr "Support and Communications"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Auxílio em redes sociais, captação de recursos, feiras de adoção e eventos"
-msgstr "Help with social media, fundraising, adoption fairs, and events"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Entrar em contato"
-msgstr "Get in touch"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Entrar em contato via WhatsApp"
-msgstr "Contact via WhatsApp"
-
-#: src/routes/$locale/quero-ajudar/-components/voluntarie-card.tsx
-msgid "Saiba como funciona"
-msgstr "Learn how it works"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Doação de Itens"
-msgstr "Items donation"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Velhinhos ou novos, qualquer contribuição é bem-vinda"
-msgstr "Old or new, any contribution is welcome"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Itens para os Gatos"
-msgstr "Items for the Cats"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Ração para gatos"
-msgstr "Cat food"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Areia higiênica"
-msgstr "Cat litter"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Cobertores e mantas"
-msgstr "Blankets and throws"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Arranhadores"
-msgstr "Scratching posts"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Casinhas e tocas"
-msgstr "Cat houses and beds"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Remédios e suplementos"
-msgstr "Medicines and supplements"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Produtos de limpeza (desinfetantes, pás, vassouras, rodos)"
-msgstr "Cleaning products (disinfectants, scoops, brooms, squeegees)"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Jornais"
-msgstr "Newspapers"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Itens para Bazar"
-msgstr "Items for the Bazaar"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Doe itens em bom estado para nosso bazar beneficente:"
-msgstr "Donate items in good condition for our charity bazaar:"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Roupas em bom estado"
-msgstr "Clothes in good condition"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Móveis"
-msgstr "Furniture"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Decoração"
-msgstr "Decor"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Livros"
-msgstr "Books"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Eletrônicos funcionando"
-msgstr "Working electronics"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Outros itens em boas condições"
-msgstr "Other items in good condition"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Quero doar itens"
-msgstr "I want to donate items"
-
-#: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
-msgid "Quero doar itens (WhatsApp)"
-msgstr "I want to donate items (WhatsApp)"
-
-# Added translations requested 2026-05-20
-#. explicit entry
-msgid "Como ser parceiro da AmiCat's"
-msgstr "How to become an AmiCat's partner"
-
-#. explicit entry
-msgid "Como Funciona"
-msgstr "How it works"
