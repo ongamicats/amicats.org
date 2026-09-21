@@ -69,12 +69,6 @@ export function Footer() {
               <a className="flex items-center gap-2 hover:text-primary transition-colors mt-4">
                 <MapPin size={18} /> {t`Campo Grande, MS`}
               </a>
-              <a
-                className="flex items-center gap-2 hover:text-primary transition-colors"
-                href="mailto:amicatsong@gmail.com"
-              >
-                <Mail size={18} /> amicatsong@gmail.com
-              </a>
             </div>
             <div className="flex gap-4 mt-4">
               <a

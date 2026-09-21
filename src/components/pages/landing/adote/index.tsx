@@ -42,13 +42,6 @@ export function AdoteSection({ images: _images }: AdoteSectionProps) {
       status: t`Disponível`,
     },
     {
-      nome: 'Gabriela',
-      descricao: t`Elegante e cheia de charme, uma dama que merece um lar cheio de amor.`,
-      imagem:
-        'https://f005.backblazeb2.com/file/catalogo-gatos/catalogo_gatos/gabriela/IMG_0001.jpg',
-      status: t`Disponível`,
-    },
-    {
       nome: 'Hayd',
       descricao: t`Tímido no início, mas quando ganha confiança é o maior grudento da casa. 💕`,
       imagem:
