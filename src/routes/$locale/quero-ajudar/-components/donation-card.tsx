@@ -87,13 +87,14 @@ export function DonationCard({ locale }: Props) {
 
           <div className="mt-4 grid grid-cols-1 gap-2">
             <a
-              className="btn btn-outline flex items-center gap-2"
-              href={recurring1}
+              className="btn btn-outline btn-disabled flex items-center gap-2 pointer-events-none"
               target="_blank"
               rel="noreferrer"
+              aria-disabled="true"
             >
               <Repeat className="h-4 w-4" />
-              <Trans>Doação recorrente (Asaas)</Trans>
+              <Trans>Doação Recorrente</Trans>
+              <div className='badge badge-accent badge-xs text-white'><Trans>Em breve</Trans></div>
             </a>
             <a
               className="btn btn-outline flex items-center gap-2"
@@ -102,7 +103,8 @@ export function DonationCard({ locale }: Props) {
               rel="noreferrer"
             >
               <Repeat className="h-4 w-4" />
-              <Trans>Doação recorrente (Apoia.se)</Trans>
+              <Trans>Financiamento Coletivo</Trans>
+              <div className='badge badge-primary badge-xs text-white'>Apoia-se</div>
             </a>
           </div>
         </div>

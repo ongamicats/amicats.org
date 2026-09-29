@@ -466,7 +466,6 @@ msgstr "Discounts"
 #: src/components/pages/landing/adote/index.tsx
 #: src/components/pages/landing/adote/index.tsx
 #: src/components/pages/landing/adote/index.tsx
-#: src/components/pages/landing/adote/index.tsx
 msgid "Disponível"
 msgstr "Available"
 
@@ -479,16 +478,21 @@ msgid "Doação de Itens"
 msgstr "Items donation"
 
 #: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+#~ msgid "Doação recorrente"
+#~ msgstr ""
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
 msgid "Doação Recorrente"
 msgstr "Recurring donation"
 
 #: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Doação recorrente (Apoia.se)"
-msgstr "Recurring donation (Apoia.se)"
+#~ msgid "Doação recorrente (Apoia.se)"
+#~ msgstr "Recurring donation (Apoia.se)"
 
 #: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
-msgid "Doação recorrente (Asaas)"
-msgstr "Recurring donation (Asaas)"
+#~ msgid "Doação recorrente (Asaas)"
+#~ msgstr "Recurring donation (Asaas)"
 
 # Quero Ajudar — route strings (added to improve coverage)
 #: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
@@ -530,12 +534,16 @@ msgid "Educar sobre a posse responsável e a importância da castração é esse
 msgstr "Educating about responsible pet ownership and the importance of spaying and neutering is essential to reduce abandonment. We work continuously to change mindsets and build a more compassionate community."
 
 #: src/components/pages/landing/adote/index.tsx
-msgid "Elegante e cheia de charme, uma dama que merece um lar cheio de amor."
-msgstr ""
+#~ msgid "Elegante e cheia de charme, uma dama que merece um lar cheio de amor."
+#~ msgstr ""
 
 #: src/routes/$locale/quero-ajudar/-components/items-donation-card.tsx
 msgid "Eletrônicos funcionando"
 msgstr "Working electronics"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Em breve"
+msgstr "Soon"
 
 #: src/routes/$locale/quero-ajudar/index.tsx
 #~ msgid "Empresas e profissionais podem apoiar com recursos, serviços e divulgação."
@@ -642,6 +650,10 @@ msgstr "Finalize the adoption"
 #: src/components/pages/landing/o-abrigo/index.tsx
 msgid "Financeiro"
 msgstr "Financial"
+
+#: src/routes/$locale/quero-ajudar/-components/donation-card.tsx
+msgid "Financiamento Coletivo"
+msgstr "Crowdfunding"
 
 #: src/components/pages/landing/adote/index.tsx
 msgid "Fortão e corajoso, mas com um coração gigante. O Rocky felino! 🥊"
