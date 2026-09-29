@@ -12,7 +12,6 @@ export function DonationCard({ locale }: Props) {
   const { t } = useLingui();
   const PIX = '27.806.981/0001-15';
   const boleto = 'https://www.asaas.com/c/905196576946';
-  const recurring1 = 'https://www.asaas.com/c/259222385152';
   const recurring2 = 'https://apoia.se/resgateemanutencaoong';
 
   const [copied, setCopied] = useState(false);
