@@ -11,7 +11,6 @@ interface Props {
 export function DonationCard({ locale }: Props) {
   const { t } = useLingui();
   const PIX = '27.806.981/0001-15';
-  const boleto = 'https://www.asaas.com/c/905196576946';
   const recurring2 = 'https://apoia.se/resgateemanutencaoong';
 
   const [copied, setCopied] = useState(false);
@@ -62,13 +61,14 @@ export function DonationCard({ locale }: Props) {
 
           <div className="mt-4 flex flex-col sm:flex-row gap-2">
             <a
-              className="btn btn-outline w-full sm:w-auto flex items-center gap-2"
-              href={boleto}
+              className="btn btn-outline btn-disabled w-full sm:w-auto flex items-center gap-2"
               target="_blank"
               rel="noreferrer"
+              aria-disabled="true"
             >
               <FileText className="h-4 w-4" />
               <Trans>Doe por Boleto</Trans>
+              <div className='badge badge-accent badge-xs text-white'><Trans>Em breve</Trans></div>
             </a>
           </div>
         </div>
