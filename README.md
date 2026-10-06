@@ -150,3 +150,5 @@ Não editar manualmente:
 ## Arquivos Demo
 
 Arquivos com prefixo `demo` podem ser removidos com segurança. Existem apenas como ponto de partida para experimentação.
+
+-
