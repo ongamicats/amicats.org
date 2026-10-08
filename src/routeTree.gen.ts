@@ -9,18 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AppRouteImport } from './routes/app'
-import { Route as LocaleRouteImport } from './routes/$locale'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LocaleRouteImport } from './routes/$locale'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
-import { Route as LocaleSejaUmParceiroIndexRouteImport } from './routes/$locale/seja-um-parceiro/index'
-import { Route as LocaleQueroAjudarIndexRouteImport } from './routes/$locale/quero-ajudar/index'
-import { Route as LocaleComoFuncionaIndexRouteImport } from './routes/$locale/como-funciona/index'
 import { Route as LocaleAppIndexRouteImport } from './routes/$locale/app/index'
+import { Route as LocaleComoFuncionaIndexRouteImport } from './routes/$locale/como-funciona/index'
+import { Route as LocaleQueroAjudarIndexRouteImport } from './routes/$locale/quero-ajudar/index'
+import { Route as LocaleSejaUmParceiroIndexRouteImport } from './routes/$locale/seja-um-parceiro/index'
 
-const AppRoute = AppRouteImport.update({
-  id: '/app',
-  path: '/app',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocaleRoute = LocaleRouteImport.update({
@@ -28,14 +28,29 @@ const LocaleRoute = LocaleRouteImport.update({
   path: '/$locale',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocaleIndexRoute = LocaleIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleAppIndexRoute = LocaleAppIndexRouteImport.update({
+  id: '/app/',
+  path: '/app/',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleComoFuncionaIndexRoute = LocaleComoFuncionaIndexRouteImport.update({
+  id: '/como-funciona/',
+  path: '/como-funciona/',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleQueroAjudarIndexRoute = LocaleQueroAjudarIndexRouteImport.update({
+  id: '/quero-ajudar/',
+  path: '/quero-ajudar/',
   getParentRoute: () => LocaleRoute,
 } as any)
 const LocaleSejaUmParceiroIndexRoute =
@@ -44,21 +59,6 @@ const LocaleSejaUmParceiroIndexRoute =
     path: '/seja-um-parceiro/',
     getParentRoute: () => LocaleRoute,
   } as any)
-const LocaleQueroAjudarIndexRoute = LocaleQueroAjudarIndexRouteImport.update({
-  id: '/quero-ajudar/',
-  path: '/quero-ajudar/',
-  getParentRoute: () => LocaleRoute,
-} as any)
-const LocaleComoFuncionaIndexRoute = LocaleComoFuncionaIndexRouteImport.update({
-  id: '/como-funciona/',
-  path: '/como-funciona/',
-  getParentRoute: () => LocaleRoute,
-} as any)
-const LocaleAppIndexRoute = LocaleAppIndexRouteImport.update({
-  id: '/app/',
-  path: '/app/',
-  getParentRoute: () => LocaleRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -130,11 +130,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/app': {
-      id: '/app'
-      path: '/app'
-      fullPath: '/app'
-      preLoaderRoute: typeof AppRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$locale': {
@@ -144,11 +144,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/$locale/': {
@@ -158,18 +158,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleIndexRouteImport
       parentRoute: typeof LocaleRoute
     }
-    '/$locale/seja-um-parceiro/': {
-      id: '/$locale/seja-um-parceiro/'
-      path: '/seja-um-parceiro'
-      fullPath: '/$locale/seja-um-parceiro/'
-      preLoaderRoute: typeof LocaleSejaUmParceiroIndexRouteImport
-      parentRoute: typeof LocaleRoute
-    }
-    '/$locale/quero-ajudar/': {
-      id: '/$locale/quero-ajudar/'
-      path: '/quero-ajudar'
-      fullPath: '/$locale/quero-ajudar/'
-      preLoaderRoute: typeof LocaleQueroAjudarIndexRouteImport
+    '/$locale/app/': {
+      id: '/$locale/app/'
+      path: '/app'
+      fullPath: '/$locale/app/'
+      preLoaderRoute: typeof LocaleAppIndexRouteImport
       parentRoute: typeof LocaleRoute
     }
     '/$locale/como-funciona/': {
@@ -179,11 +172,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleComoFuncionaIndexRouteImport
       parentRoute: typeof LocaleRoute
     }
-    '/$locale/app/': {
-      id: '/$locale/app/'
-      path: '/app'
-      fullPath: '/$locale/app/'
-      preLoaderRoute: typeof LocaleAppIndexRouteImport
+    '/$locale/quero-ajudar/': {
+      id: '/$locale/quero-ajudar/'
+      path: '/quero-ajudar'
+      fullPath: '/$locale/quero-ajudar/'
+      preLoaderRoute: typeof LocaleQueroAjudarIndexRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/seja-um-parceiro/': {
+      id: '/$locale/seja-um-parceiro/'
+      path: '/seja-um-parceiro'
+      fullPath: '/$locale/seja-um-parceiro/'
+      preLoaderRoute: typeof LocaleSejaUmParceiroIndexRouteImport
       parentRoute: typeof LocaleRoute
     }
   }
