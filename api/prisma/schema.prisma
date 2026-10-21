@@ -1,0 +1,409 @@
+// Campos de domínio com valores fixos (cargo, status, sexo…) são String no banco
+// e validados por zod na API: o projeto não usa enum (ver src/domain).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String   @id @default(uuid()) @db.Uuid
+  nome              String
+  email             String   @unique
+  senhaHash         String?  @map("senha_hash")
+  /// 'adm' | 'voluntario' (voluntário) | 'cliente'
+  cargo             String   @default("cliente")
+  telefone          String?
+  ativo             Boolean  @default(true)
+  /// Recebe o resumo diário de notificações por e-mail
+  notificarPorEmail Boolean  @default(true) @map("notificar_por_email")
+  criadoEm          DateTime @default(now()) @map("criado_em")
+  atualizadoEm      DateTime @updatedAt @map("atualizado_em")
+
+  sessions        Session[]
+  resetTokens     PasswordResetToken[]
+  gatosCriados    Gato[]               @relation("GatoCriadoPor")
+  registrosSaude  RegistroSaude[]
+  gastos          Gasto[]
+  apadrinhamentos Apadrinhamento[]
+  prescricoes     Prescricao[]
+  aplicacoes      Aplicacao[]
+  eventosVet      EventoVeterinario[]
+  notificacoes    Notificacao[]
+  assinaturas     Assinatura[]
+  doacoes         Doacao[]
+
+  @@map("users")
+}
+
+model Session {
+  /// SHA-256 do token; o token puro só existe no cookie do navegador
+  id        String   @id
+  userId    String   @map("user_id") @db.Uuid
+  expiraEm  DateTime @map("expira_em")
+  criadoEm  DateTime @default(now()) @map("criado_em")
+  userAgent String?  @map("user_agent")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model PasswordResetToken {
+  tokenHash String    @id @map("token_hash")
+  userId    String    @map("user_id") @db.Uuid
+  expiraEm  DateTime  @map("expira_em")
+  usadoEm   DateTime? @map("usado_em")
+  criadoEm  DateTime  @default(now()) @map("criado_em")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("password_reset_tokens")
+}
+
+model Gato {
+  id                  String    @id @default(uuid()) @db.Uuid
+  nome                String
+  slug                String    @unique
+  dataNascimentoAprox DateTime? @map("data_nascimento_aprox") @db.Date
+  /// 'dia' | 'mes' | 'ano'
+  precisaoNascimento  String    @default("ano") @map("precisao_nascimento")
+  /// 'macho' | 'femea' | 'desconhecido'
+  sexo                String    @default("desconhecido")
+  /// 'disponivel' | 'apadrinhado' | 'adotado' | 'em_tratamento' | 'falecido'
+  status              String    @default("disponivel")
+  castrado            Boolean   @default(false)
+  descricaoPt         String    @default("") @map("descricao_pt")
+  descricaoEn         String?   @map("descricao_en")
+  /// Observações internas: nunca expostas no catálogo público
+  observacoes         String    @default("")
+  publicado           Boolean   @default(false)
+  criadoPorId         String?   @map("criado_por_id") @db.Uuid
+  criadoEm            DateTime  @default(now()) @map("criado_em")
+  atualizadoEm        DateTime  @updatedAt @map("atualizado_em")
+
+  criadoPor          User?               @relation("GatoCriadoPor", fields: [criadoPorId], references: [id], onDelete: SetNull)
+  fotos              GatoFoto[]
+  tags               GatoTag[]
+  registrosSaude     RegistroSaude[]
+  gastos             Gasto[]
+  apadrinhamentos    Apadrinhamento[]
+  prescricaos        Prescricao[]
+  eventoVeterinarios EventoVeterinario[]
+
+  @@index([status])
+  @@index([publicado])
+  @@map("gatos")
+}
+
+model GatoFoto {
+  id         String   @id @default(uuid()) @db.Uuid
+  gatoId     String   @map("gato_id") @db.Uuid
+  /// Chave no bucket; vazia para fotos legadas cadastradas só por URL
+  storageKey String?  @map("storage_key")
+  url        String
+  ordem      Int      @default(0)
+  capa       Boolean  @default(false)
+  criadoEm   DateTime @default(now()) @map("criado_em")
+
+  gato Gato @relation(fields: [gatoId], references: [id], onDelete: Cascade)
+
+  @@index([gatoId])
+  @@map("gato_fotos")
+}
+
+model Tag {
+  id       String   @id @default(uuid()) @db.Uuid
+  nome     String   @unique
+  /// 'doenca' | 'comportamento' | 'cuidado'
+  tipo     String   @default("doenca")
+  cor      String?
+  criadoEm DateTime @default(now()) @map("criado_em")
+
+  gatos          GatoTag[]
+  registrosSaude RegistroSaude[]
+
+  @@map("tags")
+}
+
+model GatoTag {
+  gatoId   String   @map("gato_id") @db.Uuid
+  tagId    String   @map("tag_id") @db.Uuid
+  /// false = condição que o gato já teve (histórico), true = atual
+  ativa    Boolean  @default(true)
+  criadoEm DateTime @default(now()) @map("criado_em")
+
+  gato Gato @relation(fields: [gatoId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([gatoId, tagId])
+  @@map("gato_tags")
+}
+
+model RegistroSaude {
+  id              String    @id @default(uuid()) @db.Uuid
+  gatoId          String    @map("gato_id") @db.Uuid
+  tagId           String?   @map("tag_id") @db.Uuid
+  titulo          String
+  dataInicio      DateTime  @map("data_inicio") @db.Date
+  /// Vazia = condição ainda em curso
+  dataFim         DateTime? @map("data_fim") @db.Date
+  observacao      String    @default("")
+  registradoPorId String?   @map("registrado_por_id") @db.Uuid
+  criadoEm        DateTime  @default(now()) @map("criado_em")
+  atualizadoEm    DateTime  @updatedAt @map("atualizado_em")
+
+  gato          Gato  @relation(fields: [gatoId], references: [id], onDelete: Cascade)
+  tag           Tag?  @relation(fields: [tagId], references: [id], onDelete: SetNull)
+  registradoPor User? @relation(fields: [registradoPorId], references: [id], onDelete: SetNull)
+
+  @@index([gatoId])
+  @@map("registros_saude")
+}
+
+model Gasto {
+  id              String   @id @default(uuid()) @db.Uuid
+  gatoId          String   @map("gato_id") @db.Uuid
+  /// 'racao' | 'medicamento' | 'veterinario' | 'exame' | 'higiene' | 'outro'
+  categoria       String
+  descricao       String
+  /// Valor em centavos (evita erro de arredondamento)
+  valorCentavos   Int      @map("valor_centavos")
+  data            DateTime @db.Date
+  registradoPorId String?  @map("registrado_por_id") @db.Uuid
+  criadoEm        DateTime @default(now()) @map("criado_em")
+  atualizadoEm    DateTime @updatedAt @map("atualizado_em")
+
+  gato          Gato  @relation(fields: [gatoId], references: [id], onDelete: Cascade)
+  registradoPor User? @relation(fields: [registradoPorId], references: [id], onDelete: SetNull)
+
+  @@index([gatoId, data])
+  @@map("gastos")
+}
+
+model Apadrinhamento {
+  id       String    @id @default(uuid()) @db.Uuid
+  gatoId   String    @map("gato_id") @db.Uuid
+  userId   String    @map("user_id") @db.Uuid
+  inicio   DateTime  @db.Date
+  /// Vazio = apadrinhamento ativo
+  fim      DateTime? @db.Date
+  criadoEm DateTime  @default(now()) @map("criado_em")
+
+  gato       Gato                      @relation(fields: [gatoId], references: [id], onDelete: Cascade)
+  user       User                      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pagamentos PagamentoApadrinhamento[]
+
+  @@index([gatoId])
+  @@index([userId])
+  @@map("apadrinhamentos")
+}
+
+/// Pagamento avulso (Checkout do Mercado Pago) da parte do padrinho num mês fechado
+model PagamentoApadrinhamento {
+  id               String    @id @default(uuid()) @db.Uuid
+  apadrinhamentoId String    @map("apadrinhamento_id") @db.Uuid
+  /// Mês pago, no formato AAAA-MM
+  mes              String
+  valorCentavos    Int       @map("valor_centavos")
+  /// 'pendente' | 'aprovado' | 'recusado' | 'estornado'
+  status           String    @default("pendente")
+  /// id da preferência (checkout) no Mercado Pago
+  mpPreferenciaId  String?   @unique @map("mp_preferencia_id")
+  /// id do último pagamento feito nesse checkout
+  mpPagamentoId    String?   @unique @map("mp_pagamento_id")
+  checkoutUrl      String?   @map("checkout_url")
+  pagoEm           DateTime? @map("pago_em")
+  criadoEm         DateTime  @default(now()) @map("criado_em")
+  atualizadoEm     DateTime  @updatedAt @map("atualizado_em")
+
+  apadrinhamento Apadrinhamento @relation(fields: [apadrinhamentoId], references: [id], onDelete: Cascade)
+
+  @@index([apadrinhamentoId, mes])
+  @@map("pagamentos_apadrinhamento")
+}
+
+model Prescricao {
+  id             String    @id @default(uuid()) @db.Uuid
+  gatoId         String    @map("gato_id") @db.Uuid
+  medicamento    String
+  /// Ex.: "1/2 comprimido", "0,5 ml"
+  dose           String
+  /// 'oral' | 'topica' | 'injetavel' | 'ocular' | 'otologica' | 'outra'
+  via            String
+  intervaloHoras Int       @map("intervalo_horas")
+  /// Horário da primeira dose
+  inicio         DateTime  @db.Timestamptz(3)
+  /// Limite da última dose; vazio = uso contínuo
+  fim            DateTime? @db.Timestamptz(3)
+  /// Quando foi interrompida antes do fim previsto
+  encerradaEm    DateTime? @map("encerrada_em") @db.Timestamptz(3)
+  prescritoPor   String?   @map("prescrito_por")
+  observacao     String    @default("")
+  criadoPorId    String?   @map("criado_por_id") @db.Uuid
+  criadoEm       DateTime  @default(now()) @map("criado_em")
+  atualizadoEm   DateTime  @updatedAt @map("atualizado_em")
+
+  gato       Gato        @relation(fields: [gatoId], references: [id], onDelete: Cascade)
+  criadoPor  User?       @relation(fields: [criadoPorId], references: [id], onDelete: SetNull)
+  aplicacoes Aplicacao[]
+
+  @@index([gatoId])
+  @@map("prescricoes")
+}
+
+model Aplicacao {
+  id              String   @id @default(uuid()) @db.Uuid
+  prescricaoId    String   @map("prescricao_id") @db.Uuid
+  horarioPrevisto DateTime @map("horario_previsto") @db.Timestamptz(3)
+  aplicadaEm      DateTime @default(now()) @map("aplicada_em") @db.Timestamptz(3)
+  pulada          Boolean  @default(false)
+  observacao      String   @default("")
+  aplicadaPorId   String?  @map("aplicada_por_id") @db.Uuid
+
+  prescricao  Prescricao @relation(fields: [prescricaoId], references: [id], onDelete: Cascade)
+  aplicadaPor User?      @relation(fields: [aplicadaPorId], references: [id], onDelete: SetNull)
+
+  @@unique([prescricaoId, horarioPrevisto])
+  @@map("aplicacoes")
+}
+
+model EventoVeterinario {
+  id              String    @id @default(uuid()) @db.Uuid
+  gatoId          String    @map("gato_id") @db.Uuid
+  /// 'consulta' | 'vacina' | 'vermifugo' | 'exame' | 'cirurgia' | 'castracao' | 'outro'
+  tipo            String
+  titulo          String
+  data            DateTime  @db.Date
+  /// Clínica ou veterinário(a)
+  local           String?
+  observacao      String    @default("")
+  /// Retorno: reforço, revisão, novo exame
+  proximaData     DateTime? @map("proxima_data") @db.Date
+  registradoPorId String?   @map("registrado_por_id") @db.Uuid
+  criadoEm        DateTime  @default(now()) @map("criado_em")
+  atualizadoEm    DateTime  @updatedAt @map("atualizado_em")
+
+  gato          Gato  @relation(fields: [gatoId], references: [id], onDelete: Cascade)
+  registradoPor User? @relation(fields: [registradoPorId], references: [id], onDelete: SetNull)
+
+  @@index([gatoId, data])
+  @@index([proximaData])
+  @@map("eventos_veterinarios")
+}
+
+model Notificacao {
+  id             String    @id @default(uuid()) @db.Uuid
+  userId         String    @map("user_id") @db.Uuid
+  /// 'gasto_novo' | 'apadrinhamento_novo' | 'dose_atrasada' | 'retorno_proximo' | 'assinatura_nova' | 'parte_do_mes' | 'pagamento_aprovado' | 'doacao_recebida'
+  tipo           String
+  titulo         String
+  mensagem       String    @default("")
+  /// Caminho na área logada, sem o idioma (ex.: /app/remedios)
+  link           String?
+  /// Evita notificar duas vezes pelo mesmo motivo (ex.: a mesma dose atrasada)
+  chave          String
+  lidaEm         DateTime? @map("lida_em")
+  emailEnviadoEm DateTime? @map("email_enviado_em")
+  criadoEm       DateTime  @default(now()) @map("criado_em")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, chave])
+  @@index([userId, lidaEm])
+  @@map("notificacoes")
+}
+
+model PlanoClube {
+  id            String   @id @default(uuid()) @db.Uuid
+  nome          String
+  descricao     String   @default("")
+  valorCentavos Int      @map("valor_centavos")
+  ativo         Boolean  @default(true)
+  ordem         Int      @default(0)
+  criadoEm      DateTime @default(now()) @map("criado_em")
+  atualizadoEm  DateTime @updatedAt @map("atualizado_em")
+
+  assinaturas Assinatura[]
+
+  @@map("planos_clube")
+}
+
+model Assinatura {
+  id              String    @id @default(uuid()) @db.Uuid
+  userId          String    @map("user_id") @db.Uuid
+  planoId         String    @map("plano_id") @db.Uuid
+  /// Valor da faixa no momento da adesão (mudar a faixa não muda assinaturas existentes)
+  valorCentavos   Int       @map("valor_centavos")
+  /// 'pendente' | 'ativa' | 'pausada' | 'cancelada'
+  status          String    @default("pendente")
+  /// id da assinatura (preapproval) no Mercado Pago
+  mpId            String?   @unique @map("mp_id")
+  /// Página de pagamento do Mercado Pago
+  checkoutUrl     String?   @map("checkout_url")
+  proximaCobranca DateTime? @map("proxima_cobranca")
+  ativadaEm       DateTime? @map("ativada_em")
+  canceladaEm     DateTime? @map("cancelada_em")
+  criadoEm        DateTime  @default(now()) @map("criado_em")
+  atualizadoEm    DateTime  @updatedAt @map("atualizado_em")
+
+  user      User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plano     PlanoClube           @relation(fields: [planoId], references: [id])
+  cobrancas CobrancaAssinatura[]
+
+  @@index([userId])
+  @@index([status])
+  @@map("assinaturas")
+}
+
+model CobrancaAssinatura {
+  id            String   @id @default(uuid()) @db.Uuid
+  assinaturaId  String   @map("assinatura_id") @db.Uuid
+  /// id do pagamento autorizado (authorized_payment) no Mercado Pago
+  mpId          String   @unique @map("mp_id")
+  valorCentavos Int      @map("valor_centavos")
+  /// 'aprovada' | 'recusada' | 'pendente'
+  status        String
+  data          DateTime
+  criadoEm      DateTime @default(now()) @map("criado_em")
+  atualizadoEm  DateTime @updatedAt @map("atualizado_em")
+
+  assinatura Assinatura @relation(fields: [assinaturaId], references: [id], onDelete: Cascade)
+
+  @@index([assinaturaId])
+  @@map("cobrancas_assinatura")
+}
+
+/// Doação avulsa (Checkout do Mercado Pago: pix, cartão ou boleto). Não exige conta.
+model Doacao {
+  id              String    @id @default(uuid()) @db.Uuid
+  /// Conta de quem doou, quando estava logado
+  userId          String?   @map("user_id") @db.Uuid
+  nome            String
+  email           String
+  valorCentavos   Int       @map("valor_centavos")
+  /// 'pendente' | 'aprovado' | 'recusado' | 'estornado'
+  status          String    @default("pendente")
+  /// id da preferência (checkout) no Mercado Pago
+  mpPreferenciaId String?   @unique @map("mp_preferencia_id")
+  /// id do último pagamento feito nesse checkout
+  mpPagamentoId   String?   @unique @map("mp_pagamento_id")
+  checkoutUrl     String?   @map("checkout_url")
+  pagoEm          DateTime? @map("pago_em")
+  /// E-mail de agradecimento já enviado
+  agradecidaEm    DateTime? @map("agradecida_em")
+  criadoEm        DateTime  @default(now()) @map("criado_em")
+  atualizadoEm    DateTime  @updatedAt @map("atualizado_em")
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([status])
+  @@index([userId])
+  @@map("doacoes")
+}

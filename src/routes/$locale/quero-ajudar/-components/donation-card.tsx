@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { Trans, useLingui } from '@lingui/react/macro';
-import { Copy, CreditCard, FileText, Info, Repeat } from 'lucide-react';
+import { Copy, CreditCard, HandCoins, Info, Repeat } from 'lucide-react';
 import { cn } from '@/components/layout/shared/helpers/class.helper';
 
 interface Props {
@@ -60,16 +60,14 @@ export function DonationCard({ locale }: Props) {
           </div>
 
           <div className="mt-4 flex flex-col sm:flex-row gap-2">
-            <a
-              className="btn btn-outline btn-disabled w-full sm:w-auto flex items-center gap-2"
-              target="_blank"
-              rel="noreferrer"
-              aria-disabled="true"
+            <Link
+              to="/$locale/doar"
+              params={{ locale }}
+              className="btn btn-primary w-full sm:w-auto flex items-center gap-2"
             >
-              <FileText className="h-4 w-4" />
-              <Trans>Doe por Boleto</Trans>
-              <div className='badge badge-accent badge-xs text-white'><Trans>Em breve</Trans></div>
-            </a>
+              <HandCoins className="h-4 w-4" />
+              <Trans>Doar online: pix, cartão ou boleto</Trans>
+            </Link>
           </div>
         </div>
 
@@ -85,16 +83,14 @@ export function DonationCard({ locale }: Props) {
           </div>
 
           <div className="mt-4 grid grid-cols-1 gap-2">
-            <a
-              className="btn btn-outline btn-disabled flex items-center gap-2 pointer-events-none"
-              target="_blank"
-              rel="noreferrer"
-              aria-disabled="true"
+            <Link
+              to="/$locale/app/clube"
+              params={{ locale }}
+              className="btn btn-primary flex items-center gap-2"
             >
               <Repeat className="h-4 w-4" />
-              <Trans>Doação Recorrente</Trans>
-              <div className='badge badge-accent badge-xs text-white'><Trans>Em breve</Trans></div>
-            </a>
+              <Trans>Assinar o Clube Amicats</Trans>
+            </Link>
             <a
               className="btn btn-outline flex items-center gap-2"
               href={recurring2}
@@ -103,7 +99,9 @@ export function DonationCard({ locale }: Props) {
             >
               <Repeat className="h-4 w-4" />
               <Trans>Financiamento Coletivo</Trans>
-              <div className='badge badge-primary badge-xs text-white'>Apoia-se</div>
+              <div className="badge badge-primary badge-xs text-white">
+                Apoia-se
+              </div>
             </a>
           </div>
         </div>

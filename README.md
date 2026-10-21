@@ -28,19 +28,32 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
+### Backend (`api/`)
+
+O catálogo de gatos da home e a área logada (`/$locale/app`) consomem a API que fica em [`api/`](api/) neste mesmo repositório. Para rodar o site completo:
+
+1. Suba a API seguindo o [README dela](api/README.md) (`cd api`, `docker compose up -d`, `npm run db:migrate`, `npm run db:seed`, `npm run dev`).
+2. Aqui, copie `.env.example` para `.env` e ajuste `VITE_API_URL` se a API não estiver em `http://localhost:3333`.
+3. `npm run dev` e acesse `http://localhost:3000/pt-BR/app` (adm inicial: `SEED_ADMIN_EMAIL` / `SEED_ADMIN_SENHA` do `.env` da API).
+
+A área logada renderiza só no navegador (`ssr: false`) porque depende do cookie de sessão da API. O código de integração fica em `src/integrations/api/` e os componentes em `src/components/app/`. Roadmap da plataforma: [`docs/ROADMAP.md`](docs/ROADMAP.md).
+
 ### Scripts Disponíveis
 
-| Comando                   | Descrição                 |
-| ------------------------- | ------------------------- |
-| `npm run dev`             | Dev server (porta 3000)   |
-| `npm run build`           | Build de produção         |
-| `npm run preview`         | Preview do build          |
-| `npm test`                | Rodar testes (Vitest)     |
-| `npm run lint`            | ESLint                    |
-| `npm run format`          | Prettier                  |
-| `npm run check`           | Prettier + ESLint autofix |
-| `npm run storybook`       | Storybook (porta 6006)    |
-| `npm run build-storybook` | Build do Storybook        |
+| Comando                   | Descrição                                   |
+| ------------------------- | ------------------------------------------- |
+| `npm run dev`             | Dev server (porta 3000)                     |
+| `npm run build`           | Build de produção                           |
+| `npm run preview`         | Preview do build                            |
+| `npm test`                | Rodar testes (Vitest)                       |
+| `npm run e2e`             | Testes ponta a ponta (Playwright, site+API) |
+| `npm run e2e:ui`          | Testes ponta a ponta no modo interativo     |
+| `npm run e2e:stop`        | Apaga o banco descartável do e2e            |
+| `npm run lint`            | ESLint                                      |
+| `npm run format`          | Prettier                                    |
+| `npm run check`           | Prettier + ESLint autofix                   |
+| `npm run storybook`       | Storybook (porta 6006)                      |
+| `npm run build-storybook` | Build do Storybook                          |
 
 ## Estrutura do Projeto
 
@@ -132,6 +145,18 @@ Workflow TDD recomendado:
 2. Escreva um teste falhando que descreva o comportamento desejado (co-locar o teste junto ao componente, ex.: `button.test.tsx` ao lado do `button/index.tsx`).
 3. Implemente o código mínimo para fazer o teste passar.
 4. Refatore mantendo os testes verdes.
+
+### Testes ponta a ponta (Playwright)
+
+Os roteiros em `e2e/` percorrem os fluxos principais no navegador, com site e API de verdade: cargos e convite de voluntário, cadastro de gato e catálogo público, apadrinhamento, medicação e retornos veterinários, notificações e resumo por e-mail, assinatura do Clube Amicats, pagamento da parte do padrinho, doação avulsa e histórico de pagamentos com a conciliação do adm.
+
+```bash
+npx playwright install chromium   # só na primeira vez
+npm run e2e                        # recria o banco e roda tudo
+npm run e2e:stop                   # apaga o banco do e2e
+```
+
+Precisa de Docker. O ambiente é isolado e não usa os servidores de desenvolvimento: banco descartável na porta 5435, API na 3334 (com o simulador do Mercado Pago e a caixa de e-mails em memória, `CAIXA_DEV`) e site na 3001. As portas 3000 e 3333 podem continuar em uso. Em caso de falha, o relatório fica em `playwright-report/` (`npx playwright show-report`).
 
 Comando final de validação (antes de abrir um PR / mesclar):
 
